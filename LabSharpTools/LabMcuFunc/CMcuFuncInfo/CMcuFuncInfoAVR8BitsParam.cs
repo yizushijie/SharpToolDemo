@@ -1061,15 +1061,14 @@ namespace Harry.LabTools.LabMcuFunc
 			}
 			else
 			{
-
 				//---校验低位熔丝位
 				if (index == 0)
 				{
-					if (this.defaultChipExternFuseText != null)
+					if ((this.defaultChipExternFuseText != null) && (this.defaultChipExternFuseText.mText.Length > 0))
 					{
 						offset += this.defaultChipExternFuseText.mLength;
 					}
-					if (this.defaultChipHighFuseText != null)
+					if ((this.defaultChipHighFuseText != null) && (this.defaultChipHighFuseText.mText.Length > 0))
 					{
 						offset += this.defaultChipHighFuseText.mLength;
 					}
@@ -1080,7 +1079,7 @@ namespace Harry.LabTools.LabMcuFunc
 				//---校验高位熔丝位
 				else if (index == 1)
 				{
-					if (this.defaultChipExternFuseText != null)
+					if ((this.defaultChipExternFuseText != null) && (this.defaultChipExternFuseText.mText.Length > 0))
 					{
 						offset += this.defaultChipExternFuseText.mLength;
 					}
@@ -1091,7 +1090,7 @@ namespace Harry.LabTools.LabMcuFunc
 				//---校验拓展熔丝位
 				else if (index == 2)
 				{
-					if (this.defaultChipExternFuseText == null)
+					if ((this.defaultChipExternFuseText == null) ||(this.defaultChipExternFuseText.mText.Length == 0))
 					{
 						return false;
 					}
@@ -1099,21 +1098,21 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						tempCMcuFuncInfo = this.defaultChipExternFuseText;
 						//---拓展位熔丝位
-					fuseVal = this.defaultChipFuse[2];
+						fuseVal = this.defaultChipFuse[2];
 					}
 				}
 				//---校验加密熔丝位
 				else if (index == 3)
 				{
-					if (this.defaultChipExternFuseText != null)
+					if ((this.defaultChipExternFuseText!=null) &&(this.defaultChipExternFuseText.mText.Length > 0))
 					{
 						offset += this.defaultChipExternFuseText.mLength;
 					}
-					if (this.defaultChipHighFuseText != null)
+					if ((this.defaultChipHighFuseText!=null) &&(this.defaultChipHighFuseText.mText.Length > 0))
 					{
 						offset += this.defaultChipHighFuseText.mLength;
 					}
-					if (this.defaultChipLowFuseText != null)
+					if ((this.defaultChipLowFuseText != null) && (this.defaultChipLowFuseText.mText.Length > 0))
 					{
 						offset += this.defaultChipLowFuseText.mLength;
 					}
@@ -1203,7 +1202,7 @@ namespace Harry.LabTools.LabMcuFunc
 			}
 			
 			//---拓展熔丝位
-			if (this.defaultChipExternFuseText != null)
+			if ((this.defaultChipExternFuseText!=null) &&(this.defaultChipExternFuseText.mText.Length > 0))
 			{
 				if ((selectIndex < (this.defaultChipExternFuseText.mLength + offset)) && (selectIndex >= offset))
 				{
@@ -1269,7 +1268,7 @@ namespace Harry.LabTools.LabMcuFunc
 				offset += this.defaultChipExternFuseText.mLength;
 			}
 			//---高位熔丝位
-			if (this.defaultChipHighFuseText != null)
+			if ((this.defaultChipHighFuseText!=null) &&(this.defaultChipHighFuseText.mText.Length > 0))
 			{
 				if ((selectIndex < (this.defaultChipHighFuseText.mLength + offset)) && (selectIndex >= offset))
 				{
@@ -1331,7 +1330,7 @@ namespace Harry.LabTools.LabMcuFunc
 				}
 				offset += this.defaultChipHighFuseText.mLength;
 			}
-			if (this.defaultChipLowFuseText!= null)
+			if ((this.defaultChipLowFuseText!=null)&&(this.defaultChipLowFuseText.mText.Length > 0))
 			{
 				if ((selectIndex < (this.defaultChipLowFuseText.mLength + offset)) && (selectIndex >= offset))
 				{
@@ -1393,7 +1392,7 @@ namespace Harry.LabTools.LabMcuFunc
 				}
 				offset += this.defaultChipLowFuseText.mLength;
 			}
-			if (this.defaultChipLockFuseText != null)
+			if ((this.defaultChipLockFuseText != null) &&(this.defaultChipLockFuseText.mText.Length>0))
 			{
 				if ((selectIndex < (this.defaultChipLockFuseText.mLength + offset)) && (selectIndex >= offset))
 				{
@@ -2113,7 +2112,7 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取拓展位
 			CMcuFuncAVR8BitsParam temCMcuParam = this.mChipExternFuseText;
 			//---校验熔丝位
-			if (temCMcuParam != null)
+			if (temCMcuParam.mText.Length > 0)
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
@@ -2145,11 +2144,11 @@ namespace Harry.LabTools.LabMcuFunc
 						{
 							clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
 						}
-					}					
+					}
 				}
 				offsetIndex += i;
 				fuse = Convert.ToInt32(externFuseValue.Text, 16);
-				if (fuse!= tempFuse[2])
+				if (fuse != tempFuse[2])
 				{
 					if (externFuseValue.InvokeRequired)
 					{
@@ -2163,13 +2162,30 @@ namespace Harry.LabTools.LabMcuFunc
 					else
 					{
 						externFuseValue.Text = tempFuse[2].ToString("X2");
-					}					
+					}
+				}
+			}
+			else
+			{
+				fuse = 0xFF;
+				if (externFuseValue.InvokeRequired)
+				{
+					externFuseValue.BeginInvoke((EventHandler)
+										 //cbb.Invoke((EventHandler)
+										 (delegate
+										 {
+											 externFuseValue.Text = tempFuse[2].ToString("X2");
+										 }));
+				}
+				else
+				{
+					externFuseValue.Text = tempFuse[2].ToString("X2");
 				}
 			}
 			//---获取高位
 			temCMcuParam = this.mChipHighFuseText;
 			//---校验熔丝位
-			if (temCMcuParam != null)
+			if (temCMcuParam.mText.Length > 0)
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
@@ -2225,7 +2241,7 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取低位
 			temCMcuParam = this.mChipLowFuseText;
 			//---校验熔丝位
-			if (temCMcuParam != null)
+			if (temCMcuParam.mText.Length > 0)
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
@@ -2281,7 +2297,7 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取加密位
 			temCMcuParam = this.mChipLockFuseText;
 			//---校验加密位
-			if (temCMcuParam != null)
+			if (temCMcuParam.mText.Length > 0)
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
