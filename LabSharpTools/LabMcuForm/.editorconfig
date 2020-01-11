@@ -1,0 +1,37 @@
+﻿[*.cs]
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_field = false:none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_event = false:none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_method = false:none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_property = false:none
+
+# CA1303: 请不要将文本作为本地化参数传递
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1062: 验证公共方法的参数
+dotnet_diagnostic.CA1062.severity = none
+
+# CA1304: 指定 CultureInfo
+dotnet_diagnostic.CA1304.severity = none
+
+# IDE0069: 应释放可释放的字段
+dotnet_diagnostic.IDE0069.severity = none
+
+# IDE0055: 修正格式
+dotnet_diagnostic.IDE0055.severity = none
+
+# CA1305: 指定 IFormatProvider
+dotnet_diagnostic.CA1305.severity = none
+
+# CA1816: Dispose 方法应调用 SuppressFinalize
+dotnet_diagnostic.CA1816.severity = none
+
+# CA1063: 正确实现 IDisposable
+dotnet_diagnostic.CA1063.severity = none

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED85D1A0-C43E-4431-A842-547136756E05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestAgent.GraphicsLib</RootNamespace>
+    <AssemblyName>Graphics2DLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/Example6_6_1/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CurveItemClass\SPCItem.cs" />
+    <Compile Include="DefaultValue.cs" />
+    <Compile Include="AxisClass\FormAxisParamEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AxisClass\FormAxisParamEdit.Designer.cs">
+      <DependentUpon>FormAxisParamEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsObjClass\FormGraphObjParamEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicsObjClass\FormGraphObjParamEdit.Designer.cs">
+      <DependentUpon>FormGraphObjParamEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParamEditBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParamEditBase.Designer.cs">
+      <DependentUpon>FormParamEditBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsObjClass\ArrowObj.cs" />
+    <Compile Include="AxisClass\Axis.cs" />
+    <Compile Include="LabelClass\AxisLabel.cs" />
+    <Compile Include="Bar.cs" />
+    <Compile Include="CurveItemClass\BarItem.cs" />
+    <Compile Include="BarSettings.cs" />
+    <Compile Include="LineBaseClass\Border.cs" />
+    <Compile Include="GraphicsObjClass\BoxObj.cs" />
+    <Compile Include="Chart.cs" />
+    <Compile Include="ColorSymbolRotator.cs" />
+    <Compile Include="CurveItemClass\CurveItem.cs" />
+    <Compile Include="CurveList.cs" />
+    <Compile Include="ParamEditEnable.cs" />
+    <Compile Include="Praphics2DControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Praphics2DControl.Designer.cs">
+      <DependentUpon>Praphics2DControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScaleClass\DateAsOrdinalScale.cs" />
+    <Compile Include="ScaleClass\DateScale.cs" />
+    <Compile Include="ErrorBar.cs" />
+    <Compile Include="CurveItemClass\ErrorBarItem.cs" />
+    <Compile Include="Fill.cs" />
+    <Compile Include="FontSpec.cs" />
+    <Compile Include="FormExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExample.designer.cs">
+      <DependentUpon>FormExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGraphics.Designer.cs">
+      <DependentUpon>FormGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaneClass\FormPaneBaseParamEditBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaneClass\FormPaneBaseParamEditBase.Designer.cs">
+      <DependentUpon>FormPaneBaseParamEditBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaneClass\FormGraphPaneParamEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaneClass\FormGraphPaneParamEdit.Designer.cs">
+      <DependentUpon>FormGraphPaneParamEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaneClass\FormMasterPaneParamEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaneClass\FormMasterPaneParamEdit.Designer.cs">
+      <DependentUpon>FormMasterPaneParamEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelClass\GapLabel.cs" />
+    <Compile Include="GraphicsObjClass\GraphObj.cs" />
+    <Compile Include="GraphObjList.cs" />
+    <Compile Include="PaneClass\GraphPane.cs" />
+    <Compile Include="HiLowBar.cs" />
+    <Compile Include="CurveItemClass\HiLowBarItem.cs" />
+    <Compile Include="IPointList.cs" />
+    <Compile Include="IPointListEdit.cs" />
+    <Compile Include="LineBaseClass\JapaneseCandleStick.cs" />
+    <Compile Include="CurveItemClass\JapaneseCandleStickItem.cs" />
+    <Compile Include="LabelClass\Label.cs" />
+    <Compile Include="Legend.cs" />
+    <Compile Include="LineBaseClass\Line.cs" />
+    <Compile Include="ScaleClass\LinearAsOrdinalScale.cs" />
+    <Compile Include="ScaleClass\LinearScale.cs" />
+    <Compile Include="LineBaseClass\LineBase.cs" />
+    <Compile Include="CurveItemClass\LineItem.cs" />
+    <Compile Include="GraphicsObjClass\LineObj.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="ScaleClass\LogScale.cs" />
+    <Compile Include="MajorGrid.cs" />
+    <Compile Include="MajorTic.cs" />
+    <Compile Include="Margin.cs" />
+    <Compile Include="GraphicsObjClass\MarkObj.cs" />
+    <Compile Include="PaneClass\MasterPane.cs" />
+    <Compile Include="MinorGrid.cs" />
+    <Compile Include="MinorTic.cs" />
+    <Compile Include="LineBaseClass\OHLCBar.cs" />
+    <Compile Include="CurveItemClass\OHLCBarItem.cs" />
+    <Compile Include="ScaleClass\OrdinalScale.cs" />
+    <Compile Include="PaneClass\PaneBase.cs" />
+    <Compile Include="PaneList.cs" />
+    <Compile Include="CurveItemClass\PieItem.cs" />
+    <Compile Include="PointPairBaseClass\PointPair.cs" />
+    <Compile Include="PointPairBaseClass\PointPairBase.cs" />
+    <Compile Include="PointPairList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormExample.resx">
+      <DependentUpon>FormExample.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AxisClass\FormAxisParamEdit.resx">
+      <DependentUpon>FormAxisParamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGraphics.resx">
+      <DependentUpon>FormGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneClass\FormGraphPaneParamEdit.zh-CN.resx">
+      <DependentUpon>FormGraphPaneParamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneClass\FormMasterPaneParamEdit.zh-CN.resx">
+      <DependentUpon>FormMasterPaneParamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneClass\FormPaneBaseParamEditBase.resx">
+      <DependentUpon>FormPaneBaseParamEditBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicsObjClass\FormGraphObjParamEdit.resx">
+      <DependentUpon>FormGraphObjParamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneClass\FormGraphPaneParamEdit.resx">
+      <DependentUpon>FormGraphPaneParamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneClass\FormMasterPaneParamEdit.resx">
+      <DependentUpon>FormMasterPaneParamEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParamEditBase.resx">
+      <DependentUpon>FormParamEditBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParamEditBase.zh-CN.resx">
+      <DependentUpon>FormParamEditBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaneClass\FormPaneBaseParamEditBase.zh-CN.resx">
+      <DependentUpon>FormPaneBaseParamEditBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Praphics2DControl.resx">
+      <DependentUpon>Praphics2DControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScaleClass\Scale.cs" />
+    <Compile Include="CurveItemClass\StickItem.cs" />
+    <Compile Include="StockPointList.cs" />
+    <Compile Include="PointPairBaseClass\StockPt.cs" />
+    <Compile Include="Symbol.cs" />
+    <Compile Include="GraphicsObjClass\TextObj.cs" />
+    <Compile Include="ScaleClass\TextScale.cs" />
+    <Compile Include="EnumDefine\Types.cs" />
+    <Compile Include="ValueHandler.cs" />
+    <Compile Include="AxisClass\X2Axis.cs" />
+    <Compile Include="AxisClass\XAxis.cs" />
+    <Compile Include="ScaleClass\VictorScale.cs" />
+    <Compile Include="XDate.cs" />
+    <Compile Include="AxisClass\Y2Axis.cs" />
+    <Compile Include="Y2AxisList.cs" />
+    <Compile Include="AxisClass\YAxis.cs" />
+    <Compile Include="YAxisList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

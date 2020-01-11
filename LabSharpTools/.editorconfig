@@ -1,0 +1,43 @@
+﻿[*.cs]
+
+# CA1305: 指定 IFormatProvider
+dotnet_diagnostic.CA1305.severity = none
+
+# CA1816: Dispose 方法应调用 SuppressFinalize
+dotnet_diagnostic.CA1816.severity = none
+
+# CA1062: 验证公共方法的参数
+dotnet_diagnostic.CA1062.severity = none
+
+# CA1304: 指定 CultureInfo
+dotnet_diagnostic.CA1304.severity = none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_property = false:none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_method = false:none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_event = false:none
+
+# IDE0003: 删除限定
+dotnet_style_qualification_for_field = false:none
+
+# IDE0025: 使用属性的表达式主体
+csharp_style_expression_bodied_properties = true:none
+
+# CA1819: 属性不应返回数组
+dotnet_diagnostic.CA1819.severity = none
+
+# CA1822: 将成员标记为 static
+dotnet_diagnostic.CA1822.severity = none
+
+# CA1303: 请不要将文本作为本地化参数传递
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1031: 不捕获常规异常类型
+dotnet_diagnostic.CA1031.severity = none
+
+# CA2000: 丢失范围之前释放对象
+dotnet_diagnostic.CA2000.severity = none

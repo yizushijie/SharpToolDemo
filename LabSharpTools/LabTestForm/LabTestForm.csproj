@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0A538EA-8A7F-4EA9-8C87-DC52ED6288BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LabTestForm</RootNamespace>
+    <AssemblyName>LabTestForm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BoxyUsbCamera, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UsbCamera.1.0.0\lib\BoxyUsbCamera.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
+      <HintPath>..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="DSAPI, Version=2.0.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DSAPI.2.0.8.66\lib\net40\DSAPI.DLL</HintPath>
+    </Reference>
+    <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelLibrary.1.2011.7.31\lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HidLibrary, Version=3.3.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\hidlibrary.3.3.24\lib\net40\HidLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="NativeUsbLib, Version=1.4.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NativeUsbLib.1.4.8\lib\net20\NativeUsbLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SeeSharpTools.JY.GUI">
+      <HintPath>..\..\SeeSharpTools\JY.GUI\obj\Debug\SeeSharpTools.JY.GUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Theraot.Core, Version=3.1.3.0, Culture=neutral, PublicKeyToken=b1460dff8a28f7a7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Theraot.Core.3.1.3\lib\net40\Theraot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="USBLib, Version=1.0.3996.21803, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\USBLib.1.0.0\lib\USBLib.DLL</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LabCommPort\LabCommPort.csproj">
+      <Project>{3fbd5434-d5cb-4e6f-95d3-3905e5de178a}</Project>
+      <Name>LabCommPort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabControlPlus\LabControlPlus.csproj">
+      <Project>{E54A51A6-A054-4F21-AC22-A827B5EF4D36}</Project>
+      <Name>LabControlPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabFuncControl\LabFuncControl.csproj">
+      <Project>{2BDCF93A-3A16-4AC3-A3F6-6E45601F13E5}</Project>
+      <Name>LabFuncControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabGenFunc\LabGenFunc.csproj">
+      <Project>{C64AEEA0-7A08-4786-9F1E-BD66608E190E}</Project>
+      <Name>LabGenFunc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabHexEdit\LabHexEdit.csproj">
+      <Project>{72D5A1AE-5BD4-4DC1-AF94-D760DB573C10}</Project>
+      <Name>LabHexEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabMcuFunc\LabMcuFunc.csproj">
+      <Project>{22AE2121-9EBB-4772-9C2B-10BB545B4D2F}</Project>
+      <Name>LabMcuFunc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+  </Target>
+</Project>

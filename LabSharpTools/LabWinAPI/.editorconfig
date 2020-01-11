@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CA1707: 标识符不应包含下划线
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1401: P/Invokes 应该是不可见的
+dotnet_diagnostic.CA1401.severity = none

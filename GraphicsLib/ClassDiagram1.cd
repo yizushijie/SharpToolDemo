@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="TestAgent.GraphicsLib.ArrowObj" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAggAIAAABAAAgAAAAAAAAgAAAAAIAABA=</HashCode>
+      <FileName>GraphicsObjClass\ArrowObj.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Axis" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hwBBAAAEDaloEkgpAIcAoAAogAQABAAKEwKBoAAKECA=</HashCode>
+      <FileName>AxisClass\Axis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.AxisLabel" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgAAAAAAIAAAAAEAgAEAEAAAAAAAAAAAAABA=</HashCode>
+      <FileName>LabelClass\AxisLabel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Bar" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAgAIAEAAAAIgAAAADBAAAACAAAAAABA=</HashCode>
+      <FileName>Bar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.BarItem" Collapsed="true">
+    <Position X="23.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAQAAIAgAAkAIAAAAAIAgAAAAAQAAAAgAAAAAABA=</HashCode>
+      <FileName>CurveItemClass\BarItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.BarSettings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAIAAAIAAgQAAAiAAIAgAAAABCAAAQAIAAAQQCA=</HashCode>
+      <FileName>BarSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Border" Collapsed="true">
+    <Position X="57.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAIAAAAAAAgEAAABAAAAAAAAAAAABA=</HashCode>
+      <FileName>LineBaseClass\Border.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.BoxObj" Collapsed="true">
+    <Position X="19" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAkAIAEAAAAIgAAIACAAAAACAAAAAABA=</HashCode>
+      <FileName>GraphicsObjClass\BoxObj.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Chart" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="63.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAIgEAAAAIoACAADAAAAACAAAAAABA=</HashCode>
+      <FileName>Chart.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.ColorSymbolRotator" Collapsed="true">
+    <Position X="65.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAACAAAAADAIAAAAAAAAAAAAAAACEAggAAACoAAA=</HashCode>
+      <FileName>ColorSymbolRotator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.CurveItem" Collapsed="true">
+    <Position X="26.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gkAAEgggMAA0kkAoiBAAAICwBAQApQAAAAgCoAJABQI=</HashCode>
+      <FileName>CurveItemClass\CurveItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.CurveList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="67.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAACAIIBAAgAICAgQAAABAABIAQAAAAgBAAAAABA=</HashCode>
+      <FileName>CurveList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.DateAsOrdinalScale" Collapsed="true">
+    <Position X="34.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAABAAAAAAEAAAAAggAAAAAAEAAQAAAAAAABA=</HashCode>
+      <FileName>ScaleClass\DateAsOrdinalScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.DateScale" Collapsed="true">
+    <Position X="41.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAABEAAAAAE4EABAAwAAABEAEAAQAAAAAACBA=</HashCode>
+      <FileName>ScaleClass\DateScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.ErrorBar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="69" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIEgBIAAAAAAAgAIAABAAAAAAAoAAACBg=</HashCode>
+      <FileName>ErrorBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.ErrorBarItem" Collapsed="true">
+    <Position X="25.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAIAgAAkAIAAAAAIAgAAAAAQAAAAgAAAAAABA=</HashCode>
+      <FileName>CurveItemClass\ErrorBarItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Fill" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AmABACAIBMAIEgYIUEAAAAAhQAAARBQEAQaCgAAAABw=</HashCode>
+      <FileName>Fill.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.FontSpec" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="63.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgiKgEAAgAggGJIEIgCoNoKCrgLBACQECKiEIABBA=</HashCode>
+      <FileName>FontSpec.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Form1" Collapsed="true">
+    <Position X="65.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DQCAAAAgACAAAgAAACCAAAACAAEAAAAAACQAwAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.GapLabel" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQgAQAAAAAAIAAAAAAAgAAAAAAAAAAAQAAAAABA=</HashCode>
+      <FileName>LabelClass\GapLabel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.GraphObj" Collapsed="true">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAEAAAAgEkAIAAIAAAAgAAICBAACAiAAIEAAAAA=</HashCode>
+      <FileName>GraphicsObjClass\GraphObj.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.GraphObjList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="67.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAYAAAgAICAgAAAAAAAAAAAAAAAAAAAABABA=</HashCode>
+      <FileName>GraphObjList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.GraphPane" Collapsed="true">
+    <Position X="50.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>2CIKQ0UDBCAAokAsiIIAAElsAaImFIAKgBZAVgDACZA=</HashCode>
+      <FileName>PaneClass\GraphPane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.HiLowBar" Collapsed="true">
+    <Position X="6.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAYgAAAAAgBAIQAAAAAAgAAAAAAAAAAAAAAIAABA=</HashCode>
+      <FileName>HiLowBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.HiLowBarItem" Collapsed="true">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>CurveItemClass\HiLowBarItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.JapaneseCandleStick" Collapsed="true">
+    <Position X="59.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAgAIQAAAgAAgAABACAAOAQAAAAAAgBA=</HashCode>
+      <FileName>LineBaseClass\JapaneseCandleStick.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.JapaneseCandleStickItem" Collapsed="true">
+    <Position X="32.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQAAIAAAAkAIAAAAAIAggAAAAQAAAAAAAAAAABA=</HashCode>
+      <FileName>CurveItemClass\JapaneseCandleStickItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Label" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEAAIAAAAAAAgAAAABAAIAAAAKAAAABA=</HashCode>
+      <FileName>LabelClass\Label.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Legend" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="69" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABgIIASQAAEwCoAEIAEAIgACBADAACCCCQoAABAhA=</HashCode>
+      <FileName>Legend.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Line" Collapsed="true">
+    <Position X="55" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUBACAEAAgAAEgAIAAAIAAIoQAAADAAAABABAAAAAhY=</HashCode>
+      <FileName>LineBaseClass\Line.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.LinearAsOrdinalScale" Collapsed="true">
+    <Position X="37" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAAAAAAAAAAAAAAAAgAAAAAAEAAQAAAAAAABA=</HashCode>
+      <FileName>ScaleClass\LinearAsOrdinalScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.LinearScale" Collapsed="true">
+    <Position X="43.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAAAAAAAAAAAAAAAAgAAAAAAAAAQAAAAAAABA=</HashCode>
+      <FileName>ScaleClass\LinearScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.LineBase" Collapsed="true">
+    <Position X="57.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBAAAAAjJEAAIAAAAAEAoAJAAIAAEBAAAoCAAAAA=</HashCode>
+      <FileName>LineBaseClass\LineBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.LineItem" Collapsed="true">
+    <Position X="28" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAYAAAAkAIAAABAIAgAIAAAQAAAAAAAAABCBA=</HashCode>
+      <FileName>CurveItemClass\LineItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.LineObj" Collapsed="true">
+    <Position X="15.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAkAIAAABAAAgAAIAAAAAAAAAAAABABA=</HashCode>
+      <FileName>GraphicsObjClass\LineObj.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Location" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAAAAIBASAABAJAAADAEQgBLABBBgEAAQgAAAAYBA=</HashCode>
+      <FileName>Location.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.LogScale" Collapsed="true">
+    <Position X="46" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAIBAAAQAAEoEBAAIgAAAAEAEAAQAAAAAACBA=</HashCode>
+      <FileName>ScaleClass\LogScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.MajorGrid" Collapsed="true">
+    <Position X="3.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAACAAAIAAAAgAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MajorGrid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.MajorTic" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAgAAAAgAIAAAAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>MajorTic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Margin" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="63.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAIAAAQAAAgAAAMBQgACICAAAAAABA=</HashCode>
+      <FileName>Margin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.MasterPane" Collapsed="true">
+    <Position X="52.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAMBASACAisKQkAICIgAAQAgIBLAMlAaABgAACGAAho=</HashCode>
+      <FileName>PaneClass\MasterPane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.MinorGrid" Collapsed="true">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAABJEgBIAAAAAAAoAAAABAAEAAAAoAAAABg=</HashCode>
+      <FileName>MinorGrid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.MinorTic" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAAIIggBIAAAAAEEoAAAADAAAACAAgANBABg=</HashCode>
+      <FileName>MinorTic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.OHLCBar" Collapsed="true">
+    <Position X="59.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIgAAAAAghAIQIAAAAAgAAAABAAAAAAAAAMAABA=</HashCode>
+      <FileName>LineBaseClass\OHLCBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.OHLCBarItem" Collapsed="true">
+    <Position X="30.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAIAgAAkAIAAAAAIAgAAAAAQAAAAgAAAAAABA=</HashCode>
+      <FileName>CurveItemClass\OHLCBarItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.OrdinalScale" Collapsed="true">
+    <Position X="48.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAAAAAAAAAAAAAAAAgAAAAAAAAAQAAAAAAABA=</HashCode>
+      <FileName>ScaleClass\OrdinalScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.PaneBase" Collapsed="true">
+    <Position X="51.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAAARIioAwA0AIAEgHEAIwACUADAFCABCEgCFAAAA=</HashCode>
+      <FileName>PaneClass\PaneBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.PaneList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="65.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAICAgAAAAgAAAABAAAAAAAAAAAABA=</HashCode>
+      <FileName>PaneList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.PieItem" Collapsed="true">
+    <Position X="21.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAQBAJAAAEmIoAEFoAIKgGrIAKQoABEShIIIEABE=</HashCode>
+      <FileName>CurveItemClass\PieItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.PointPair" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAMgAAAAAAgAAAEAIAAAAACAAAAARE=</HashCode>
+      <FileName>PointPairBaseClass\PointPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.PointPairBase" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAggAAAFgAAAAAggAABABIAAAAAAAAAAYAA=</HashCode>
+      <FileName>PointPairBaseClass\PointPairBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.PointPairList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="67.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgIAAEAAQAAgABYIgAgQAAQgAAAABIAAAAAAAAAAABA=</HashCode>
+      <FileName>PointPairList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Scale" Collapsed="true">
+    <Position X="41.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>9FcOIUwAoLUEkwCSG8EDEQUgUIhDNKFMlYbDIAsaTlg=</HashCode>
+      <FileName>ScaleClass\Scale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.StickItem" Collapsed="true">
+    <Position X="28" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAIAAAAAIAgAAAAAQAAAAAAAAAAABA=</HashCode>
+      <FileName>CurveItemClass\StickItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.StockPointList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="63.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAICAAAAAAAAAIAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>StockPointList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.StockPt" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAIEAEAgAAAAAgAAgwAAABAAACAACAAAA=</HashCode>
+      <FileName>PointPairBaseClass\StockPt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Symbol" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="65.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAgAkgQIAEEAAAIgAABALAAAIQCAIAIAABA=</HashCode>
+      <FileName>Symbol.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.TextObj" Collapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQAAAAAAEkAIAAAAAAAgAAIAAAEIAAACCAAAIBA=</HashCode>
+      <FileName>GraphicsObjClass\TextObj.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.TextScale" Collapsed="true">
+    <Position X="39.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQQAAAAAAAAAAgEAAAAgAAAAEAEAAQAAAAAAABA=</HashCode>
+      <FileName>ScaleClass\TextScale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.ValueHandler" Collapsed="true">
+    <Position X="67.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ValueHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.X2Axis" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAAAQAABAAAAAAIAAAAIAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AxisClass\X2Axis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.XAxis" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAAAQAABAAAAAAIAAAAIAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AxisClass\XAxis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Y2Axis" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAAAQAABAAAAAAIAAAAIAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AxisClass\Y2Axis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Y2AxisList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="69" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAAAAAAAAAICAgAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Y2AxisList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.YAxis" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAAAQAABAAAAAAIAAAAIAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>AxisClass\YAxis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.YAxisList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAAAAAAAAAICAgAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>YAxisList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Properties.Resources" Collapsed="true">
+    <Position X="69" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.Properties.Settings" Collapsed="true">
+    <Position X="62" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.MarkObj" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAIAkAIAAAAAAAAAAKAAAAAAAAAAQAQEBA=</HashCode>
+      <FileName>GraphicsObjClass\MarkObj.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TestAgent.GraphicsLib.ParamEditEnable" Collapsed="true">
+    <Position X="31.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAIABAAEAAgAAAAAAACAAAAAAABAAA=</HashCode>
+      <FileName>ParamEditEnable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="TestAgent.GraphicsLib.XDate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="62" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GABiJBAxEokAQGxkwgEANgAMBEIEBI5MJAACIAIQIIA=</HashCode>
+      <FileName>XDate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Interface Name="TestAgent.GraphicsLib.IPointList" Collapsed="true">
+    <Position X="3.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPointList.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TestAgent.GraphicsLib.IPointListEdit" Collapsed="true">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAABAAAA=</HashCode>
+      <FileName>IPointListEdit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TestAgent.GraphicsLib.AxisType" Collapsed="true">
+    <Position X="67.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAABAAgAAAIAgAAAABAAAACAAAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.BarBase" Collapsed="true">
+    <Position X="69" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.BarType" Collapsed="true">
+    <Position X="62" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAEAAAAAAAgAAAAAAAABAAAACAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.FillType" Collapsed="true">
+    <Position X="67.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAAAAAAAAIAAAAAAAAAAQAAAACIAAAAAAEAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.SymbolType" Collapsed="true">
+    <Position X="62" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAABEAgAIAAgAAgAAgAAgCBgAAEAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.LegendPos" Collapsed="true">
+    <Position X="69" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAUAAIAAAEAQAQAAAAAIAAAACACAEAggAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.AlignH" Collapsed="true">
+    <Position X="62" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAIAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.AlignP" Collapsed="true">
+    <Position X="63.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.AlignV" Collapsed="true">
+    <Position X="65.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.CoordType" Collapsed="true">
+    <Position X="63.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAhAAAAAAAAAAABAAAAAACEAAAAAAACAAAAACAIAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.DateUnit" Collapsed="true">
+    <Position X="65.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJACAAAAAAAAAAAIAAAAAACIEAAAAAAAAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.StepType" Collapsed="true">
+    <Position X="69" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAACAAAAgQAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.LineType" Collapsed="true">
+    <Position X="62" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.SortType" Collapsed="true">
+    <Position X="67.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.ZOrder" Collapsed="true">
+    <Position X="63.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEAAAAAAAAEAAAAAAAAAAAAAYACAAAAQAAAAIAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.PaneLayout" Collapsed="true">
+    <Position X="63.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAaAAAAAAAAAAAAAAABAgAAAAAABEA0AAAAgAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestAgent.GraphicsLib.PieLabelType" Collapsed="true">
+    <Position X="65.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAkCAkAAAA=</HashCode>
+      <FileName>EnumDefine\Types.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

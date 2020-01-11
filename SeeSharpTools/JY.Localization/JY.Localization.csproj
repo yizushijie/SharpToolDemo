@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\..\LabSharpTools\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\..\LabSharpTools\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\..\LabSharpTools\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\..\LabSharpTools\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{20012951-09DA-4822-AE7F-8D97159195CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeeSharpTools.JY.Localization</RootNamespace>
+    <AssemblyName>SeeSharpTools.JY.Localization</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\SeeSharpTools.JY.Localization.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BoxyUsbCamera, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\LabSharpTools\packages\UsbCamera.1.0.0\lib\BoxyUsbCamera.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
+      <HintPath>..\..\LabSharpTools\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="DSAPI, Version=2.0.8.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DSAPI.2.0.8.66\lib\net40\DSAPI.DLL</HintPath>
+    </Reference>
+    <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\LabSharpTools\packages\ExcelLibrary.1.2011.7.31\lib\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HidLibrary, Version=3.3.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\hidlibrary.3.3.24\lib\net40\HidLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="NativeUsbLib, Version=1.4.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\LabSharpTools\packages\NativeUsbLib.1.4.8\lib\net20\NativeUsbLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Theraot.Core, Version=3.1.3.0, Culture=neutral, PublicKeyToken=b1460dff8a28f7a7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Theraot.Core.3.1.3\lib\net40\Theraot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="USBLib, Version=1.0.3996.21803, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\..\LabSharpTools\packages\USBLib.1.0.0\lib\USBLib.DLL</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JY.Localization.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.NetCore.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\..\LabSharpTools\packages\Microsoft.NetFramework.Analyzers.2.9.8\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.8\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\LabSharpTools\packages\Microsoft.CodeQuality.Analyzers.2.9.8\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\..\LabSharpTools\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\LabSharpTools\packages\Microsoft.NetCore.Analyzers.2.9.8\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\..\LabSharpTools\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\LabSharpTools\packages\Microsoft.NetFramework.Analyzers.2.9.8\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\LabSharpTools\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.8\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

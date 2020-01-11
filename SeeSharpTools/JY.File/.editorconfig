@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CA1062: 验证公共方法的参数
+dotnet_diagnostic.CA1062.severity = none

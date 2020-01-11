@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;checkBox_isPenWidthScaled.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="num_TitleGap.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_titleGap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="checkBox_isPenWidthScaled.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="groupBox_BoardParam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 48</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="num_BoardFactor.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textBox_Title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 21</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_Title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="&gt;&gt;num_BoardFactor.Parent" xml:space="preserve">
+    <value>groupBox_BoardParam</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Top.Name" xml:space="preserve">
+    <value>num_Margin_Top</value>
+  </data>
+  <data name="&gt;&gt;num_BoardFactor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="&gt;&gt;textBox_Title.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_Title.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label_BoardColor.Parent" xml:space="preserve">
+    <value>groupBox_BoardParam</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Left.Name" xml:space="preserve">
+    <value>num_Margin_Left</value>
+  </data>
+  <data name="textBox_Tag.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 8</value>
+  </data>
+  <data name="&gt;&gt;label_Margin_Left.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="num_Margin_Top.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;num_TitleGap.Name" xml:space="preserve">
+    <value>num_TitleGap</value>
+  </data>
+  <data name="num_Margin_Left.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_BoardColor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_BoardFactor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;colorDialog_ParamEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_BoardColor.Name" xml:space="preserve">
+    <value>label_BoardColor</value>
+  </data>
+  <data name="num_Margin_Left.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="groupBox_margin.Text" xml:space="preserve">
+    <value>Margin</value>
+  </data>
+  <data name="label_BoardColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 19</value>
+  </data>
+  <data name="num_Margin_Left.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="label_Tag.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="num_BoardFactor.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_Tag.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_BoardFactor.Parent" xml:space="preserve">
+    <value>groupBox_BoardParam</value>
+  </data>
+  <data name="textBox_Title.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_Margin_Left.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBox_isFontScaled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 176</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FormGraphicsParamEditBase</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isBoardVisible.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isBoardVisible.Name" xml:space="preserve">
+    <value>checkBox_isBoardVisible</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_BoardColor.Parent" xml:space="preserve">
+    <value>groupBox_BoardParam</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Bottom.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="&gt;&gt;groupBox_margin.Name" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="&gt;&gt;num_BoardFactor.Name" xml:space="preserve">
+    <value>num_BoardFactor</value>
+  </data>
+  <data name="&gt;&gt;textBox_Title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Margin_Left.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_Margin_Left.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="checkBox_isBoardVisible.Text" xml:space="preserve">
+    <value>Is Board Visible</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="&gt;&gt;textBox_Tag.Name" xml:space="preserve">
+    <value>textBox_Tag</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;colorDialog_ParamEdit.Name" xml:space="preserve">
+    <value>colorDialog_ParamEdit</value>
+  </data>
+  <data name="label_BoardFactor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 18</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isFontScaled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isPenWidthScaled.Name" xml:space="preserve">
+    <value>checkBox_isPenWidthScaled</value>
+  </data>
+  <data name="&gt;&gt;button_OK.Name" xml:space="preserve">
+    <value>button_OK</value>
+  </data>
+  <data name="num_Margin_Bottom.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Top:</value>
+  </data>
+  <data name="&gt;&gt;num_BoardFactor.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="num_Margin_Bottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 20</value>
+  </data>
+  <data name="&gt;&gt;label_Margin_Left.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="&gt;&gt;textBox_Title.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="num_Margin_Top.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 20</value>
+  </data>
+  <data name="&gt;&gt;textBox_Title.Name" xml:space="preserve">
+    <value>textBox_Title</value>
+  </data>
+  <data name="num_Margin_Top.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="label_titleGap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 34</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Name" xml:space="preserve">
+    <value>button_Cancel</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;groupBox_BoardParam.Name" xml:space="preserve">
+    <value>groupBox_BoardParam</value>
+  </data>
+  <data name="&gt;&gt;label_titleGap.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="pictureBox_BoardColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 23</value>
+  </data>
+  <data name="groupBox_BoardParam.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label_BoardColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isFontScaled.Name" xml:space="preserve">
+    <value>checkBox_isFontScaled</value>
+  </data>
+  <data name="button_OK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>421, 202</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormGraphicsParamEditBase</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="num_Margin_Top.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="label_Margin_Left.Text" xml:space="preserve">
+    <value>Left:</value>
+  </data>
+  <data name="checkBox_isPenWidthScaled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 21</value>
+  </data>
+  <data name="&gt;&gt;num_TitleGap.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkBox_isPenWidthScaled.Text" xml:space="preserve">
+    <value>Is Pen Width Scaled</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox_Tag.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label_BoardFactor.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_BoardFactor.Name" xml:space="preserve">
+    <value>label_BoardFactor</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Bottom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_Title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="&gt;&gt;textBox_Tag.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox_margin.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label_BoardFactor.Text" xml:space="preserve">
+    <value>Board Factor:</value>
+  </data>
+  <data name="&gt;&gt;button_OK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Bottom.Name" xml:space="preserve">
+    <value>num_Margin_Bottom</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Right.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;num_TitleGap.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="groupBox_margin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 51</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Left.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Title.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_OK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_titleGap.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="num_Margin_Bottom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isBoardVisible.Parent" xml:space="preserve">
+    <value>groupBox_BoardParam</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Top.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="label_BoardColor.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_Cancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label_Margin_Left.Name" xml:space="preserve">
+    <value>label_Margin_Left</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="button_Cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 202</value>
+  </data>
+  <data name="label_Tag.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_BoardColor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_BoardColor.Name" xml:space="preserve">
+    <value>pictureBox_BoardColor</value>
+  </data>
+  <data name="label_titleGap.Text" xml:space="preserve">
+    <value>Title Gap:</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Right.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="&gt;&gt;label_titleGap.Name" xml:space="preserve">
+    <value>label_titleGap</value>
+  </data>
+  <data name="label_Margin_Left.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 19</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label_Margin_Left.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isPenWidthScaled.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_titleGap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox_Title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 7</value>
+  </data>
+  <data name="&gt;&gt;groupBox_margin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Top.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isFontScaled.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBox_BoardParam.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label_titleGap.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;groupBox_BoardParam.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>364, 19</value>
+  </data>
+  <data name="checkBox_isBoardVisible.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 20</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isPenWidthScaled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_titleGap.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="checkBox_isPenWidthScaled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 176</value>
+  </data>
+  <data name="label_BoardFactor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="&gt;&gt;label_Tag.Name" xml:space="preserve">
+    <value>label_Tag</value>
+  </data>
+  <data name="&gt;&gt;label_Title.Name" xml:space="preserve">
+    <value>label_Title</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>TestAgent.GraphicsLib.FormParamEditBase, Graphics2DLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Right:</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Right.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_Tag.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="num_Margin_Left.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 18</value>
+  </data>
+  <data name="checkBox_isBoardVisible.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_Title.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label_Tag.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 7</value>
+  </data>
+  <data name="checkBox_isFontScaled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 21</value>
+  </data>
+  <data name="checkBox_isFontScaled.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="num_Margin_Right.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="&gt;&gt;textBox_Tag.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_BoardFactor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="num_Margin_Right.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 18</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Left.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;groupBox_BoardParam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_BoardColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="&gt;&gt;groupBox_margin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="num_BoardFactor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="label_BoardColor.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox_BoardColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;num_TitleGap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>531, 244</value>
+  </data>
+  <data name="label_Title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 8</value>
+  </data>
+  <data name="checkBox_isFontScaled.Text" xml:space="preserve">
+    <value>Is Fonts Scaled</value>
+  </data>
+  <data name="groupBox_margin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 113</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9pt, style=Bold</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 19</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isBoardVisible.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_BoardFactor.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="num_TitleGap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 34</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Left.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="&gt;&gt;textBox_Tag.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox_BoardParam.Text" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="textBox_Tag.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 21</value>
+  </data>
+  <data name="pictureBox_BoardColor.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="num_BoardFactor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>430, 19</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="&gt;&gt;button_OK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Top.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBox_isBoardVisible.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 21</value>
+  </data>
+  <data name="label_Title.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="num_TitleGap.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;groupBox_margin.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;checkBox_isFontScaled.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label_BoardColor.Text" xml:space="preserve">
+    <value>Board Color:</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Bottom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label_Tag.Text" xml:space="preserve">
+    <value>Tag:</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="groupBox_BoardParam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 59</value>
+  </data>
+  <data name="&gt;&gt;num_Margin_Right.Name" xml:space="preserve">
+    <value>num_Margin_Right</value>
+  </data>
+  <data name="&gt;&gt;label_Tag.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="num_Margin_Right.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label_Title.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="num_Margin_Bottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="num_TitleGap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 21</value>
+  </data>
+  <data name="label_Tag.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="num_Margin_Right.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox_margin</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Bottom:</value>
+  </data>
+  <data name="pictureBox_BoardColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 17</value>
+  </data>
+  <metadata name="colorDialog_ParamEdit.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

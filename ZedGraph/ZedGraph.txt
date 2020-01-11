@@ -1,0 +1,75 @@
+Copy(Boolean) ->> 将图像复制到剪贴板。
+DoPageSetup()() ->> 打开打印设置对话框。
+
+DoPrint()() ->> 打印图表。
+DoPrintPreview()() ->> 打印预览。
+
+GetImage()() ->> 返回图表上的图像。
+
+IsEnableHZoom ->> 是否允许横向缩放。
+
+IsEnableVZoom ->> 是否允许纵向缩放。
+IsEnableZoom ->> 是否允许缩放。
+
+IsShowContextMenu ->> 是否显示右键菜单，如果指定了ContextMenuStrip会一直显示指定的ContextMenu。
+IsShowCopyMessage ->> 复制图像时是否显示提示信息。
+IsShowCursorValues ->> 鼠标在图表上移动时是否显示鼠标所在点对应的坐标值。默认为false
+IsShowHScrollBar ->> 是否显示横向滚动条。
+IsShowPointValues ->> 鼠标经过图表上的点时是否气泡显示该点所对应的值。默认为false
+IsShowVScrollBar ->> 是否显示纵向滚动条。
+
+ 
+
+IsZoomOnMouseCenter ->> 使用滚轮时以鼠标所在点进行缩放还是以图形中心进行缩放。
+
+MouseDownEvent ->> 代替MouseDown事件，有一个bool类型的返回值，代表是否响应该事件。
+MouseUpEvent ->> 代替MouseUp事件，有一个bool类型的返回值，代表是否响应该事件。
+
+SaveAs()() ->> 显示另存为对话框。
+SaveAsBitmap()() ->> 显示另存为对话框，将图像另存为BMP文件。
+SaveAsEmf()() ->> 显示另存为对话框，将图像另存为EMF文件。
+
+ 
+
+MinorGrid\MajorGrid 小刻度和大刻度的虚线的，显示在图表中用来分割图表的。默认IsVisible是False，看不到效果。
+Color ->> 线的颜色。
+DashOff ->> 点线中点与点之间的间隔。
+DashOn ->> 点线中点的长度。
+IsVisible ->> 是否可见。
+PenWidth ->> 画笔宽度。
+
+MinorTic\MajorTic 坐标轴上小刻度和大刻度的线的设置。
+Color ->> 刻度线的颜色。
+
+IsInside ->> 刻度条是否要显示到坐标轴的里边。
+
+IsOpposite ->> 对面的坐标轴是否显示该刻度。
+IsOutside ->> 刻度条是否要显示到坐标轴的外边。
+PenWidth ->> 画笔宽度。
+Size ->> 刻度线的长度。
+
+Scale 刻度值相关
+BaseTic ->> 第一个刻度从哪个值开始。
+FontSpec ->> 刻度值的字体属性。
+Format ->> 刻度值的格式化，string类型。
+FormatAuto ->> 为true时自动设置Format属性，注意设置Format属性时该属性自动变为False
+IsDate ->> 是否为日期。
+IsLabelsInside ->> 坐标标签是不是在坐标轴的内部显示。
+IsReverse ->> 刻度以0为中心翻转，图形也会随着翻转。
+IsSkipCrossLabel ->> 不显示交叉点的标签。
+IsSkipFirstLabel ->> 不显示第一个刻度标签。
+IsSkipLastLabel ->> 不显示最后一个标签。
+IsText ->> 返回刻度值是否是文本类型（只读）
+IsUseTenPower ->> 是否为10次幂表示，scale为LogScale时有效。
+IsVisible ->> 是否可见。
+Mag ->> 如果坐标轴的值要用10次幂显示，此值设置幂数。为0则不用10次幂
+MagAuto ->> 是否自动套用10次幂方式显示
+MajorStep ->> 大刻度步长值。
+MajorStepAuto ->> 自动设置大刻度的步长值。
+Max ->> 默认显示的最大刻度值（缩放时会显示比它大的值）
+MaxAuto ->> 自动设置最大刻度值。
+Min ->> 默认显示的最小刻度值（缩放时会显示比它小的值）
+MinAuto ->> 自动设置最小刻度值
+MinorStep ->> 小刻度的步长值。
+MinorStepAuto ->> 是否自动设定小刻度的步长值。
+Type ->> 获取刻度类型（只读）。
