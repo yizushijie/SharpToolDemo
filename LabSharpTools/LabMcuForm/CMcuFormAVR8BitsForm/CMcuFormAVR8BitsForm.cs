@@ -428,6 +428,7 @@ namespace LabMcuForm
 						if (this.comboBox_ChipType.Text != this.defaultCMcuFunc.mMcuInfoParam.mTypeName)
 						{
 							this.McuTypeChanged(this.comboBox_ChipType.Text);
+							CRichTextBoxPlus.AppendTextInfoTopWithDataTime(this.cRichTextBoxEx_ChipMsg, "器件型号是："+ this.defaultCMcuFunc.mMcuInfoParam.mTypeName, Color.Black);
 						}
 					}
 					break;
