@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Forms;
 using LiveCharts;
+using LiveCharts.Configurations;
+using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 
 namespace Test.UC

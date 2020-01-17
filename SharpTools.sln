@@ -83,11 +83,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HZH_Controls", "HZH_Control
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LabSharpTools", "LabSharpTools", "{2E33275D-CB89-4750-8C7E-A4DBF1DC25BF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F72BDF72-DCDD-4043-891F-972E91EA7D78}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HZH_Controls", "HZH_Controls\HZH_Controls\HZH_Controls.csproj", "{AF32E163-C577-4CBC-A072-0DC1CE0E1DA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "HZH_Controls\Test\Test.csproj", "{53CCD007-AA85-4CCF-AE81-BBB8B1CBEB1F}"
@@ -121,6 +116,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib-lib", "PremakeCore\contrib\zlib\zlib-lib.vcxproj", "{7AF09988-66BD-F493-8FD6-E23B7B022A22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabIniFile", "LabSharpTools\LabIniFile\LabIniFile.csproj", "{FCB39572-BBB0-4FD3-BD78-8B60E43BDF10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabSerialPortTools", "LabSharpTools\LabSerialPortTools\LabSerialPortTools.csproj", "{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -666,6 +663,18 @@ Global
 		{FCB39572-BBB0-4FD3-BD78-8B60E43BDF10}.Release|x64.Build.0 = Release|Any CPU
 		{FCB39572-BBB0-4FD3-BD78-8B60E43BDF10}.Release|x86.ActiveCfg = Release|Any CPU
 		{FCB39572-BBB0-4FD3-BD78-8B60E43BDF10}.Release|x86.Build.0 = Release|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Debug|x64.Build.0 = Debug|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Release|x64.ActiveCfg = Release|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Release|x64.Build.0 = Release|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -719,6 +728,7 @@ Global
 		{34744A64-A029-C359-291E-BD3095D2B95D} = {E41C22F2-E52A-4014-9E42-0A3ED0CBFC1E}
 		{7AF09988-66BD-F493-8FD6-E23B7B022A22} = {E41C22F2-E52A-4014-9E42-0A3ED0CBFC1E}
 		{FCB39572-BBB0-4FD3-BD78-8B60E43BDF10} = {2E33275D-CB89-4750-8C7E-A4DBF1DC25BF}
+		{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7} = {2E33275D-CB89-4750-8C7E-A4DBF1DC25BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82C2205E-3337-4CAE-B54B-D78BD96B134F}

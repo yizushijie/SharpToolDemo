@@ -11,6 +11,8 @@
     <AssemblyName>HZH_Controls</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DSAPI, Version=2.0.8.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DSAPI.2.0.8.66\lib\net40\DSAPI.DLL</HintPath>
-    </Reference>
     <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
     </Reference>
@@ -874,7 +873,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="IconFont\FontAwesome.ttf" />
-    <None Include="packages.config" />
     <None Include="Resources\alarm.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1026,7 +1024,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

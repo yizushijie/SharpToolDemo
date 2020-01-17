@@ -73,7 +73,8 @@
 			// 
 			// button_COMM
 			// 
-			this.button_COMM.Location = new System.Drawing.Point(66, 135);
+			this.button_COMM.Location = new System.Drawing.Point(57, 135);
+			this.button_COMM.Size = new System.Drawing.Size(83, 25);
 			// 
 			// label_BaudRate
 			// 
@@ -161,7 +162,7 @@
 			this.comboBox_DataBits.FormattingEnabled = true;
 			this.comboBox_DataBits.IntegralHeight = false;
 			this.comboBox_DataBits.Items.AddRange(new object[] {
-			"9",
+            "9",
             "8",
             "7",
             "6",

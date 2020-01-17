@@ -1,4 +1,10 @@
-﻿namespace Test.UC
+﻿using LiveCharts.WinForms;
+using LiveCharts;
+using LiveCharts.Configurations;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
+
+namespace Test.UC
 {
     partial class GanttExample
     {

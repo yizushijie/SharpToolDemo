@@ -68,7 +68,7 @@
 			// 
 			this.pictureBox_COMM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_COMM.Image")));
 			this.pictureBox_COMM.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.pictureBox_COMM.Location = new System.Drawing.Point(146, 3);
+			this.pictureBox_COMM.Location = new System.Drawing.Point(143, 3);
 			this.pictureBox_COMM.Name = "pictureBox_COMM";
 			this.pictureBox_COMM.Size = new System.Drawing.Size(25, 25);
 			this.pictureBox_COMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -79,9 +79,9 @@
 			// button_COMM
 			// 
 			this.button_COMM.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button_COMM.Location = new System.Drawing.Point(177, 3);
+			this.button_COMM.Location = new System.Drawing.Point(171, 3);
 			this.button_COMM.Name = "button_COMM";
-			this.button_COMM.Size = new System.Drawing.Size(74, 25);
+			this.button_COMM.Size = new System.Drawing.Size(82, 25);
 			this.button_COMM.TabIndex = 2;
 			this.button_COMM.Text = "打开设备";
 			this.button_COMM.UseVisualStyleBackColor = true;

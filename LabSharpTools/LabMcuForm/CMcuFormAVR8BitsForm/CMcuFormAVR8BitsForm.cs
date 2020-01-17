@@ -1,9 +1,11 @@
 ﻿using Harry.LabTools.LabCommType;
 using Harry.LabTools.LabControlPlus;
 using Harry.LabTools.LabGenFunc;
+using Harry.LabTools.LabIniFile;
 using Harry.LabTools.LabMcuFunc;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,26 +17,31 @@ using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
 namespace LabMcuForm
-{
-
-	#region	定义委托事件
-
-	/// <summary>
-	/// 定义同步事件
-	/// </summary>
-	/// <param name="sender"></param>
-	/// <param name="e"></param>
-	public delegate void EventSynchronized();
-
-	#endregion
+{	
 	public partial class CMcuFormAVR8BitsForm : Form
 	{
+		#region	定义委托事件
+
+		/// <summary>
+		/// 定义同步事件
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public delegate void EventSynchronized();
+
+		/// <summary>
+		/// 定义任务空闲事件
+		/// </summary>
+		public delegate void EventCallBackTaskIdle();
+
+		#endregion
+
 		#region 委托事件
 
 		/// <summary>
 		/// 通讯端口同步事件
 		/// </summary>
-		public virtual event EventSynchronized EventHandlerCCommSynchronized = null;
+		public virtual event EventSynchronized EventHandlerCCommSynchronized = null;		
 
 		#endregion
 
@@ -49,6 +56,11 @@ namespace LabMcuForm
 		/// MCU的参数
 		/// </summary>
 		private CMcuFuncAVR8BitsBase defaultCMcuFunc = new CMcuFuncAVR8BitsISP();
+
+		/// <summary>
+		/// 任务空闲，false---空闲；true---忙
+		/// </summary>
+		private bool defaultTaskIdle = false;
 
 		#endregion
 
@@ -267,6 +279,18 @@ namespace LabMcuForm
 			//---初始化MCU列表
 			//this.defaultCMcuFunc.mMcuInfoParam.McuListInfo(this.comboBox_ChipType);
 			this.defaultCMcuFunc.McuListInfo(this.comboBox_ChipType);
+			//---自动从ini文件中加载配置信息
+			CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini");
+			if (ini.mPathExists)
+			{
+				NameValueCollection values = null;
+				//---设备ID信息
+				ini.CIniFileReadSectionValues("ChipID", ref values);
+				if ((values != null)&&(values.Count>0))
+				{
+					this.comboBox_ChipType.SelectedIndex = Convert.ToInt32(values.GetValues(0)[0]);
+				}
+			}
 			//---初始化MCU类型
 			this.McuTypeChanged(this.comboBox_ChipType.Text.ToLower());
 			//---初始化通信端口
@@ -368,6 +392,18 @@ namespace LabMcuForm
 			//---初始化芯片信息
 			//this.defaultCMcuFunc.mMcuInfoParam.McuTypeInfo(chipName, this.comboBox_ChipInterface,this.textBox_ChipID);
 			this.defaultCMcuFunc.McuTypeInfo(chipName, this.comboBox_ChipInterface, this.textBox_ChipID);
+			//---自动从ini文件中加载配置信息
+			CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini");
+			if (ini.mPathExists)
+			{
+				NameValueCollection values = null;
+				//---设备接口信息
+				ini.CIniFileReadSectionValues("Interface", ref values);
+				if ((values != null) && (values.Count > 0))
+				{
+					this.comboBox_ChipInterface.SelectedIndex = Convert.ToInt32(values.GetValues(0)[0]);
+				}
+			}
 			//---依据芯片的类型进行控件的初始化
 			this.cMcuFormAVR8BitsFuseAndLockControl_ChipFuse.Init(this.defaultCMcuFunc, this.cRichTextBoxEx_ChipMsg);
 			//-->>>依据芯片进行Memery的信息初始化---开始
@@ -411,6 +447,8 @@ namespace LabMcuForm
 				default:
 					break;
 			}
+			//---任务空闲
+			this.defaultTaskIdle = false;
 		}
 
 		/// <summary>
@@ -419,6 +457,7 @@ namespace LabMcuForm
 		/// <param name="cbb"></param>
 		private void UI_ComboBox_SelectedIndexChanged(ComboBox cbb)
 		{
+			//cbb.Enabled = false;
 			switch (cbb.Name)
 			{
 				//---芯片类型发生变化
@@ -429,6 +468,20 @@ namespace LabMcuForm
 						{
 							this.McuTypeChanged(this.comboBox_ChipType.Text);
 							CRichTextBoxPlus.AppendTextInfoTopWithDataTime(this.cRichTextBoxEx_ChipMsg, "器件型号是："+ this.defaultCMcuFunc.mMcuInfoParam.mTypeName, Color.Black);
+							//---写入配置信息
+							CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini", true);
+							//---记录设备信息
+							if (ini.CIniFileSectionExists("ChipID"))
+							{
+								ini.CIniFileEraseSection("ChipID");
+							}
+							ini.CIniFileWriteInt("ChipID", this.comboBox_ChipType.Text, this.comboBox_ChipType.SelectedIndex);
+							//---写入设备接口信息
+							if (ini.CIniFileSectionExists("Interface"))
+							{
+								ini.CIniFileEraseSection("Interface");
+							}
+							ini.CIniFileWriteInt("Interface", this.comboBox_ChipInterface.Text, this.comboBox_ChipInterface.SelectedIndex);
 						}
 					}
 					break;
@@ -438,6 +491,9 @@ namespace LabMcuForm
 				default:
 					break;
 			}
+			//---任务空闲
+			this.defaultTaskIdle = false;
+			//cbb.Enabled = true;
 		}
 
 		/// <summary>
@@ -481,6 +537,14 @@ namespace LabMcuForm
 							default:
 								break;
 						}
+						//---写入配置信息
+						CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini", true);
+						//---记录设备接口
+						if (ini.CIniFileSectionExists("Interface"))
+						{
+							ini.CIniFileEraseSection("Interface");
+						}
+						ini.CIniFileWriteInt("Interface", this.comboBox_ChipInterface.Text, this.comboBox_ChipInterface.SelectedIndex);
 						this.cMcuFormAVR8BitsFuseAndLockControl_ChipFuse.mCMcuFunc = this.defaultCMcuFunc;
 					}
 					else
@@ -574,6 +638,8 @@ namespace LabMcuForm
 				default:
 					break;
 			}
+			//---任务空闲
+			this.defaultTaskIdle = false;
 		}
 		#endregion
 
@@ -589,9 +655,8 @@ namespace LabMcuForm
 		private void Form_Shown(Object sender, EventArgs e)
 		{
 			Form fm = (Form)sender;
-			//---后台线程执行函数
-			Thread t = new Thread
-			(delegate ()
+			//---无参数的线程
+			ThreadStart threadStart = delegate 
 			{
 				if (fm.InvokeRequired)
 				{
@@ -605,12 +670,15 @@ namespace LabMcuForm
 				{
 					this.UI_Form_Shown(fm);
 				}
-
-			}
-			);
+			};
+			//---后台线程执行函数
+			Thread t = new Thread(threadStart);
+			//---校验线程
 			if (t!=null)
 			{
+				//---后台任务
 				t.IsBackground = true;
+				//---启动任务
 				t.Start();
 			}			
 			//this.UI_Form_Shown(fm);
@@ -809,7 +877,8 @@ namespace LabMcuForm
 		/// <param name="e"></param>
 		private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (sender==null)
+			//---检验当前任务空闲
+			if ((sender==null)||(this.defaultTaskIdle == true))
 			{
 				return;
 			}
@@ -838,7 +907,9 @@ namespace LabMcuForm
 			//---校验线程有效
 			if (t != null)
 			{
+				//---后台任务
 				t.IsBackground = true;
+				//---启动任务
 				t.Start();
 			}
 			//this.UI_ComboBox_SelectedIndexChanged(cbb);
@@ -887,7 +958,8 @@ namespace LabMcuForm
 		/// <param name="e"></param>
 		private void Button_Click(object sender, EventArgs e)
 		{
-			if (sender == null)
+			//---检验当前任务空闲
+			if ((sender == null) || (this.defaultTaskIdle == true))
 			{
 				return;
 			}
@@ -897,31 +969,34 @@ namespace LabMcuForm
 				return;
 			}
 			Button bt = (Button)sender;
+			//---任务执行中
+			this.defaultTaskIdle = true;
 			//bt.Enabled = false;
 			//bt.Focus();
-			//---后台线程执行函数
-			Thread t = new Thread
-			(delegate ()
+			//---无参数的线程
+			ThreadStart threadStart = delegate
+			{
+				if (bt.InvokeRequired)
 				{
-					if (bt.InvokeRequired)
-					{
-						bt.BeginInvoke((EventHandler)
-							 (delegate
-							 {
-								 this.UI_Button_Click(bt);
-							 }));
-					}
-					else
-					{
-						this.UI_Button_Click(bt);
-					}
-
+					bt.BeginInvoke((EventHandler)
+						 (delegate
+						 {
+							 this.UI_Button_Click(bt);
+						 }));
 				}
-			);
+				else
+				{
+					this.UI_Button_Click(bt);
+				}
+			};
+			//---后台线程执行函数
+			Thread t = new Thread(threadStart);
 			//---校验线程有效
 			if (t != null)
 			{
+				//---后台任务
 				t.IsBackground = true;
+				//---启动任务
 				t.Start();
 			}
 			//this.UI_Button_Click(bt);

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FBA5494A-61A4-45B7-92FF-AA4F5F06BB49}</ProjectGuid>
+    <ProjectGuid>{87D501A2-ECFE-47CD-ADFF-3E485A3B19E7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Harry.LabTools.LabGenForm</RootNamespace>
-    <AssemblyName>Harry.LabTools.LabGenForm</AssemblyName>
+    <RootNamespace>LabSerialPortTools</RootNamespace>
+    <AssemblyName>LabSerialPortTools</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -33,18 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Harry.LabTools.LabCommType">
+      <HintPath>..\LabSharpTools\LabCommPort\obj\Debug\Harry.LabTools.LabCommType.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,23 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FloatPopupBaseForm\FloatPopupBaseForm.cs">
+    <Compile Include="SerialPortToolsForm\SerialPortToolsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FloatPopupBaseForm\FloatPopupBaseForm.Designer.cs">
-      <DependentUpon>FloatPopupBaseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FloatPopupBaseForm\FloatPopupBaseFormEx.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FloatPopupBaseForm\FloatPopupBaseFormEx.Designer.cs">
-      <DependentUpon>FloatPopupBaseFormEx.cs</DependentUpon>
+    <Compile Include="SerialPortToolsForm\SerialPortToolsForm.Designer.cs">
+      <DependentUpon>SerialPortToolsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FloatPopupBaseForm\FloatPopupBaseForm.resx">
-      <DependentUpon>FloatPopupBaseForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,8 +65,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SerialPortToolsForm\SerialPortToolsForm.resx">
+      <DependentUpon>SerialPortToolsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,14 +78,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LabGenFunc\LabGenFunc.csproj">
-      <Project>{c64aeea0-7a08-4786-9f1e-bd66608e190e}</Project>
-      <Name>LabGenFunc</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Media;
-using LiveCharts;
-using LiveCharts.Defaults;
-using LiveCharts.Wpf;
 
 namespace Test.UC
 {

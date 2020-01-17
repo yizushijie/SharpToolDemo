@@ -16,8 +16,18 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 {
 	public partial class CMcuFormAVR8BitsFuseAndLockControl : UserControl
 	{
-		#region 变量定义
+
+		#region	定义委托事件
 		
+		/// <summary>
+		/// 定义任务空闲事件
+		/// </summary>
+		public delegate void EventCallBackTaskIdle();
+
+		#endregion
+
+		#region 变量定义
+
 		/// <summary>
 		/// MCU的参数
 		/// </summary>
@@ -37,6 +47,11 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 		/// 事件注册的状态，false---未注册事件，true---已经注册事件
 		/// </summary>
 		private bool defaultRegisterEventState = false;
+
+		/// <summary>
+		/// 任务空闲，false---空闲；true---忙
+		/// </summary>
+		private bool defaultTaskIdle = false;
 
 		#endregion
 
@@ -274,7 +289,7 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 		}
 
 		#region UI处理事件
-		
+
 		/// <summary>
 		/// 事件处理函数
 		/// </summary>
@@ -306,6 +321,8 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 				default:
 					break;
 			}
+			//---任务结束
+			this.defaultTaskIdle = false;
 		}
 
 		/// <summary>
@@ -335,6 +352,8 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 				default:
 					break;
 			}
+			//---任务结束
+			this.defaultTaskIdle = false;
 		}
 
 		/// <summary>
@@ -373,6 +392,8 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 				default:
 					break;
 			}
+			//---任务结束
+			this.defaultTaskIdle = false;
 		}
 		#endregion
 		
@@ -387,7 +408,8 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 		/// <param name="e"></param>
 		private void CheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (sender==null)
+			//---检验当前任务空闲
+			if ((sender == null) || (this.defaultTaskIdle == true))
 			{
 				return;
 			}
@@ -426,7 +448,9 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 				//---校验线程有效
 				if (t != null)
 				{
+					//---后台任务
 					t.IsBackground = true;
+					//---启动任务
 					t.Start();
 				}
 				//this.UI_CheckedListBox_SelectedIndexChanged(clb);
@@ -441,7 +465,8 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 		/// <param name="e"></param>
 		private void TextBox_TextChanged(object sender, EventArgs e)
 		{
-			if (sender==null)
+			//---检验当前任务空闲
+			if ((sender == null) || (this.defaultTaskIdle == true))
 			{
 				return;
 			}
@@ -475,7 +500,9 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 			//---校验线程有效
 			if (t != null)
 			{
+				//---后台任务
 				t.IsBackground = true;
+				//---启动任务
 				t.Start();
 			}
 			//this.UI_TextBox_TextChanged(tb);
@@ -492,7 +519,8 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 		/// <param name="e"></param>
 		private void Button_Click(object sender, EventArgs e)
 		{
-			if (sender == null)
+			//---检验当前任务空闲
+			if ((sender == null) || (this.defaultTaskIdle == true))
 			{
 				return;
 			}
@@ -503,32 +531,35 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 				return;
 			}
 			Button bt = (Button)sender;
+			//---任务执行中
+			this.defaultTaskIdle = true;
 			//bt.Enabled = false;
-			//---设置输入焦点
 			//bt.Focus();
-			//---后台线程执行函数
-			Thread t = new Thread
-			(delegate ()
+			//---带参数的线程
+			//ParameterizedThreadStart threadStart = delegate
+			ThreadStart threadStart = delegate
+			{
+				if (bt.InvokeRequired)
 				{
-					if (bt.InvokeRequired)
-					{
-						bt.BeginInvoke((EventHandler)
-							 (delegate
-							 {
-								 this.UI_Button_Click(bt);
-							 }));
-					}
-					else
-					{
-						this.UI_Button_Click(bt);
-					}
-
+					bt.BeginInvoke((EventHandler)
+						 (delegate
+						 {
+							 this.UI_Button_Click(bt);
+						 }));
 				}
-			);
+				else
+				{
+					this.UI_Button_Click(bt);
+				}
+			};
+			//---后台线程执行函数
+			Thread t = new Thread(threadStart);
 			//---校验线程有效
 			if (t != null)
 			{
+				//---后台任务
 				t.IsBackground = true;
+				//---启动任务
 				t.Start();
 			}
 			//this.UI_Button_Click(bt);

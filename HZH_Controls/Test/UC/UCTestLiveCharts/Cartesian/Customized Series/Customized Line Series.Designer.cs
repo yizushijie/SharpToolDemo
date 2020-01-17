@@ -1,4 +1,8 @@
 ﻿using LiveCharts.WinForms;
+using LiveCharts;
+using LiveCharts.Configurations;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
 
 namespace Test.UC
 {
@@ -58,6 +62,6 @@ namespace Test.UC
 
         #endregion
 
-        private CartesianChart cartesianChart1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

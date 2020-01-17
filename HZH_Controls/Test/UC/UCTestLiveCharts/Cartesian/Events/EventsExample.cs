@@ -2,8 +2,10 @@
 using System.Windows.Media;
 using System.Windows.Forms;
 using LiveCharts;
-using LiveCharts.Events;
+using LiveCharts.Configurations;
+using LiveCharts.Defaults;
 using LiveCharts.Wpf;
+using LiveCharts.Events;
 
 namespace Test.UC
 {
