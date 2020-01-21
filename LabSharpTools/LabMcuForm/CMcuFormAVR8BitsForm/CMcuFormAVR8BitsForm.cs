@@ -387,23 +387,27 @@ namespace LabMcuForm
 		/// MCU的类型变换
 		/// </summary>
 		/// <param name="chipName"></param>
-		private void McuTypeChanged(string chipName)
+		private void McuTypeChanged(string chipName,bool isAutoConfig=true)
 		{
 			//---初始化芯片信息
 			//this.defaultCMcuFunc.mMcuInfoParam.McuTypeInfo(chipName, this.comboBox_ChipInterface,this.textBox_ChipID);
 			this.defaultCMcuFunc.McuTypeInfo(chipName, this.comboBox_ChipInterface, this.textBox_ChipID);
-			//---自动从ini文件中加载配置信息
-			CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini");
-			if (ini.mPathExists)
+			//---校验是否需要自动加载配置文件
+			if (isAutoConfig)
 			{
-				NameValueCollection values = null;
-				//---设备接口信息
-				ini.CIniFileReadSectionValues("Interface", ref values);
-				if ((values != null) && (values.Count > 0))
+				//---自动从ini文件中加载配置信息
+				CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini");
+				if (ini.mPathExists)
 				{
-					this.comboBox_ChipInterface.SelectedIndex = Convert.ToInt32(values.GetValues(0)[0]);
+					NameValueCollection values = null;
+					//---设备接口信息
+					ini.CIniFileReadSectionValues("Interface", ref values);
+					if ((values != null) && (values.Count > 0))
+					{
+						this.comboBox_ChipInterface.SelectedIndex = Convert.ToInt32(values.GetValues(0)[0]);
+					}
 				}
-			}
+			}			
 			//---依据芯片的类型进行控件的初始化
 			this.cMcuFormAVR8BitsFuseAndLockControl_ChipFuse.Init(this.defaultCMcuFunc, this.cRichTextBoxEx_ChipMsg);
 			//-->>>依据芯片进行Memery的信息初始化---开始
@@ -466,7 +470,9 @@ namespace LabMcuForm
 					{
 						if (this.comboBox_ChipType.Text != this.defaultCMcuFunc.mMcuInfoParam.mTypeName)
 						{
-							this.McuTypeChanged(this.comboBox_ChipType.Text);
+							//---芯片类型发生改变，但是不在加载配置文件
+							this.McuTypeChanged(this.comboBox_ChipType.Text,false);
+							//---打印器件型号
 							CRichTextBoxPlus.AppendTextInfoTopWithDataTime(this.cRichTextBoxEx_ChipMsg, "器件型号是："+ this.defaultCMcuFunc.mMcuInfoParam.mTypeName, Color.Black);
 							//---写入配置信息
 							CIniFile ini = new CIniFile(Application.StartupPath + @"\Config.ini", true);

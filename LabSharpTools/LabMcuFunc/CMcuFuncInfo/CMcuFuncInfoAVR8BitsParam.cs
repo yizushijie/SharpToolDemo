@@ -226,7 +226,7 @@ namespace Harry.LabTools.LabMcuFunc
 		}
 
 		/// <summary>
-		/// 当前设备支持的编程接口为只读属性
+		/// 设备支持的编程接口为只读属性
 		/// </summary>
 		public virtual CMcuFuncAVR8BitsParam mChipInterface
 		{
@@ -267,15 +267,15 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipID;
 			}
-			set
-			{
-				if (value != null)
-				{
-					this.defaultChipID = new byte[value.Length];
-					//---数据拷贝
-					Array.Copy(value, this.defaultChipID, value.Length);
-				}
-			}
+			//set
+			//{
+			//	if (value != null)
+			//	{
+			//		this.defaultChipID = new byte[value.Length];
+			//		//---数据拷贝
+			//		Array.Copy(value, this.defaultChipID, value.Length);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -287,10 +287,10 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultIDChip;
 			}
-			set
-			{
-				this.defaultIDChip = value;
-			}
+			//set
+			//{
+			//	this.defaultIDChip = value;
+			//}
 		}
 
 		/// <summary>
@@ -359,10 +359,10 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipFlashPageNum;
 			}
-			set
-			{
-				this.defaultChipFlashPageNum = value;
-			}
+			//set
+			//{
+			//	this.defaultChipFlashPageNum = value;
+			//}
 		}
 
 		/// <summary>
@@ -374,10 +374,10 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipFlashPerPageWordNum;
 			}
-			set
-			{
-				this.defaultChipFlashPerPageWordNum = value;
-			}
+			//set
+			//{
+			//	this.defaultChipFlashPerPageWordNum = value;
+			//}
 		}
 
 		/// <summary>
@@ -444,10 +444,10 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipEepromPageNum;
 			}
-			set
-			{
-				this.defaultChipEepromPageNum = value;
-			}
+			//set
+			//{
+			//	this.defaultChipEepromPageNum = value;
+			//}
 		}
 
 		/// <summary>
@@ -459,10 +459,10 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipEepromPerPageByteNum;
 			}
-			set
-			{
-				this.defaultChipEepromPerPageByteNum = value;
-			}
+			//set
+			//{
+			//	this.defaultChipEepromPerPageByteNum = value;
+			//}
 		}
 
 		/// <summary>
@@ -496,17 +496,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipOSCCalibration;
 			}
-			set
-			{
-				if (this.defaultChipOSCCalibration == null)
-				{
-					this.defaultChipOSCCalibration = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipOSCCalibration.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipOSCCalibration == null)
+			//	{
+			//		this.defaultChipOSCCalibration = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipOSCCalibration.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -518,17 +518,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipLowFuseBits;
 			}
-			set
-			{
-				if (this.defaultChipLowFuseBits == null)
-				{
-					this.defaultChipLowFuseBits = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipLowFuseBits.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipLowFuseBits == null)
+			//	{
+			//		this.defaultChipLowFuseBits = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipLowFuseBits.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -540,17 +540,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipLowFuseText;
 			}
-			set
-			{
-				if (this.defaultChipLowFuseText == null)
-				{
-					this.defaultChipLowFuseText = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipLowFuseText.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipLowFuseText == null)
+			//	{
+			//		this.defaultChipLowFuseText = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipLowFuseText.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -562,17 +562,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipHighFuseBits;
 			}
-			set
-			{
-				if (this.defaultChipHighFuseBits == null)
-				{
-					this.defaultChipHighFuseBits = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipHighFuseBits.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipHighFuseBits == null)
+			//	{
+			//		this.defaultChipHighFuseBits = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipHighFuseBits.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -584,17 +584,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipHighFuseText;
 			}
-			set
-			{
-				if (this.defaultChipHighFuseText == null)
-				{
-					this.defaultChipHighFuseText = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipHighFuseText.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipHighFuseText == null)
+			//	{
+			//		this.defaultChipHighFuseText = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipHighFuseText.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -606,17 +606,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipExternFuseBits;
 			}
-			set
-			{
-				if (this.defaultChipExternFuseBits == null)
-				{
-					this.defaultChipExternFuseBits = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipExternFuseBits.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipExternFuseBits == null)
+			//	{
+			//		this.defaultChipExternFuseBits = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipExternFuseBits.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -628,17 +628,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipExternFuseText;
 			}
-			set
-			{
-				if (this.defaultChipExternFuseText == null)
-				{
-					this.defaultChipExternFuseText = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipExternFuseText.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipExternFuseText == null)
+			//	{
+			//		this.defaultChipExternFuseText = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipExternFuseText.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -650,17 +650,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipLockFuseBits;
 			}
-			set
-			{
-				if (this.defaultChipLockFuseBits == null)
-				{
-					this.defaultChipLockFuseBits = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipLockFuseBits.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipLockFuseBits == null)
+			//	{
+			//		this.defaultChipLockFuseBits = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipLockFuseBits.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -672,17 +672,17 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				return this.defaultChipLockFuseText;
 			}
-			set
-			{
-				if (this.defaultChipLockFuseText == null)
-				{
-					this.defaultChipLockFuseText = new CMcuFuncAVR8BitsParam(value);
-				}
-				else
-				{
-					this.defaultChipLockFuseText.Init(value);
-				}
-			}
+			//set
+			//{
+			//	if (this.defaultChipLockFuseText == null)
+			//	{
+			//		this.defaultChipLockFuseText = new CMcuFuncAVR8BitsParam(value);
+			//	}
+			//	else
+			//	{
+			//		this.defaultChipLockFuseText.Init(value);
+			//	}
+			//}
 		}
 
 		/// <summary>
@@ -778,14 +778,14 @@ namespace Harry.LabTools.LabMcuFunc
 							 //cbb.Invoke((EventHandler)
 							 (delegate
 							 {
-								 tbChipID.Text = this.mChipID[0].ToString("X2").ToUpper()
-								 + ":" + this.mChipID[1].ToString("X2").ToUpper()
-								 + ":" + this.mChipID[2].ToString("X2").ToUpper();
+								 tbChipID.Text = this.defaultChipID[0].ToString("X2").ToUpper()
+								 + ":" + this.defaultChipID[1].ToString("X2").ToUpper()
+								 + ":" + this.defaultChipID[2].ToString("X2").ToUpper();
 							 }));
 				}
 				else
 				{
-					tbChipID.Text = this.mChipID[0].ToString("X2").ToUpper() + ":" + this.mChipID[1].ToString("X2").ToUpper() + ":" + this.mChipID[2].ToString("X2").ToUpper();
+					tbChipID.Text = this.defaultChipID[0].ToString("X2").ToUpper() + ":" + this.defaultChipID[1].ToString("X2").ToUpper() + ":" + this.defaultChipID[2].ToString("X2").ToUpper();
 				}
 			}
 			return _return ;
@@ -878,12 +878,16 @@ namespace Harry.LabTools.LabMcuFunc
 									TextBox oscValue1,TextBox oscValue2,TextBox oscValue3,TextBox oscValue4,
 									TextBox lowFuseValue, TextBox highFuseValue, TextBox externFuseValue, TextBox lockFuseValue)
 		{
-			this.FuseCheckedListBoxBitsInit(lowFuseBits, this.mChipLowFuseBits);
-			this.FuseCheckedListBoxBitsInit(highFuseBits, this.mChipHighFuseBits);
-			this.FuseCheckedListBoxBitsInit(externFuseBits, this.mChipExternFuseBits);
-			this.FuseCheckedListBoxBitsInit(lockFuseBits, this.mChipLockFuseBits);
+			this.FuseCheckedListBoxBitsInit(lowFuseBits,	this.defaultChipLowFuseBits);
+			this.FuseCheckedListBoxBitsInit(highFuseBits,	this.defaultChipHighFuseBits);
+			//---判断拓展位是不是全部都是NC，自动规避XML文件存在的细小差异
+			if (this.FuseCheckedListBoxBitsInit(externFuseBits, this.defaultChipExternFuseBits) == 8)
+			{
+				this.defaultChipExternFuseText = null;
+			}
+			this.FuseCheckedListBoxBitsInit(lockFuseBits,	this.defaultChipLockFuseBits);
 			this.FuseCheckedListBoxTextInit(fuseText, lowFuseValue,highFuseValue,externFuseValue,lockFuseValue);
-			this.OSCControlInit(oscText1,oscText2,oscText3,oscText4,
+			this.InternalRCOSControlInit(oscText1,oscText2,oscText3,oscText4,
 								oscValue1, oscValue2, oscValue3, oscValue4);
 		}
 
@@ -998,7 +1002,7 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				if (fuseVal != this.defaultChipLock)
 				{
-					defaultChipLock = (byte)fuseVal;
+					this.defaultChipLock = (byte)fuseVal;
 				}
 				val = this.defaultChipLock;
 			}
@@ -1717,7 +1721,7 @@ namespace Harry.LabTools.LabMcuFunc
 				{
 					//---获取设备的ID信息
 					case "ID":
-						this.mChipID = this.AnalyseChipAVR8BitsMcuXml(xn.InnerText, 16);
+						this.defaultChipID = this.AnalyseChipAVR8BitsMcuXml(xn.InnerText, 16);
 						_return += 1;
 						break;
 					//---获取芯片的ChipID
@@ -1727,7 +1731,7 @@ namespace Harry.LabTools.LabMcuFunc
 						break;
 					//---获取设备的熔丝位
 					case "FUSE":
-						this.mChipFuse = this.AnalyseChipAVR8BitsMcuXml(xn.InnerText, 16);
+						this.defaultChipFuse = this.AnalyseChipAVR8BitsMcuXml(xn.InnerText, 16);
 						_return += 1;
 						break;
 					//---获取设备的加密位
@@ -1781,7 +1785,7 @@ namespace Harry.LabTools.LabMcuFunc
 			this.defaultChipOSCCalibration.mMask = new int[this.defaultChipFuse.Length];
 			//---拷贝数据
 			Array.Copy(this.defaultChipFuse, this.defaultChipOSCCalibration.mMask, this.defaultChipFuse.Length);
-
+			//---芯片名称
 			this.defaultChipName = chipName;
 			return true;
 		}
@@ -2045,16 +2049,18 @@ namespace Harry.LabTools.LabMcuFunc
 		/// </summary>
 		/// <param name="clb"></param>
 		/// <param name="fuseBits"></param>
-		private void FuseCheckedListBoxBitsInit(CheckedListBox clb, CMcuFuncAVR8BitsParam fuseBits)
+		private int FuseCheckedListBoxBitsInit(CheckedListBox clb, CMcuFuncAVR8BitsParam fuseBits)
 		{
+			int _return = 0;
 			if (clb.InvokeRequired)
 			{
 				clb.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 (delegate
-									 {
+									//cbb.Invoke((EventHandler)
+									(delegate
+									{
 										 clb.Items.Clear();
-									 }));
+									}
+								));
 			}
 			else
 			{
@@ -2066,18 +2072,18 @@ namespace Harry.LabTools.LabMcuFunc
 				if (clb.InvokeRequired)
 				{
 					clb.BeginInvoke((EventHandler)
-										 //cbb.Invoke((EventHandler)
-										 (delegate
-										 {
-											 //---检验是否为空
-											 if (fuseBits == null)
-											 {
+										//cbb.Invoke((EventHandler)
+										(delegate
+										{
+											//---检验是否为空
+											if (fuseBits == null)
+											{
 												 clb.Items.Add("NC");
 												 clb.SetItemCheckState(i, CheckState.Unchecked);
 												 clb.SetItemCheckState(i, CheckState.Indeterminate);  //是控件处于不可选定状态
-											 }
-											 else
-											 {
+											}
+											else
+											{
 												 clb.Items.Add(fuseBits.mText[7 - i]);
 												 //---检验是不是NC参数
 												 if (fuseBits.mText[7 - i] == "NC")
@@ -2096,8 +2102,9 @@ namespace Harry.LabTools.LabMcuFunc
 														 clb.SetItemCheckState(i, CheckState.Unchecked);
 													 }
 												 }
-											 }
-										 }));
+											}
+										}
+									));
 				}
 				else
 				{
@@ -2116,6 +2123,7 @@ namespace Harry.LabTools.LabMcuFunc
 						{
 							clb.SetItemCheckState(i, CheckState.Unchecked);
 							clb.SetItemCheckState(i, CheckState.Indeterminate);  //是控件处于不可选定状态
+							_return++;
 						}
 						else
 						{
@@ -2130,8 +2138,8 @@ namespace Harry.LabTools.LabMcuFunc
 						}
 					}
 				}
-				
 			}
+			return _return;
 		}
 
 
@@ -2146,11 +2154,12 @@ namespace Harry.LabTools.LabMcuFunc
 			if (clb.InvokeRequired)
 			{
 				clb.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 (delegate
-									 {
-										 clb.Items.Clear();
-									 }));
+									//cbb.Invoke((EventHandler)
+									(delegate
+									{
+										clb.Items.Clear();
+									}
+								));
 			}
 			else
 			{
@@ -2164,26 +2173,27 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取拓展位
 			CMcuFuncAVR8BitsParam temCMcuParam = this.mChipExternFuseText;
 			//---校验熔丝位
-			if (temCMcuParam.mText.Length > 0)
+			if ((temCMcuParam!=null)&&(temCMcuParam.mText.Length > 0))
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
 					if (clb.InvokeRequired)
 					{
 						clb.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 clb.Items.Add(temCMcuParam.mText[i]);
-												 if ((tempFuse[2] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
-												 {
+											//cbb.Invoke((EventHandler)
+											(delegate
+											{
+												clb.Items.Add(temCMcuParam.mText[i]);
+												if ((tempFuse[2] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
+												{
 													 clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
-												 }
-												 else
-												 {
+												}
+												else
+												{
 													 clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
-												 }
-											 }));
+												}
+											}
+										));
 					}
 					else
 					{
@@ -2205,11 +2215,12 @@ namespace Harry.LabTools.LabMcuFunc
 					if (externFuseValue.InvokeRequired)
 					{
 						externFuseValue.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 externFuseValue.Text = tempFuse[2].ToString("X2");
-											 }));
+														//cbb.Invoke((EventHandler)
+														(delegate
+														{
+															 externFuseValue.Text = tempFuse[2].ToString("X2");
+														}
+													));
 					}
 					else
 					{
@@ -2223,11 +2234,12 @@ namespace Harry.LabTools.LabMcuFunc
 				if (externFuseValue.InvokeRequired)
 				{
 					externFuseValue.BeginInvoke((EventHandler)
-										 //cbb.Invoke((EventHandler)
-										 (delegate
-										 {
-											 externFuseValue.Text = tempFuse[2].ToString("X2");
-										 }));
+													 //cbb.Invoke((EventHandler)
+													(delegate
+													{
+														 externFuseValue.Text = tempFuse[2].ToString("X2");
+													}
+												));
 				}
 				else
 				{
@@ -2237,26 +2249,27 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取高位
 			temCMcuParam = this.mChipHighFuseText;
 			//---校验熔丝位
-			if (temCMcuParam.mText.Length > 0)
+			if ((temCMcuParam!=null) &&(temCMcuParam.mText.Length > 0))
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
 					if (clb.InvokeRequired)
 					{
 						clb.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 clb.Items.Add(temCMcuParam.mText[i]);
-												 if ((tempFuse[1] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
-												 {
-													 clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
-												 }
-												 else
-												 {
-													 clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
-												 }
-											 }));
+											//cbb.Invoke((EventHandler)
+											(delegate
+											{
+												clb.Items.Add(temCMcuParam.mText[i]);
+												if ((tempFuse[1] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
+												{
+													clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
+												}
+												else
+												{
+													clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
+												}
+											}
+										));
 					}
 					else
 					{
@@ -2278,11 +2291,12 @@ namespace Harry.LabTools.LabMcuFunc
 					if (highFuseValue.InvokeRequired)
 					{
 						highFuseValue.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 highFuseValue.Text = tempFuse[1].ToString("X2");
-											 }));
+												//cbb.Invoke((EventHandler)
+												(delegate
+												{
+													 highFuseValue.Text = tempFuse[1].ToString("X2");
+												}
+											));
 					}
 					else
 					{
@@ -2293,26 +2307,27 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取低位
 			temCMcuParam = this.mChipLowFuseText;
 			//---校验熔丝位
-			if (temCMcuParam.mText.Length > 0)
+			if ((temCMcuParam != null) && (temCMcuParam.mText.Length > 0))
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
 					if (clb.InvokeRequired)
 					{
 						clb.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 clb.Items.Add(temCMcuParam.mText[i]);
-												 if ((tempFuse[0] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
-												 {
-													 clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
-												 }
-												 else
-												 {
-													 clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
-												 }
-											 }));
+											//cbb.Invoke((EventHandler)
+											(delegate
+											{
+												clb.Items.Add(temCMcuParam.mText[i]);
+												if ((tempFuse[0] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
+												{
+													clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
+												}
+												else
+												{
+													clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
+												}
+											}
+										));
 					}
 					else
 					{
@@ -2334,11 +2349,12 @@ namespace Harry.LabTools.LabMcuFunc
 					if (lowFuseValue.InvokeRequired)
 					{
 						lowFuseValue.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 lowFuseValue.Text = tempFuse[0].ToString("X2");
-											 }));
+													//cbb.Invoke((EventHandler)
+													(delegate
+													{
+														lowFuseValue.Text = tempFuse[0].ToString("X2");
+													}
+												));
 					}
 					else
 					{
@@ -2349,26 +2365,27 @@ namespace Harry.LabTools.LabMcuFunc
 			//---获取加密位
 			temCMcuParam = this.mChipLockFuseText;
 			//---校验加密位
-			if (temCMcuParam.mText.Length > 0)
+			if ((temCMcuParam != null) && (temCMcuParam.mText.Length > 0))
 			{
 				for (i = 0; i < temCMcuParam.mLength; i++)
 				{
 					if (clb.InvokeRequired)
 					{
 						clb.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 (delegate
-											 {
-												 clb.Items.Add(temCMcuParam.mText[i]);
-												 if ((tempFuse[tempFuse.Length-1] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
-												 {
-													 clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
-												 }
-												 else
-												 {
-													 clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
-												 }
-											 }));
+											//cbb.Invoke((EventHandler)
+											(delegate
+											{
+												clb.Items.Add(temCMcuParam.mText[i]);
+												if ((tempFuse[tempFuse.Length-1] & temCMcuParam.mMask[i]) == temCMcuParam.mValue[i])
+												{
+													clb.SetItemCheckState(i + offsetIndex, CheckState.Checked);
+												}
+												else
+												{
+													clb.SetItemCheckState(i + offsetIndex, CheckState.Unchecked);
+												}
+											}
+										));
 					}
 					else
 					{
@@ -2390,12 +2407,12 @@ namespace Harry.LabTools.LabMcuFunc
 					if (lockFuseValue.InvokeRequired)
 					{
 						lockFuseValue.BeginInvoke((EventHandler)
-											 //cbb.Invoke((EventHandler)
-											 delegate
-											 {
-												 lockFuseValue.Text = tempFuse[tempFuse.Length - 1].ToString("X2");
-											 }
-											 );
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														lockFuseValue.Text = tempFuse[tempFuse.Length - 1].ToString("X2");
+													}
+												);
 					}
 					else
 					{
@@ -2406,133 +2423,133 @@ namespace Harry.LabTools.LabMcuFunc
 		}
 
 		/// <summary>
-		/// 内部RC控件初始化
+		/// 内部RC振荡器控件初始化
 		/// </summary>
-		private void OSCControlInit(Label oscText1, Label oscText2, Label oscText3, Label oscText4,
-							TextBox oscValue1, TextBox oscValue2, TextBox oscValue3, TextBox oscValue4)
+		private void InternalRCOSControlInit(Label oscText1, Label oscText2, Label oscText3, Label oscText4,
+											TextBox oscValue1, TextBox oscValue2, TextBox oscValue3, TextBox oscValue4)
 		{
+			//---第一个内部OSC
 			if (oscText1.InvokeRequired)
 			{
 				oscText1.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscText1.Visible = false;
-									 }
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscText1.Visible = false;
+										}
 									 );
 			}
 			else
 			{
 				oscText1.Visible = false;
 			}
-
+			//---第二个内部OSC
 			if (oscText2.InvokeRequired)
 			{
 				oscText2.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscText2.Visible = false;
-									 }
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscText2.Visible = false;
+										}
 									 );
 			}
 			else
 			{
 				oscText2.Visible = false;
 			}
-
+			//---第三个内部OSC
 			if (oscText3.InvokeRequired)
 			{
 				oscText3.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscText3.Visible = false;
-									 }
-									 );
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscText3.Visible = false;
+										}
+									);
 			}
 			else
 			{
 				oscText3.Visible = false;
 			}
-
+			//---第四个内部OSC
 			if (oscText4.InvokeRequired)
 			{
 				oscText4.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscText4.Visible = false;
-									 }
-									 );
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscText4.Visible = false;
+										}
+									);
 			}
 			else
 			{
 				oscText4.Visible = false;
 			}
-
-
+			//---第一个内部OSC校准字
 			if (oscValue1.InvokeRequired)
 			{
 				oscValue1.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscValue1.Visible = false;
-									 }
-									 );
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscValue1.Visible = false;
+										}
+									);
 			}
 			else
 			{
 				oscValue1.Visible = false;
 			}
-
+			//---第二个内部OSC校准字
 			if (oscValue2.InvokeRequired)
 			{
 				oscValue2.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscValue2.Visible = false;
-									 }
-									 );
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscValue2.Visible = false;
+										}
+									);
 			}
 			else
 			{
 				oscValue2.Visible = false;
 			}
-
+			//---第三个内部OSC校准字
 			if (oscValue3.InvokeRequired)
 			{
 				oscValue3.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscValue3.Visible = false;
-									 }
-									 );
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscValue3.Visible = false;
+										}
+									);
 			}
 			else
 			{
 				oscValue3.Visible = false;
 			}
-
+			//---第四个内部OSC校准字
 			if (oscValue4.InvokeRequired)
 			{
 				oscValue4.BeginInvoke((EventHandler)
-									 //cbb.Invoke((EventHandler)
-									 delegate
-									 {
-										 oscValue4.Visible = false;
-									 }
-									 );
+										//cbb.Invoke((EventHandler)
+										delegate
+										{
+											oscValue4.Visible = false;
+										}
+									);
 			}
 			else
 			{
 				oscValue4.Visible = false;
 			}
-
-			for (int i = 0; i < this.mChipOSCCalibration.mLength; i++)
+			//---遍历显示OSC和校准字对应的关系
+			for (int i = 0; i < this.defaultChipOSCCalibration.mLength; i++)
 			{
 				switch (i)
 				{
@@ -2540,54 +2557,137 @@ namespace Harry.LabTools.LabMcuFunc
 						if (oscText1.InvokeRequired)
 						{
 							oscText1.BeginInvoke((EventHandler)
-										 //cbb.Invoke((EventHandler)
-										 delegate
-										 {
-											 oscText1.Visible = true;
-											 oscText1.Text = this.mChipOSCCalibration.mText[i];
-										 }
-										 );
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscText1.Visible = true;
+														oscText1.Text = this.defaultChipOSCCalibration.mText[i];
+													}
+												);
 						}
 						else
 						{
 							oscText1.Visible = true;
-							oscText1.Text = this.mChipOSCCalibration.mText[i];
+							oscText1.Text = this.defaultChipOSCCalibration.mText[i];
 						}
-
 						if (oscValue1.InvokeRequired)
 						{
 							oscValue1.BeginInvoke((EventHandler)
-										 //cbb.Invoke((EventHandler)
-										 delegate
-										 {
-											 oscValue1.Visible = true;
-											 oscValue1.Text = this.mChipOSCCalibration.mValue[i].ToString("X2");
-										 }
-										 );
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscValue1.Visible = true;
+														oscValue1.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+													}
+												);
 						}
 						else
 						{
 							oscValue1.Visible = true;
-							oscValue1.Text = this.mChipOSCCalibration.mValue[i].ToString("X2");
+							oscValue1.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
 						}						
 						break;
 					case 1:
-						oscText2.Visible = true;
-						oscValue2.Visible = true;
-						oscText2.Text = this.mChipOSCCalibration.mText[i];
-						oscValue2.Text = this.mChipOSCCalibration.mValue[i].ToString("X2");
+						if (oscText2.InvokeRequired)
+						{
+							oscText2.BeginInvoke((EventHandler)
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscText2.Visible = true;
+														oscText2.Text = this.defaultChipOSCCalibration.mText[i];
+													}
+												);
+						}
+						else
+						{
+							oscText2.Visible = true;
+							oscText2.Text = this.defaultChipOSCCalibration.mText[i];
+						}
+						if (oscValue2.InvokeRequired)
+						{
+							oscValue2.BeginInvoke((EventHandler)
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscValue2.Visible = true;
+														oscValue2.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+													}
+												);
+						}
+						else
+						{
+							oscValue2.Visible = true;
+							oscValue2.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+						}
 						break;
 					case 2:
-						oscText3.Visible = true;
-						oscValue3.Visible = true;
-						oscText3.Text = this.mChipOSCCalibration.mText[i];
-						oscValue3.Text = this.mChipOSCCalibration.mValue[i].ToString("X2");
+						if (oscText3.InvokeRequired)
+						{
+							oscText3.BeginInvoke((EventHandler)
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscText3.Visible = true;
+														oscText3.Text = this.defaultChipOSCCalibration.mText[i];
+													}
+												);
+						}
+						else
+						{
+							oscText3.Visible = true;
+							oscText3.Text = this.defaultChipOSCCalibration.mText[i];
+						}
+						if (oscValue3.InvokeRequired)
+						{
+							oscValue3.BeginInvoke((EventHandler)
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscValue3.Visible = true;
+														oscValue3.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+													}
+												);
+						}
+						else
+						{
+							oscValue3.Visible = true;
+							oscValue3.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+						}
 						break;
 					case 3:
-						oscText4.Visible = true;
-						oscValue4.Visible = true;
-						oscText4.Text = this.mChipOSCCalibration.mText[i];
-						oscValue4.Text = this.mChipOSCCalibration.mValue[i].ToString("X2");
+						if (oscText4.InvokeRequired)
+						{
+							oscText4.BeginInvoke((EventHandler)
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscText4.Visible = true;
+														oscText4.Text = this.defaultChipOSCCalibration.mText[i];
+													}
+												);
+						}
+						else
+						{
+							oscText4.Visible = true;
+							oscText4.Text = this.defaultChipOSCCalibration.mText[i];
+						}
+						if (oscValue4.InvokeRequired)
+						{
+							oscValue4.BeginInvoke((EventHandler)
+													//cbb.Invoke((EventHandler)
+													delegate
+													{
+														oscValue4.Visible = true;
+														oscValue4.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+													}
+												);
+						}
+						else
+						{
+							oscValue4.Visible = true;
+							oscValue4.Text = this.defaultChipOSCCalibration.mValue[i].ToString("X2");
+						}
 						break;
 					default:
 						break;

@@ -381,7 +381,7 @@ namespace Harry.LabTools.LabMcuFunc
 		byte[] mChipID
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -390,7 +390,7 @@ namespace Harry.LabTools.LabMcuFunc
 		int mIDChip
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -417,7 +417,7 @@ namespace Harry.LabTools.LabMcuFunc
 		int mChipFlashPageNum
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -426,7 +426,7 @@ namespace Harry.LabTools.LabMcuFunc
 		int mChipFlashPerPageWordNum
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -475,7 +475,7 @@ namespace Harry.LabTools.LabMcuFunc
 		int mChipEepromPageNum
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -484,7 +484,7 @@ namespace Harry.LabTools.LabMcuFunc
 		int mChipEepromPerPageByteNum
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -509,7 +509,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipOSCCalibration
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -518,7 +518,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipLowFuseBits
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -527,7 +527,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipLowFuseText
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -536,7 +536,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipHighFuseBits
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -545,7 +545,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipHighFuseText
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -554,7 +554,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipExternFuseBits
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -563,7 +563,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipExternFuseText
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -572,7 +572,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipLockFuseBits
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
@@ -581,7 +581,7 @@ namespace Harry.LabTools.LabMcuFunc
 		CMcuFuncAVR8BitsParam mChipLockFuseText
 		{
 			get;
-			set;
+			//set;
 		}
 
 		/// <summary>
