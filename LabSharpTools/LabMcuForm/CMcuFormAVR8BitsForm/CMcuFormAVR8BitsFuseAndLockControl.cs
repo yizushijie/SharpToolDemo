@@ -36,7 +36,7 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 		/// <summary>
 		/// 是否刷新FuseText设备
 		/// </summary>
-		private bool defaultIsRefreshFuseText = false;
+		private bool defaultRefreshFuseText = false;
 
 		/// <summary>
 		/// 消息窗体
@@ -299,23 +299,23 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 			switch (clb.Name)
 			{
 				case "cCheckedListBoxEx_LowFuseBits":
-					this.defaultIsRefreshFuseText = true;
+					this.defaultRefreshFuseText = true;
 					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_LowFuseBits, this.cCheckedListBoxEx_FuseText, this.textBox_LowFuseValue, 0);
 					break;
 				case "cCheckedListBoxEx_HighFuseBits":
-					this.defaultIsRefreshFuseText = true;
+					this.defaultRefreshFuseText = true;
 					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_HighFuseBits, this.cCheckedListBoxEx_FuseText, this.textBox_HighFuseValue, 1);
 					break;
 				case "cCheckedListBoxEx_ExternFuseBits":
-					this.defaultIsRefreshFuseText = true;
+					this.defaultRefreshFuseText = true;
 					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_ExternFuseBits, this.cCheckedListBoxEx_FuseText, this.textBox_ExternFuseValue, 2);
 					break;
 				case "cCheckedListBoxEx_LockFuseBits":
-					this.defaultIsRefreshFuseText = true;
+					this.defaultRefreshFuseText = true;
 					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_LockFuseBits, this.cCheckedListBoxEx_FuseText, this.textBox_LockFuseValue, 3);
 					break;
 				case "cCheckedListBoxEx_FuseText":
-					this.defaultIsRefreshFuseText = false;
+					this.defaultRefreshFuseText = false;
 					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_FuseText, this.textBox_LowFuseValue, this.textBox_HighFuseValue, this.textBox_ExternFuseValue, this.textBox_LockFuseValue);
 					break;
 				default:
@@ -334,20 +334,20 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 			switch (tb.Name)
 			{
 				case "textBox_LowFuseValue":
-					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_LowFuseBits, (this.defaultIsRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_LowFuseValue.Text, 16), 0);
-					this.defaultIsRefreshFuseText = false;
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_LowFuseBits, (this.defaultRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_LowFuseValue.Text, 16), 0);
+					this.defaultRefreshFuseText = false;
 					break;
 				case "textBox_HighFuseValue":
-					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_HighFuseBits, (this.defaultIsRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_HighFuseValue.Text, 16), 1);
-					this.defaultIsRefreshFuseText = false;
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_HighFuseBits, (this.defaultRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_HighFuseValue.Text, 16), 1);
+					this.defaultRefreshFuseText = false;
 					break;
 				case "textBox_ExternFuseValue":
-					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_ExternFuseBits, (this.defaultIsRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_ExternFuseValue.Text, 16), 2);
-					this.defaultIsRefreshFuseText = false;
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_ExternFuseBits, (this.defaultRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_ExternFuseValue.Text, 16), 2);
+					this.defaultRefreshFuseText = false;
 					break;
 				case "textBox_LockFuseValue":
-					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_LockFuseBits, (this.defaultIsRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_LockFuseValue.Text, 16), 3);
-					this.defaultIsRefreshFuseText = false;
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxRefresh(this.cCheckedListBoxEx_LockFuseBits, (this.defaultRefreshFuseText == false) ? this.cCheckedListBoxEx_FuseText : null, Convert.ToByte(this.textBox_LockFuseValue.Text, 16), 3);
+					this.defaultRefreshFuseText = false;
 					break;
 				default:
 					break;
@@ -375,7 +375,22 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 					break;
 				//---默认熔丝位
 				case "button_DefaultChipFuse":
+					//---恢复默认熔丝位
 					this.defaultCMcuFunc.CMcuFunc_DefaultChipFuse(this.textBox_LowFuseValue, this.textBox_HighFuseValue, this.textBox_ExternFuseValue, this.defaultRichTextBoxMsg);
+					//---刷新低位熔丝位的BIT控件，原因是更改TextBox的值text的值，未发生回调函数
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxBitsRefresh(this.cCheckedListBoxEx_LowFuseBits, Convert.ToByte(this.textBox_LowFuseValue.Text, 16), 0);
+					//---刷新高位熔丝位的BIT控件，原因是更改TextBox的值text的值，未发生回调函数
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxBitsRefresh(this.cCheckedListBoxEx_HighFuseBits, Convert.ToByte(this.textBox_HighFuseValue.Text, 16), 1);
+					//---刷新拓展位熔丝位的BIT控件，原因是更改TextBox的值text的值，未发生回调函数
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxBitsRefresh(this.cCheckedListBoxEx_ExternFuseBits, Convert.ToByte(this.textBox_ExternFuseValue.Text, 16), 2);
+					//---刷新低位熔丝位的TEXT控件，原因是更改TextBox的值text的值，未发生回调函数
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxTextRefresh(this.cCheckedListBoxEx_FuseText, 0);
+					//---刷新高位熔丝位的TEXT控件，原因是更改TextBox的值text的值，未发生回调函数
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxTextRefresh(this.cCheckedListBoxEx_FuseText, 1);
+					//---刷新拓展位熔丝位的TEXT控件，原因是更改TextBox的值text的值，未发生回调函数
+					this.defaultCMcuFunc.mMcuInfoParam.FuseCheckedListBoxTextRefresh(this.cCheckedListBoxEx_FuseText, 2);
+
+
 					break;
 				//---写入熔丝位
 				case "button_WriteChipFuse":

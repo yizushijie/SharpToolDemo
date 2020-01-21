@@ -942,9 +942,10 @@ namespace Harry.LabTools.LabMcuFunc
 				}
 				
 			}
-			if (index < 2)
+			if (index <3)
 			{
-				if (this.defaultChipFuse.Length ==2)
+				//---检验熔丝位的配置超出默认数组的大小
+				if (this.defaultChipFuse.Length>index)
 				{
 					this.defaultChipFuse[index] = (byte)temp;
 				}
@@ -970,8 +971,6 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				tb.Text = temp.ToString("X2").ToUpper();
 			}
-			
-			
 		}
 
 		/// <summary>
@@ -982,13 +981,18 @@ namespace Harry.LabTools.LabMcuFunc
 		public void FuseCheckedListBoxBitsRefresh(CheckedListBox clb,int fuseVal, int index)
 		{
 			int val = 0;
-			if (index <2)
+			if (index <3)
 			{
-				if (fuseVal!=this.defaultChipFuse[index])
+				//if (fuseVal != this.defaultChipFuse[index]) 
+				if (this.defaultChipFuse.Length > index)
 				{
 					this.defaultChipFuse[index] = (byte)fuseVal;
 				}
-				val = this.defaultChipFuse[index];
+				else
+				{
+					fuseVal = 0x00;
+				}
+				val = fuseVal;
 			}
 			else
 			{
@@ -1215,8 +1219,14 @@ namespace Harry.LabTools.LabMcuFunc
 												 {
 													 if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 													 {
-														 if (!((this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x10) ||
-															   (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x01)))
+														 if (!(	(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x80) || 
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x40) || 
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x20) || 
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x10) ||
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x08) || 
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x04) || 
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x02) || 
+																(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x01)))
 														 {
 															 clb.SetItemCheckState(selectIndex, CheckState.Checked);
 															 return;
@@ -1234,8 +1244,14 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 						{
-							if (!((this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x10) ||
-								  (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x01)))
+							if (!(	(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x80) || 
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x40) || 
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x20) || 
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x10) ||
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x08) || 
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x04) || 
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x02) || 
+									(this.defaultChipExternFuseText.mMask[selectIndex - offset] == 0x01)))
 							{
 								clb.SetItemCheckState(selectIndex, CheckState.Checked);
 								return;
@@ -1281,8 +1297,14 @@ namespace Harry.LabTools.LabMcuFunc
 												 {
 													 if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 													 {
-														 if (!((this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x10) ||
-															   (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x01)))
+														 if (!(	(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x80) || 
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x40) || 
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x20) || 
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x10) ||
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x08) || 
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x04) || 
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x02) || 
+																(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x01)))
 														 {
 															 clb.SetItemCheckState(selectIndex, CheckState.Checked);
 															 return;
@@ -1299,8 +1321,14 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 						{
-							if (!((this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x10) ||
-								  (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x01)))
+							if (!(	(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x80) || 
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x40) || 
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x20) || 
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x10) ||
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x08) || 
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x04) || 
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x02) || 
+									(this.defaultChipHighFuseText.mMask[selectIndex - offset] == 0x01)))
 							{
 								clb.SetItemCheckState(selectIndex, CheckState.Checked);
 								return;
@@ -1343,8 +1371,14 @@ namespace Harry.LabTools.LabMcuFunc
 												 {
 													 if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 													 {
-														 if (!((this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x10) ||
-															   (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x01)))
+														 if (!(	(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x80) || 
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x40) || 
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x20) || 
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x10) ||
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x08) || 
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x04) || 
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x02) || 
+																(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x01)))
 														 {
 															 clb.SetItemCheckState(selectIndex, CheckState.Checked);
 															 return;
@@ -1361,8 +1395,14 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 						{
-							if (!((this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x10) ||
-								  (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x01)))
+							if (!(	(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x80) || 
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x40) || 
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x20) || 
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x10) ||
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x08) || 
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x04) || 
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x02) || 
+									(this.defaultChipLowFuseText.mMask[selectIndex - offset] == 0x01)))
 							{
 								clb.SetItemCheckState(selectIndex, CheckState.Checked);
 								return;
@@ -1405,8 +1445,14 @@ namespace Harry.LabTools.LabMcuFunc
 												 {
 													 if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 													 {
-														 if (!((this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x10) ||
-															   (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x01)))
+														 if (!(	(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x80) || 
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x40) || 
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x20) || 
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x10) ||
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x08) || 
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x04) || 
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x02) || 
+																(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x01)))
 														 {
 															 clb.SetItemCheckState(selectIndex, CheckState.Checked);
 															 return;
@@ -1423,8 +1469,14 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						if (clb.GetItemCheckState(selectIndex) == CheckState.Unchecked)
 						{
-							if (!((this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x80) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x40) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x20) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x10) ||
-								  (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x08) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x04) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x02) || (this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x01)))
+							if (!(	(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x80) || 
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x40) || 
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x20) || 
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x10) ||
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x08) || 
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x04) || 
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x02) || 
+									(this.defaultChipLockFuseText.mMask[selectIndex - offset] == 0x01)))
 							{
 								clb.SetItemCheckState(selectIndex, CheckState.Checked);
 								return;

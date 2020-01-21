@@ -946,7 +946,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = 0;
 			//---获取熔丝位
-			int[] fuse = this.mMcuInfoParam.McuDefaultFuseInfo();
+			int[] fuse = this.defaultMcuInfoParam.McuDefaultFuseInfo();
 			//---校验熔丝位
 			if ((fuse == null) || (fuse.Length < 2))
 			{
@@ -962,6 +962,7 @@ namespace Harry.LabTools.LabMcuFunc
 						lowFuse.BeginInvoke((EventHandler)
 											(delegate
 											{
+												lowFuse.Focus();
 												lowFuse.Text = fuse[0].ToString("X2");
 											}));
 					}
@@ -969,6 +970,7 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						lowFuse.Text = fuse[0].ToString("X2");
 					}
+					this.defaultMcuInfoParam.mChipFuse[0] = (byte)fuse[0];
 				}
 
 				//---高位熔丝位
@@ -986,6 +988,7 @@ namespace Harry.LabTools.LabMcuFunc
 					{
 						highFuse.Text = fuse[1].ToString("X2");
 					}
+					this.defaultMcuInfoParam.mChipFuse[1] = (byte)fuse[1];
 				}
 
 				//---拓展位熔丝位
@@ -995,6 +998,7 @@ namespace Harry.LabTools.LabMcuFunc
 					if (fuse.Length > 2)
 					{
 						tempFuse = fuse[2];
+						this.defaultMcuInfoParam.mChipFuse[2] = (byte)fuse[2];
 					}
 					else
 					{

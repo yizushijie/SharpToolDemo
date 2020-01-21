@@ -9,8 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabCommPort", "LabSharpTool
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{11F54A7E-2BA4-4531-9DA4-12A86541F8D7}"
 	ProjectSection(SolutionItems) = preProject
-		Note.txt = Note.txt
-		规范说明.txt = 规范说明.txt
+		Doc\Note.txt = Doc\Note.txt
+		Doc\规范说明.txt = Doc\规范说明.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabGenFunc", "LabSharpTools\LabGenFunc\LabGenFunc.csproj", "{C64AEEA0-7A08-4786-9F1E-BD66608E190E}"
