@@ -33,16 +33,21 @@ namespace Harry.LabTools.LabCommType
 		/// <summary>
 		/// 是否显示端口配置参数
 		/// </summary>
-		private bool defaultIsShowCommParam=false;
-		
-        #endregion
+		private bool defaultShowCommParam=false;
 
-        #region 属性定义
+		/// <summary>
+		/// 是否限定控件的大小，false---不缩放，true---缩放
+		/// </summary>
+		private bool defaultLimitedControlSize = false;
 
-        /// <summary>
-        /// 通讯端口对象
-        /// </summary>
-        public virtual CCommBase mCCOMM
+		#endregion
+
+		#region 属性定义
+
+		/// <summary>
+		/// 通讯端口对象
+		/// </summary>
+		public virtual CCommBase mCCOMM
         {
             get
             {
@@ -87,25 +92,43 @@ namespace Harry.LabTools.LabCommType
                 this.pictureBox_COMM = value;
             }
         }
-		
+
 		/// <summary>
 		/// 是否显示端口配置参数
 		/// </summary>
-		public virtual bool mIsShowCommParam
+		[Description("通讯端口的参数"), Category("自定义属性")]
+		public virtual bool mShowCommParam
 		{
 			get
 			{
-				return this.defaultIsShowCommParam;
+				return this.defaultShowCommParam;
 			}
 			set
 			{
-				this.defaultIsShowCommParam=value;
+				this.defaultShowCommParam=value;
+			}
+		}
+
+		/// <summary>
+		/// 是否限制控件的大小
+		/// </summary>
+		[Description("限制控件的大小"), Category("自定义属性")]
+		public virtual bool mLimitedControlSize
+		{
+			get
+			{
+				return this.defaultLimitedControlSize;
+			}
+			set
+			{
+				this.defaultLimitedControlSize=value;
 			}
 		}
 
 		/// <summary>
 		/// 通讯端口名称
 		/// </summary>
+		[Description("通讯端口的名称"), Category("自定义属性")]
 		public virtual string mCCommName
 		{
 			get
@@ -138,8 +161,7 @@ namespace Harry.LabTools.LabCommType
 				}
 			}
 		}
-
-
+		
 		/// <summary>
 		/// 每包字节的大小
 		/// </summary>
@@ -225,7 +247,7 @@ namespace Harry.LabTools.LabCommType
 		{
 			 InitializeComponent();
 			 this.StartupInit(null);
-			this.defaultIsShowCommParam=true;
+			this.defaultShowCommParam=true;
 		}
 
         /// <summary>
@@ -235,7 +257,7 @@ namespace Harry.LabTools.LabCommType
         {
             InitializeComponent();
             this.StartupInit(null);
-			this.defaultIsShowCommParam=isShowCommParam;
+			this.defaultShowCommParam=isShowCommParam;
         }
 
         /// <summary>
@@ -325,7 +347,7 @@ namespace Harry.LabTools.LabCommType
 						}
                         this.pictureBox_COMM.Image= Properties.Resources.open;
                         this.defaultCCOMM.EventHandlerCCommChange += this.EventDeviceChanged;
-						this.defaultIsShowCommParam = false;
+						this.defaultShowCommParam = false;
 						//---执行设备的同步事件
 						this.EventHandlerCCommSynchronized?.Invoke();
 					}
@@ -373,7 +395,7 @@ namespace Harry.LabTools.LabCommType
 						this.pictureBox_COMM.Image = Properties.Resources.lost;
 						//---设备移除事件
 						this.defaultCCOMM.EventHandlerCCommChange -= this.EventDeviceChanged;
-						this.defaultIsShowCommParam = true;
+						this.defaultShowCommParam = true;
 						//---执行设备的同步事件
 						this.EventHandlerCCommSynchronized?.Invoke();
 					}
@@ -444,7 +466,7 @@ namespace Harry.LabTools.LabCommType
 											 //---注销资源,一般这里不能释放资源，如果资源被释放，就不能主动监控端口的拔插事件
 											 //this.defaultCCOMM.Dispose();
 											 this.pictureBox_COMM.Image = Properties.Resources.lost;
-											 this.defaultIsShowCommParam = true;
+											 this.defaultShowCommParam = true;
 										 }
                                      }
                                  }));
@@ -486,7 +508,7 @@ namespace Harry.LabTools.LabCommType
 							//---注销资源
 							this.defaultCCOMM.Dispose();
 							this.pictureBox_COMM.Image = Properties.Resources.lost;
-							this.defaultIsShowCommParam = true;
+							this.defaultShowCommParam = true;
 						}
                     }
                 }
@@ -719,7 +741,7 @@ namespace Harry.LabTools.LabCommType
 							//---注销资源
 							this.defaultCCOMM.Dispose();
 							this.pictureBox_COMM.Image = Properties.Resources.lost;
-							this.defaultIsShowCommParam = true;
+							this.defaultShowCommParam = true;
 						}
 						//---执行设备的同步事件
 						this.EventHandlerCCommSynchronized?.Invoke();
@@ -852,7 +874,7 @@ namespace Harry.LabTools.LabCommType
 				case "comboBox_COMM":
 					//---判断鼠标按下的按键
 					//if (e.Button == MouseButtons.Right)
-					if ((e.Button == MouseButtons.Right) && (this.defaultIsShowCommParam == true))
+					if ((e.Button == MouseButtons.Right) && (this.defaultShowCommParam == true))
 					{
 						//---通过图片校验端口的状态
 						//if (LabGenFunc.CGenFuncBitMap.GenFuncCompareBitMap((Bitmap)this.pictureBox_COMM.Image, Properties.Resources.open)!=true)

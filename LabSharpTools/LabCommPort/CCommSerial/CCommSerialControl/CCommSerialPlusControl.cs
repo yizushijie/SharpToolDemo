@@ -68,17 +68,45 @@ namespace Harry.LabTools.LabCommType
         }
 
 		/// <summary>
-		/// 
+		/// 是否显示通讯端口的参数
 		/// </summary>
-		public override bool mIsShowCommParam
+		public override bool mShowCommParam
 		{
 			get
 			{
-				return base.mIsShowCommParam;
+				return base.mShowCommParam;
 			}
 			set
 			{
-				base.mIsShowCommParam = value;
+				base.mShowCommParam = value;
+			}
+		}
+
+		/// <summary>
+		/// 是否限制控件的尺寸
+		/// </summary>
+		public override bool mLimitedControlSize
+		{
+			get
+			{
+				return	base.mLimitedControlSize;
+			}
+			set
+			{
+				base.mLimitedControlSize = value;
+				if (value == true)
+				{
+					//---限制窗体的大小
+					this.MinimumSize = this.Size;
+					this.MaximumSize = this.Size;
+				}
+				else
+				{
+					Size temp = this.Size;
+					temp.Width *= 50;
+					temp.Height *= 50;
+					this.MaximumSize=temp;
+				}
 			}
 		}
 

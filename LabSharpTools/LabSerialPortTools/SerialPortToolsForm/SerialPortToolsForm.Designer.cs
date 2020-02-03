@@ -34,7 +34,9 @@
 			// 
 			// cCommSerialPlusControl1
 			// 
-			this.cCommSerialPlusControl1.Location = new System.Drawing.Point(12, 12);
+			this.cCommSerialPlusControl1.Location = new System.Drawing.Point(9, 9);
+			this.cCommSerialPlusControl1.Margin = new System.Windows.Forms.Padding(0);
+			this.cCommSerialPlusControl1.MaximumSize = new System.Drawing.Size(151, 189);
 			cCommBase1.mCCommComBox = null;
 			cCommBase1.mCCommForm = null;
 			cCommBase1.mCCommRichTextBox = null;
@@ -52,8 +54,10 @@
 			cCommBase1.mUSBParam = null;
 			this.cCommSerialPlusControl1.mCCOMM = cCommBase1;
 			this.cCommSerialPlusControl1.mCCommRichTextBox = null;
-			this.cCommSerialPlusControl1.mIsShowCommParam = true;
+			this.cCommSerialPlusControl1.MinimumSize = new System.Drawing.Size(151, 189);
+			this.cCommSerialPlusControl1.mLimitedControlSize = true;
 			this.cCommSerialPlusControl1.mPerPackageMaxSize = 64;
+			this.cCommSerialPlusControl1.mShowCommParam = true;
 			this.cCommSerialPlusControl1.Name = "cCommSerialPlusControl1";
 			this.cCommSerialPlusControl1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
 			this.cCommSerialPlusControl1.Size = new System.Drawing.Size(151, 189);

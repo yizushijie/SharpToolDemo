@@ -66,15 +66,15 @@ namespace Harry.LabTools.LabCommType
 		/// <summary>
 		/// 
 		/// </summary>
-		public override bool mIsShowCommParam
+		public override bool mShowCommParam
 		{
 			get 
 			{
-				return	base.mIsShowCommParam;
+				return	base.mShowCommParam;
 			}
 			set 
 			{
-				base.mIsShowCommParam = value;
+				base.mShowCommParam = value;
 			}
 		}
 

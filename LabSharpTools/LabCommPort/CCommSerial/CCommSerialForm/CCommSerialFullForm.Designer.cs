@@ -36,7 +36,7 @@
 			this.cCommSerial.Location = new System.Drawing.Point(2, 3);
 			this.cCommSerial.mCCOMM = null;
 			this.cCommSerial.mCCommRichTextBox = null;
-			this.cCommSerial.mIsShowCommParam = true;
+			this.cCommSerial.mShowCommParam = true;
 			this.cCommSerial.Name = "cCommSerial";
 			this.cCommSerial.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
 			this.cCommSerial.Size = new System.Drawing.Size(291, 160);

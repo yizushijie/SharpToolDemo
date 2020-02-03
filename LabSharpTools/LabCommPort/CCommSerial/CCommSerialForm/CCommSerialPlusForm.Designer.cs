@@ -41,7 +41,7 @@
 			this.cCommSerial.mCCOMM = null;
 			this.cCommSerial.mCCommRichTextBox = null;
 			this.cCommSerial.MinimumSize = new System.Drawing.Size(151, 189);
-			this.cCommSerial.mIsShowCommParam = true;
+			this.cCommSerial.mShowCommParam = true;
 			this.cCommSerial.Name = "cCommSerial";
 			this.cCommSerial.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
 			this.cCommSerial.Size = new System.Drawing.Size(151, 189);

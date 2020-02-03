@@ -816,7 +816,7 @@
 			this.trackBar_ChipClock.Dock = System.Windows.Forms.DockStyle.Left;
 			this.trackBar_ChipClock.LargeChange = 1;
 			this.trackBar_ChipClock.Location = new System.Drawing.Point(3, 17);
-			this.trackBar_ChipClock.Maximum = 19;
+			this.trackBar_ChipClock.Maximum = 17;
 			this.trackBar_ChipClock.Name = "trackBar_ChipClock";
 			this.trackBar_ChipClock.Size = new System.Drawing.Size(393, 51);
 			this.trackBar_ChipClock.TabIndex = 0;
@@ -989,8 +989,9 @@
 			this.cCommBaseControl_ChipCOMM.Location = new System.Drawing.Point(939, 3);
 			this.cCommBaseControl_ChipCOMM.mCCOMM = null;
 			this.cCommBaseControl_ChipCOMM.mCCommRichTextBox = null;
-			this.cCommBaseControl_ChipCOMM.mIsShowCommParam = true;
+			this.cCommBaseControl_ChipCOMM.mLimitedControlSize = false;
 			this.cCommBaseControl_ChipCOMM.mPerPackageMaxSize = 64;
+			this.cCommBaseControl_ChipCOMM.mShowCommParam = true;
 			this.cCommBaseControl_ChipCOMM.Name = "cCommBaseControl_ChipCOMM";
 			this.cCommBaseControl_ChipCOMM.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
 			this.cCommBaseControl_ChipCOMM.Size = new System.Drawing.Size(262, 71);
