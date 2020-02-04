@@ -15,7 +15,7 @@ namespace Harry.LabTools.LabGenForm
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FloatPopupBaseForm());
+			Application.Run(new CFloatPopupBaseForm());
 		}
 	}
 }

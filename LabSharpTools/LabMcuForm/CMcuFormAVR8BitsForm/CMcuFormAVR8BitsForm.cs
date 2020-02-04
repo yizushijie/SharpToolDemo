@@ -1,4 +1,4 @@
-﻿using Harry.LabTools.LabCommType;
+﻿using Harry.LabTools.LabCommPort;
 using Harry.LabTools.LabControlPlus;
 using Harry.LabTools.LabGenFunc;
 using Harry.LabTools.LabIniFile;
@@ -50,7 +50,7 @@ namespace LabMcuForm
 		/// <summary>
 		/// 使用的通讯端口
 		/// </summary>
-		private CCommBase defaultCComm = new CCommSerial();
+		private CCommPort defaultCComm = new CSerialPort();
 
 		/// <summary>
 		/// MCU的参数
@@ -69,7 +69,7 @@ namespace LabMcuForm
 		/// <summary>
 		/// 通讯端口的属性为只读
 		/// </summary>
-		public virtual CCommBase mCComm
+		public virtual CCommPort mCComm
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace LabMcuForm
 		/// <summary>
 		/// 通讯端口类的属性为读写属性
 		/// </summary>
-		public virtual CCommBaseControl mCCommControl
+		public virtual CCommPortControl mCCommControl
 		{
 			get
 			{
@@ -212,7 +212,7 @@ namespace LabMcuForm
 		/// <summary>
 		/// 有参构造函数
 		/// </summary>
-		public CMcuFormAVR8BitsForm(CCommBase usedCComm, CMcuFuncAVR8BitsBase usedCMcuFunc)
+		public CMcuFormAVR8BitsForm(CCommPort usedCComm, CMcuFuncAVR8BitsBase usedCMcuFunc)
 		{
 			InitializeComponent();
 			//---限定最小尺寸
@@ -224,7 +224,7 @@ namespace LabMcuForm
 			//---检查通讯端口
 			if (this.defaultCComm==usedCComm)
 			{
-				this.defaultCComm = new CCommBase();
+				this.defaultCComm = new CCommPort();
 			}
 			//---通讯接口
 			this.defaultCComm = usedCComm;

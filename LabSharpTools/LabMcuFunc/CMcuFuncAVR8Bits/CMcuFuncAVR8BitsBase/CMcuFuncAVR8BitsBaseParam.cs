@@ -1,4 +1,5 @@
-﻿using Harry.LabTools.LabCommType;
+﻿
+using Harry.LabTools.LabCommPort;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Harry.LabTools.LabMcuFunc
 		/// <summary>
 		/// 使用的通讯端口信息
 		/// </summary>
-		private CCommBase defaultCCOMM = null;
+		private CCommPort defaultCCOMM = null;
 
 		/// <summary>
 		/// 使用的MCU信息,默认初始化AVR的8Bit的Mcu
@@ -39,7 +40,7 @@ namespace Harry.LabTools.LabMcuFunc
 		/// <summary>
 		/// 通讯使用的端口为读写属性
 		/// </summary>
-		public virtual CCommBase mCCOMM
+		public virtual CCommPort mCCOMM
 		{
 			get
 			{
@@ -49,7 +50,7 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				if (value == null)
 				{
-					this.defaultCCOMM = new CCommBase();
+					this.defaultCCOMM = new CCommPort();
 				}
 				this.defaultCCOMM = value;
 			}
@@ -108,13 +109,13 @@ namespace Harry.LabTools.LabMcuFunc
 		/// 带参数的构造函数
 		/// </summary>
 		/// <param name="usedComm">使用的通讯端口</param>
-		public CMcuFuncAVR8BitsBase(CCommBase usedComm)
+		public CMcuFuncAVR8BitsBase(CCommPort usedComm)
 		{
 			if (usedComm!=null)
 			{
 				if (this.defaultCCOMM==null)
 				{
-					this.defaultCCOMM = new CCommBase();
+					this.defaultCCOMM = new CCommPort();
 				}
 				this.defaultCCOMM = usedComm;
 			}

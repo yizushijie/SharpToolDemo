@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace LabSerialPortTools
 {
-	public partial class Form1 : Form
+	public partial class SerialPortToolsForm : Form
 	{
-		public Form1()
+		public SerialPortToolsForm()
 		{
 			InitializeComponent();
 		}

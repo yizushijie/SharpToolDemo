@@ -7,8 +7,8 @@
     <ProjectGuid>{3FBD5434-D5CB-4E6F-95D3-3905E5DE178A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Harry.LabTools.LabCommType</RootNamespace>
-    <AssemblyName>Harry.LabTools.LabCommType</AssemblyName>
+    <RootNamespace>Harry.LabTools.LabCommPort</RootNamespace>
+    <AssemblyName>Harry.LabTools.LabCommPort</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -36,12 +36,6 @@
   <ItemGroup>
     <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
-    </Reference>
-    <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -99,107 +93,107 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CCommBase\CCommBaseControl\CCommBaseControl.cs">
+    <Compile Include="CBasePort\CBasePortControl\CBasePortControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CCommBase\CCommBaseControl\CCommBaseControl.Designer.cs">
-      <DependentUpon>CCommBaseControl.cs</DependentUpon>
+    <Compile Include="CBasePort\CBasePortControl\CBasePortControl.Designer.cs">
+      <DependentUpon>CBasePortControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommBase\CCommBaseForm\CCommBaseForm.cs">
+    <Compile Include="CBasePort\CBasePortForm\CBasePortForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommBase\CCommBaseForm\CCommBaseForm.Designer.cs">
-      <DependentUpon>CCommBaseForm.cs</DependentUpon>
+    <Compile Include="CBasePort\CBasePortForm\CBasePortForm.Designer.cs">
+      <DependentUpon>CBasePortForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommBase\CCommBaseForm\CCommTypeForm.cs">
+    <Compile Include="CBasePort\CBasePortForm\CBasePortTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommBase\CCommBaseForm\CCommTypeForm.Designer.cs">
-      <DependentUpon>CCommTypeForm.cs</DependentUpon>
+    <Compile Include="CBasePort\CBasePortForm\CBasePortTypeForm.Designer.cs">
+      <DependentUpon>CBasePortTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommBase\CCommBaseFunc\CCommBase.cs" />
-    <Compile Include="CCommBase\CCommBaseFunc\CCommBaseControl.cs" />
-    <Compile Include="CCommBase\CCommBaseFunc\CCommBaseData.cs" />
-    <Compile Include="CCommBase\CCommBaseFunc\CCommBaseEvent.cs" />
-    <Compile Include="CCommBase\CCommBaseFunc\CCommBaseFunc.cs" />
-    <Compile Include="CCommBase\CCommBaseFunc\CCommBaseParam.cs" />
-    <Compile Include="CCommSerial\CCommSerialControl\CCommSerialControl.cs">
+    <Compile Include="CBasePort\CBasePortFunc\CBasePort.cs" />
+    <Compile Include="CBasePort\CBasePortFunc\CBasePortControl.cs" />
+    <Compile Include="CBasePort\CBasePortFunc\CBasePortData.cs" />
+    <Compile Include="CBasePort\CBasePortFunc\CBasePortEvent.cs" />
+    <Compile Include="CBasePort\CBasePortFunc\CBasePortFunc.cs" />
+    <Compile Include="CBasePort\CBasePortFunc\CBasePortParam.cs" />
+    <Compile Include="CSerialPort\CSerialPortControl\CSerialPortControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialControl\CCommSerialControl.Designer.cs">
-      <DependentUpon>CCommSerialControl.cs</DependentUpon>
+    <Compile Include="CSerialPort\CSerialPortControl\CSerialPortControl.Designer.cs">
+      <DependentUpon>CSerialPortControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialControl\CCommSerialFullControl.cs">
+    <Compile Include="CSerialPort\CSerialPortControl\CSerialPortFullControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialControl\CCommSerialFullControl.Designer.cs">
-      <DependentUpon>CCommSerialFullControl.cs</DependentUpon>
+    <Compile Include="CSerialPort\CSerialPortControl\CSerialPortFullControl.Designer.cs">
+      <DependentUpon>CSerialPortFullControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialControl\CCommSerialPlusControl.cs">
+    <Compile Include="CSerialPort\CSerialPortControl\CSerialPortPlusControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialControl\CCommSerialPlusControl.Designer.cs">
-      <DependentUpon>CCommSerialPlusControl.cs</DependentUpon>
+    <Compile Include="CSerialPort\CSerialPortControl\CSerialPortPlusControl.Designer.cs">
+      <DependentUpon>CSerialPortPlusControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialForm\CCommSerialForm.cs">
+    <Compile Include="CSerialPort\CSerialPortForm\CSerialPortForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialForm\CCommSerialForm.Designer.cs">
-      <DependentUpon>CCommSerialForm.cs</DependentUpon>
+    <Compile Include="CSerialPort\CSerialPortForm\CSerialPortForm.Designer.cs">
+      <DependentUpon>CSerialPortForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialForm\CCommSerialFullForm.cs">
+    <Compile Include="CSerialPort\CSerialPortForm\CSerialPortFullForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialForm\CCommSerialFullForm.Designer.cs">
-      <DependentUpon>CCommSerialFullForm.cs</DependentUpon>
+    <Compile Include="CSerialPort\CSerialPortForm\CSerialPortFullForm.Designer.cs">
+      <DependentUpon>CSerialPortFullForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialForm\CCommSerialPlusForm.cs">
+    <Compile Include="CSerialPort\CSerialPortForm\CSerialPortPlusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialForm\CCommSerialPlusForm.Designer.cs">
-      <DependentUpon>CCommSerialPlusForm.cs</DependentUpon>
+    <Compile Include="CSerialPort\CSerialPortForm\CSerialPortPlusForm.Designer.cs">
+      <DependentUpon>CSerialPortPlusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommSerial\CCommSerialFunc\CCommSerial.cs" />
-    <Compile Include="CCommSerial\CCommSerialFunc\CCommSerialControl.cs" />
-    <Compile Include="CCommSerial\CCommSerialFunc\CCommSerialData.cs" />
-    <Compile Include="CCommSerial\CCommSerialFunc\CCommSerialEvent.cs" />
-    <Compile Include="CCommSerial\CCommSerialFunc\CCommSerialFunc.cs" />
-    <Compile Include="CCommSerial\CCommSerialFunc\CCommSerialParam.cs" />
-    <Compile Include="CCommUSB\CCommUSBControl\CCommUSBControl.cs">
+    <Compile Include="CSerialPort\CSerialPortFunc\CSerialPort.cs" />
+    <Compile Include="CSerialPort\CSerialPortFunc\CSerialPortControl.cs" />
+    <Compile Include="CSerialPort\CSerialPortFunc\CSerialPortData.cs" />
+    <Compile Include="CSerialPort\CSerialPortFunc\CSerialPortEvent.cs" />
+    <Compile Include="CSerialPort\CSerialPortFunc\CSerialPortFunc.cs" />
+    <Compile Include="CSerialPort\CSerialPortFunc\CSerialPortParam.cs" />
+    <Compile Include="CUSBPort\CUSBPortControl\CUSBPortControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBControl\CCommUSBControl.Designer.cs">
-      <DependentUpon>CCommUSBControl.cs</DependentUpon>
+    <Compile Include="CUSBPort\CUSBPortControl\CUSBPortControl.Designer.cs">
+      <DependentUpon>CUSBPortControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBControl\CCommUSBPlusControl.cs">
+    <Compile Include="CUSBPort\CUSBPortControl\CUSBPortPlusControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBControl\CCommUSBPlusControl.Designer.cs">
-      <DependentUpon>CCommUSBPlusControl.cs</DependentUpon>
+    <Compile Include="CUSBPort\CUSBPortControl\CUSBPortPlusControl.Designer.cs">
+      <DependentUpon>CUSBPortPlusControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBForm\CCommUSBForm.cs">
+    <Compile Include="CUSBPort\CUSBPortForm\CUSBPortForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBForm\CCommUSBForm.Designer.cs">
-      <DependentUpon>CCommUSBForm.cs</DependentUpon>
+    <Compile Include="CUSBPort\CUSBPortForm\CUSBPortForm.Designer.cs">
+      <DependentUpon>CUSBPortForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBForm\CCommUSBPlusForm.cs">
+    <Compile Include="CUSBPort\CUSBPortForm\CUSBPortPlusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBForm\CCommUSBPlusForm.Designer.cs">
-      <DependentUpon>CCommUSBPlusForm.cs</DependentUpon>
+    <Compile Include="CUSBPort\CUSBPortForm\CUSBPortPlusForm.Designer.cs">
+      <DependentUpon>CUSBPortPlusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCommUSB\CCommUSBFunc\CCommUSBFunc.cs" />
-    <Compile Include="CCommUSB\CCommUSBFunc\CCommUSBControl.cs" />
-    <Compile Include="CCommUSB\CCommUSBFunc\CCommUSBData.cs" />
-    <Compile Include="CCommUSB\CCommUSBFunc\CCommUSBEvent.cs" />
-    <Compile Include="CCommUSB\CCommUSBFunc\CCommUSB.cs" />
-    <Compile Include="CCommUSB\CCommUSBFunc\CCommUSBParam.cs" />
-    <Compile Include="ICommCore\ICommControl.cs" />
-    <Compile Include="ICommCore\ICommData.cs" />
-    <Compile Include="ICommCore\ICommEvent.cs" />
-    <Compile Include="ICommCore\ICommFunc.cs" />
-    <Compile Include="ICommCore\ICommParam.cs" />
+    <Compile Include="CUSBPort\CUSBPortFunc\CUSBPortFunc.cs" />
+    <Compile Include="CUSBPort\CUSBPortFunc\CUSBPortControl.cs" />
+    <Compile Include="CUSBPort\CUSBPortFunc\CUSBPortData.cs" />
+    <Compile Include="CUSBPort\CUSBPortFunc\CUSBPortEvent.cs" />
+    <Compile Include="CUSBPort\CUSBPortFunc\CUSBPort.cs" />
+    <Compile Include="CUSBPort\CUSBPortFunc\CUSBPortParam.cs" />
+    <Compile Include="IBaseCore\IBaseCoreControl.cs" />
+    <Compile Include="IBaseCore\IBaseCoreData.cs" />
+    <Compile Include="IBaseCore\IBaseCoreEvent.cs" />
+    <Compile Include="IBaseCore\IBaseCoreFunc.cs" />
+    <Compile Include="IBaseCore\IBaseCoreParam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -222,35 +216,35 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CCommBase\CCommBaseControl\CCommBaseControl.resx">
-      <DependentUpon>CCommBaseControl.cs</DependentUpon>
+    <EmbeddedResource Include="CBasePort\CBasePortControl\CBasePortControl.resx">
+      <DependentUpon>CBasePortControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommBase\CCommBaseForm\CCommBaseForm.resx">
-      <DependentUpon>CCommBaseForm.cs</DependentUpon>
+    <EmbeddedResource Include="CBasePort\CBasePortForm\CBasePortForm.resx">
+      <DependentUpon>CBasePortForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommBase\CCommBaseForm\CCommTypeForm.resx">
-      <DependentUpon>CCommTypeForm.cs</DependentUpon>
+    <EmbeddedResource Include="CBasePort\CBasePortForm\CBasePortTypeForm.resx">
+      <DependentUpon>CBasePortTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommSerial\CCommSerialControl\CCommSerialControl.resx">
-      <DependentUpon>CCommSerialControl.cs</DependentUpon>
+    <EmbeddedResource Include="CSerialPort\CSerialPortControl\CSerialPortControl.resx">
+      <DependentUpon>CSerialPortControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommSerial\CCommSerialControl\CCommSerialFullControl.resx">
-      <DependentUpon>CCommSerialFullControl.cs</DependentUpon>
+    <EmbeddedResource Include="CSerialPort\CSerialPortControl\CSerialPortFullControl.resx">
+      <DependentUpon>CSerialPortFullControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommSerial\CCommSerialControl\CCommSerialPlusControl.resx">
-      <DependentUpon>CCommSerialPlusControl.cs</DependentUpon>
+    <EmbeddedResource Include="CSerialPort\CSerialPortControl\CSerialPortPlusControl.resx">
+      <DependentUpon>CSerialPortPlusControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommSerial\CCommSerialForm\CCommSerialFullForm.resx">
-      <DependentUpon>CCommSerialFullForm.cs</DependentUpon>
+    <EmbeddedResource Include="CSerialPort\CSerialPortForm\CSerialPortFullForm.resx">
+      <DependentUpon>CSerialPortFullForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommSerial\CCommSerialForm\CCommSerialPlusForm.resx">
-      <DependentUpon>CCommSerialPlusForm.cs</DependentUpon>
+    <EmbeddedResource Include="CSerialPort\CSerialPortForm\CSerialPortPlusForm.resx">
+      <DependentUpon>CSerialPortPlusForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommUSB\CCommUSBControl\CCommUSBPlusControl.resx">
-      <DependentUpon>CCommUSBPlusControl.cs</DependentUpon>
+    <EmbeddedResource Include="CUSBPort\CUSBPortControl\CUSBPortPlusControl.resx">
+      <DependentUpon>CUSBPortPlusControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CCommUSB\CCommUSBForm\CCommUSBPlusForm.resx">
-      <DependentUpon>CCommUSBPlusForm.cs</DependentUpon>
+    <EmbeddedResource Include="CUSBPort\CUSBPortForm\CUSBPortPlusForm.resx">
+      <DependentUpon>CUSBPortPlusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

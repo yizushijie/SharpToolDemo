@@ -110,7 +110,7 @@
 			this.button_ReadChipID = new System.Windows.Forms.Button();
 			this.textBox_ChipID = new System.Windows.Forms.TextBox();
 			this.label_ChipID = new System.Windows.Forms.Label();
-			this.cCommBaseControl_ChipCOMM = new Harry.LabTools.LabCommType.CCommBaseControl();
+			this.cCommBaseControl_ChipCOMM = new Harry.LabTools.LabCommPort.CCommPortControl();
 			this.tabPage_ChipEdit = new System.Windows.Forms.TabPage();
 			this.tabControl_ChipMemery = new Harry.LabTools.LabControlPlus.CTabControlEx();
 			this.tabPage_Flash = new System.Windows.Forms.TabPage();
@@ -2771,7 +2771,7 @@
 
 		#endregion
 
-		private Harry.LabTools.LabCommType.CCommBaseControl cCommBaseControl_ChipCOMM;
+		private Harry.LabTools.LabCommPort.CCommPortControl cCommBaseControl_ChipCOMM;
 		private System.Windows.Forms.Panel panel_ChipID;
 		private System.Windows.Forms.GroupBox groupBox_ChipType;
 		private System.Windows.Forms.ComboBox comboBox_ChipType;

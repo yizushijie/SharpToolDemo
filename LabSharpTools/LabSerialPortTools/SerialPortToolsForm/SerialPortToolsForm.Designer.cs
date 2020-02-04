@@ -1,6 +1,6 @@
 ﻿namespace LabSerialPortTools
 {
-	partial class Form1
+	partial class SerialPortToolsForm
 	{
 		/// <summary>
 		/// 必需的设计器变量。
@@ -28,48 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			Harry.LabTools.LabCommType.CCommBase cCommBase1 = new Harry.LabTools.LabCommType.CCommBase();
-			this.cCommSerialPlusControl1 = new Harry.LabTools.LabCommType.CCommSerialPlusControl();
 			this.SuspendLayout();
 			// 
-			// cCommSerialPlusControl1
+			// SerialPortToolsForm
 			// 
-			this.cCommSerialPlusControl1.Location = new System.Drawing.Point(9, 9);
-			this.cCommSerialPlusControl1.Margin = new System.Windows.Forms.Padding(0);
-			this.cCommSerialPlusControl1.MaximumSize = new System.Drawing.Size(151, 189);
-			cCommBase1.mCCommComBox = null;
-			cCommBase1.mCCommForm = null;
-			cCommBase1.mCCommRichTextBox = null;
-			cCommBase1.mChanged = false;
-			cCommBase1.mFullParam = false;
-			cCommBase1.mIndex = -1;
-			cCommBase1.mMultiCMD = false;
-			cCommBase1.mName = "";
-			cCommBase1.mPerPackageMaxSize = 64;
-			cCommBase1.mReceData = null;
-			cCommBase1.mSendData = null;
-			cCommBase1.mSerialParam = null;
-			cCommBase1.mTimeout = 200;
-			cCommBase1.mType = Harry.LabTools.LabCommType.CCOMM_TYPE.COMM_SERIAL;
-			cCommBase1.mUSBParam = null;
-			this.cCommSerialPlusControl1.mCCOMM = cCommBase1;
-			this.cCommSerialPlusControl1.mCCommRichTextBox = null;
-			this.cCommSerialPlusControl1.MinimumSize = new System.Drawing.Size(151, 189);
-			this.cCommSerialPlusControl1.mLimitedControlSize = true;
-			this.cCommSerialPlusControl1.mPerPackageMaxSize = 64;
-			this.cCommSerialPlusControl1.mShowCommParam = true;
-			this.cCommSerialPlusControl1.Name = "cCommSerialPlusControl1";
-			this.cCommSerialPlusControl1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-			this.cCommSerialPlusControl1.Size = new System.Drawing.Size(151, 189);
-			this.cCommSerialPlusControl1.TabIndex = 0;
-			// 
-			// Form1
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(832, 601);
-			this.Controls.Add(this.cCommSerialPlusControl1);
-			this.Name = "Form1";
+			this.ClientSize = new System.Drawing.Size(1086, 635);
+			this.Name = "SerialPortToolsForm";
 			this.Text = "串口调试助手";
 			this.ResumeLayout(false);
 
@@ -77,7 +41,7 @@
 
 		#endregion
 
-		private Harry.LabTools.LabCommType.CCommSerialPlusControl cCommSerialPlusControl1;
+		private Harry.LabTools.LabCommPort.CSerialPortPlusControl cSerialPortPlusControl1;
 	}
 }
 

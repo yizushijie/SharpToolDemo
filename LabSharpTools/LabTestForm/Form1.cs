@@ -1,4 +1,5 @@
-﻿using Harry.LabTools.LabCommType;
+﻿
+using Harry.LabTools.LabCommPort;
 using Harry.LabTools.LabGenFunc;
 using Harry.LabTools.LabHexEdit;
 using Harry.LabTools.LabMcuFunc;
@@ -15,7 +16,7 @@ namespace LabTestForm
 		/// <summary>
 		/// 
 		/// </summary>
-		private CCommBase usedComm = null;
+		private CCommPort usedComm = null;
 
 		/// <summary>
 		/// 
@@ -45,7 +46,7 @@ namespace LabTestForm
 		/// <param name="e"></param>
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			this.usedComm =new CCommSerial();
+			this.usedComm =new CSerialPort();
 		}
 
 		/// <summary>

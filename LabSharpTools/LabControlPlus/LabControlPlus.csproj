@@ -58,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAutoResize\CAutoResize.cs" />
+    <Compile Include="CImageButton\CImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CImageButton\CImageButton.Designer.cs">
+      <DependentUpon>CImageButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPanelPlus\CPanelEx.cs">
       <SubType>Component</SubType>
     </Compile>

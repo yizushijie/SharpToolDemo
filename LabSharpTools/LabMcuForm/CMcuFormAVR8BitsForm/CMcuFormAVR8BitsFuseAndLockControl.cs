@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Harry.LabTools.LabCommType;
+using Harry.LabTools.LabCommPort;
 using Harry.LabTools.LabMcuFunc;
 using Harry.LabTools.LabGenFunc;
 using System.Threading;

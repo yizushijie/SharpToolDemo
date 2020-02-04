@@ -1,8 +1,4 @@
-﻿using Harry.LabTools.LabCommType;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Harry.LabTools.LabCommPort;
 
 namespace Harry.LabTools.LabMcuFunc
 {
@@ -17,7 +13,7 @@ namespace Harry.LabTools.LabMcuFunc
 		/// <summary>
 		/// 通讯使用的端口为读写属性
 		/// </summary>
-		public override CCommBase mCCOMM
+		public override CCommPort mCCOMM
 		{
 			get
 			{
