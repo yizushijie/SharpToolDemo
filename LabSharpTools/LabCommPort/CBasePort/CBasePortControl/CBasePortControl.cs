@@ -19,7 +19,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 通讯设备同步事件
 		/// </summary>
-		public virtual event CCommChangeEvent EventHandlerCCommSynchronized = null;
+		public virtual event EventCCommChanged EventHandlerCCommSynchronized = null;
 
 		#endregion
 
@@ -346,7 +346,7 @@ namespace Harry.LabTools.LabCommPort
 							this.comboBox_COMM.Enabled = false;
 						}
                         this.pictureBox_COMM.Image= Properties.Resources.open;
-                        this.defaultCCOMM.EventHandlerCCommChange += this.EventDeviceChanged;
+                        this.defaultCCOMM.EventCCommChangedHandler += this.EventDeviceChanged;
 						this.defaultShowCommParam = false;
 						//---执行设备的同步事件
 						this.EventHandlerCCommSynchronized?.Invoke();
@@ -394,7 +394,7 @@ namespace Harry.LabTools.LabCommPort
 						}
 						this.pictureBox_COMM.Image = Properties.Resources.lost;
 						//---设备移除事件
-						this.defaultCCOMM.EventHandlerCCommChange -= this.EventDeviceChanged;
+						this.defaultCCOMM.EventCCommChangedHandler -= this.EventDeviceChanged;
 						this.defaultShowCommParam = true;
 						//---执行设备的同步事件
 						this.EventHandlerCCommSynchronized?.Invoke();
@@ -431,7 +431,7 @@ namespace Harry.LabTools.LabCommPort
                     this.BeginInvoke((EventHandler)
                                  (delegate
                                  {
-                                     if ((!string.IsNullOrEmpty(this.comboBox_COMM.Text))|| ((this.defaultCCOMM.mName != this.comboBox_COMM.Text)))
+                                     if ((!string.IsNullOrEmpty(this.comboBox_COMM.Text))|| ((this.defaultCCOMM.mCOMMName != this.comboBox_COMM.Text)))
                                      {
 										 //if (this.pictureBox_COMM.Image.Flags == Properties.Resources.open.Flags)
 										 if (LabGenFunc.CGenFuncBitMap.GenFuncCompareBitMap((Bitmap)this.pictureBox_COMM.Image, Properties.Resources.open) == true)
@@ -473,7 +473,7 @@ namespace Harry.LabTools.LabCommPort
                 }
                 else
                 {
-					if (!(string.IsNullOrEmpty(this.comboBox_COMM.Text)) || ((this.defaultCCOMM.mName != this.comboBox_COMM.Text)))
+					if (!(string.IsNullOrEmpty(this.comboBox_COMM.Text)) || ((this.defaultCCOMM.mCOMMName != this.comboBox_COMM.Text)))
                     {
 						//if (this.pictureBox_COMM.Image.Flags == Properties.Resources.open.Flags)
 						if (LabGenFunc.CGenFuncBitMap.GenFuncCompareBitMap((Bitmap)this.pictureBox_COMM.Image, Properties.Resources.open) == true)
@@ -614,7 +614,7 @@ namespace Harry.LabTools.LabCommPort
 			{
 				CCommPortForm p=null;
 				//---检查对象类型
-				if ((this.defaultCCOMM.GetType() == typeof(CSerialPort)) && (this.defaultCCOMM.mType == CCOMM_TYPE.COMM_SERIAL))
+				if ((this.defaultCCOMM.GetType() == typeof(CSerialPort)) && (this.defaultCCOMM.mCOMMType == CCOMM_TYPE.COMM_SERIAL))
 				{
 					if (this.defaultCCOMM.mFullParam)
 					{
@@ -627,7 +627,7 @@ namespace Harry.LabTools.LabCommPort
 						p = new CSerialPortPlusForm(this.comboBox_COMM, this.defaultCCOMM, this.defaultCCOMM.mCCommRichTextBox, "配置设备", true);
 					}
 				}
-				else if ((this.defaultCCOMM.GetType() == typeof(CUSBPort)) && (this.defaultCCOMM.mType == CCOMM_TYPE.COMM_USB))
+				else if ((this.defaultCCOMM.GetType() == typeof(CUSBPort)) && (this.defaultCCOMM.mCOMMType == CCOMM_TYPE.COMM_USB))
 				{
 					//---USB通讯对象的参数
 					p = new CCommUSBPlusForm();
@@ -697,7 +697,7 @@ namespace Harry.LabTools.LabCommPort
 		{
 			if (this.defaultCCOMM!=null)
 			{
-				CCommPortTypeForm p = new CCommPortTypeForm(this.defaultCCOMM.mType,true);
+				CCommPortTypeForm p = new CCommPortTypeForm(this.defaultCCOMM.mCOMMType,true);
 				if (p != null)
 				{
 					//---计算位置偏移，避免超出可见区域
@@ -708,7 +708,7 @@ namespace Harry.LabTools.LabCommPort
 					}
 					if (p.ShowDialog(this.button_COMM, offset, this.button_COMM.Height +4) == System.Windows.Forms.DialogResult.OK)
 					{
-						if (this.defaultCCOMM.mType != p.mCCommType)
+						if (this.defaultCCOMM.mCOMMType != p.mCCommType)
 						{
 							//if (p.mCCommType == CCOMM_TYPE.COMM_SERIAL)
 							if ((p.mCCommType == CCOMM_TYPE.COMM_SERIAL)&&(this.defaultCCOMM.GetType() == typeof(CUSBPort)))
@@ -884,10 +884,10 @@ namespace Harry.LabTools.LabCommPort
 							//---鼠标右键配置通信端口的参数
 							this.ConfigCCOMMParam(true);
 							//---判断是否端口发生了变化
-							if ((!string.IsNullOrEmpty(this.comboBox_COMM.Text)) && (!string.IsNullOrEmpty(this.defaultCCOMM.mName)) && (this.defaultCCOMM.mName != this.comboBox_COMM.Text))
+							if ((!string.IsNullOrEmpty(this.comboBox_COMM.Text)) && (!string.IsNullOrEmpty(this.defaultCCOMM.mCOMMName)) && (this.defaultCCOMM.mCOMMName != this.comboBox_COMM.Text))
 							{
 								//---数据位
-								index = this.comboBox_COMM.Items.IndexOf(this.defaultCCOMM.mName);
+								index = this.comboBox_COMM.Items.IndexOf(this.defaultCCOMM.mCOMMName);
 								if (index < 0)
 								{
 									this.comboBox_COMM.SelectedIndex = 0;

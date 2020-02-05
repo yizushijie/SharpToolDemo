@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Harry.LabTools.LabCommPort
 {
+
+	#region 枚举定义
+
 	/// <summary>
 	/// 通信状态
 	/// </summary>
@@ -27,6 +30,9 @@ namespace Harry.LabTools.LabCommPort
 		COMM_USB				=1,																						//---USB通讯
 	};
 
+	#endregion
+
+	#region 串口参数	
 	/// <summary>
 	/// 串口参数
 	/// </summary>
@@ -226,7 +232,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <param name="stopBits"></param>
 		/// <param name="dataBits"></param>
 		/// <param name="parity"></param>
-		public void AnalyseParam(string name,string baudRate,string stopBits,string dataBits,string parity)
+		public virtual void AnalyseParam(string name,string baudRate,string stopBits,string dataBits,string parity)
 		{
 			this.defaultName=name;
 			this.defaultBaudRate=baudRate;
@@ -242,6 +248,9 @@ namespace Harry.LabTools.LabCommPort
 		#endregion
 	}
 
+	#endregion
+
+	#region USB参数
 	/// <summary>
 	/// USB参数
 	/// </summary>
@@ -310,7 +319,7 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		/// <param name="vid"></param>
 		/// <param name="pid"></param>
-		public CUSBPortParam (int vid, int pid)
+		public CUSBPortParam(int vid, int pid)
 		{
 			this.defaultVID = vid;
 			this.defaultPID = pid;
@@ -333,8 +342,8 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		public virtual void Dispose()
 		{
-			this.defaultVID =-1;
-			this.defaultPID =-1;
+			this.defaultVID = -1;
+			this.defaultPID = -1;
 
 			GC.SuppressFinalize(this);
 		}
@@ -343,7 +352,7 @@ namespace Harry.LabTools.LabCommPort
 
 		#region 公有函数
 
-		public void AnalyseParam(int vid,int pid)
+		public virtual void AnalyseParam(int vid, int pid)
 		{
 			this.mVID = vid;
 			this.mPID = pid;
@@ -356,6 +365,8 @@ namespace Harry.LabTools.LabCommPort
 		#endregion
 	}
 
+	#endregion
+
 	/// <summary>
 	/// 通讯接口的参数
 	/// </summary>
@@ -366,7 +377,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 使用的通讯方式
 		/// </summary>
-		CCOMM_TYPE mType
+		CCOMM_TYPE mCOMMType
 		{
 			get;
 			set;
@@ -375,7 +386,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 通断端口名称
 		/// </summary>
-		string mName
+		string mCOMMName
 		{
 			get;
 			set;
@@ -384,7 +395,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 通讯接口的序号
 		/// </summary>
-		int mIndex
+		int mCOMMIndex
 		{
 			get;
 			set;
@@ -394,7 +405,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 通讯端口的信息
 		/// </summary>
-		string mInfo
+		string mCOMMInfo
 		{
 			get;
 		}
@@ -409,9 +420,34 @@ namespace Harry.LabTools.LabCommPort
 		}
 
 		/// <summary>
+		/// 读取超时时间
+		/// </summary>
+		int mCOMMReadTimeout
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// 写入超时时间
+		/// </summary>
+		int mCOMMWriteTimeout
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		int mCOMMInfiniteTimeout
+		{
+			get;
+		}
+		/// <summary>
 		/// 是不是多地址通讯，false---不是，true---是
 		/// </summary>
-		bool mMultiAddr
+		bool mChildAddr
 		{
 			get;
 		}
@@ -419,7 +455,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 是不是复合命令，比如主命令加子命令,仅仅针对接收有效
 		/// </summary>
-		bool mMultiCMD
+		bool mChildCMD
 		{
 			get;
 			set;
@@ -428,7 +464,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 通讯端口是够打开，false---关闭，true---打开
 		/// </summary>
-		bool mOpen
+		bool mCOMMOpen
 		{
 			get;
 		}
@@ -457,18 +493,18 @@ namespace Harry.LabTools.LabCommPort
 			get;
 		}
 
-        /// <summary>
-        /// 设备连接状态
-        /// </summary>
-        bool mConnected
-        {
-            get;
-        }
+		/// <summary>
+		/// 设备连接状态
+		/// </summary>
+		bool mCOMMConnected
+		{
+		    get;
+		}
 
 		/// <summary>
 		/// 设备是否发生变化
 		/// </summary>
-		bool mChanged
+		bool mCOMMChanged
 		{
 			get;
 			set;
@@ -503,8 +539,10 @@ namespace Harry.LabTools.LabCommPort
 		#endregion
 
 		#region 串口参数
-
-		CSerialPortParam mSerialParam
+		/// <summary>
+		/// 串口参数
+		/// </summary>
+		CSerialPortParam mSerialPortParam
 		{
 			get;
 			set;
@@ -513,8 +551,10 @@ namespace Harry.LabTools.LabCommPort
 		#endregion
 
 		#region USB参数
-
-		CUSBPortParam mUSBParam
+		/// <summary>
+		/// USB端口参数
+		/// </summary>
+		CUSBPortParam mUSBPortParam
 		{
 			get;
 			set;
@@ -522,41 +562,41 @@ namespace Harry.LabTools.LabCommPort
 
 		#endregion
 
-		#region 初始化函数
+		#region 函数定义
 
 		/// <summary>
 		/// 初始化串口通讯参数
 		/// </summary>
-		/// <param name="serialParam"></param>
+		/// <param name="serialPortParam"></param>
 		/// <param name="msg"></param>
 		/// <returns></returns>
-		int Init(CSerialPortParam serialParam, RichTextBox msg = null);
+		int Init(CSerialPortParam serialPortParam, RichTextBox msg = null);
 
 		/// <summary>
 		/// 初始化串口通讯参数
 		/// </summary>
-		/// <param name="serialParam"></param>
+		/// <param name="serialPortParam"></param>
 		/// <param name="msg"></param>
 		/// <returns></returns>
-		int Init(CSerialPortParam serialParam, CCOMM_CRC rxCRC, CCOMM_CRC txCRC, RichTextBox msg = null);
+		int Init(CSerialPortParam serialPortParam, CCOMM_CRC rxCRC, CCOMM_CRC txCRC, RichTextBox msg = null);
 
 		/// <summary>
 		/// 初始化usb参数
 		/// </summary>
-		/// <param name="usbParam"></param>
+		/// <param name="usbPortParam"></param>
 		/// <param name="msg"></param>
 		/// <returns></returns>
-		int Init(CUSBPortParam usbParam, RichTextBox msg = null);
+		int Init(CUSBPortParam usbPortParam, RichTextBox msg = null);
 
 		/// <summary>
 		/// 初始化usb参数
 		/// </summary>
-		/// <param name="usbParam"></param>
+		/// <param name="usbPortParam"></param>
 		/// <param name="rxCRC"></param>
 		/// <param name="tcCRC"></param>
 		/// <param name="msg"></param>
 		/// <returns></returns>
-		int Init(CUSBPortParam usbParam, CCOMM_CRC rxCRC, CCOMM_CRC txCRC, RichTextBox msg = null);
+		int Init(CUSBPortParam usbPortParam, CCOMM_CRC rxCRC, CCOMM_CRC txCRC, RichTextBox msg = null);
 
 		#endregion
 	}

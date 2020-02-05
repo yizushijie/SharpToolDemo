@@ -46,14 +46,14 @@ namespace Harry.LabTools.LabCommPort
             //---注销监控时间
 			this.DestroyWatcherCommEvent();
             //---串口参数回收处理
-            if (this.mSerialParam!=null)
+            if (this.mSerialPortParam!=null)
             {
-                this.mSerialParam = null;
+                this.mSerialPortParam = null;
             }
             //---USB参数回收处理
-            if (this.mUSBParam != null)
+            if (this.mUSBPortParam != null)
             {
-                this.mUSBParam = null;
+                this.mUSBPortParam = null;
             }
             //---垃圾回收
             GC.SuppressFinalize(this);

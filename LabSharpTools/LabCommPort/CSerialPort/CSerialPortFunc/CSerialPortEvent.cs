@@ -12,12 +12,12 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 设备变化事件
 		/// </summary>
-		public override event CCommChangeEvent EventHandlerCCommChange;
+		public override event EventCCommChanged EventCCommChangedHandler;
 		
 		/// <summary>
 		/// 数据接收事件
 		/// </summary>
-		public override event CCommEvent EventHandlerCCommReceData;
+		public override event EventCCommDataReceived EventCCommDataReceivedHandler;
 
         #endregion
 
@@ -63,7 +63,7 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public override void EventWatcherCommHandler(Object sender, EventArrivedEventArgs e)
+		public override void HandleWatcherCommEvent(Object sender, EventArrivedEventArgs e)
 		{
 			//===备注：如果这个事件多次进入，请检查一下是否被多次注册；每次的初始化都会被注册一次
 			if ((e.NewEvent.ClassPath.ClassName == "__InstanceCreationEvent"))
@@ -76,9 +76,9 @@ namespace Harry.LabTools.LabCommPort
 				//---设备拔出处理函数
 				this.RemoveDevice();
 				//---设备变化事件
-				if (this.EventHandlerCCommChange != null)
+				if (this.EventCCommChangedHandler != null)
 				{
-					this.EventHandlerCCommChange?.Invoke();
+					this.EventCCommChangedHandler?.Invoke();
 				}
 			}
 		}
@@ -88,7 +88,7 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public override void EventDataReceivedHandler(object sender, EventArgs e)
+		public override void HandleDataReceivedEvent(object sender, EventArgs e)
 		{
 			string str = e.ToString();
 			//---判断事件的类型
@@ -100,9 +100,9 @@ namespace Harry.LabTools.LabCommPort
 					//---设置状态为事件读取
 					this.defaultSerialSTATE = CCOMM_STATE.STATE_EVENTREAD;
 					//---执行委托函数,数据接收函数
-					if (this.EventHandlerCCommReceData!=null)
+					if (this.EventCCommDataReceivedHandler!=null)
 					{
-						this.EventHandlerCCommReceData?.Invoke(sender, e);
+						this.EventCCommDataReceivedHandler?.Invoke(sender, e);
 					}					
 					//---设置状态为空闲模式
 					this.defaultSerialSTATE = CCOMM_STATE.STATE_IDLE;

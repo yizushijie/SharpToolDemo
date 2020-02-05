@@ -60,7 +60,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] {	(byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_OPEN_CLOSE, 0x01,
@@ -110,7 +110,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_OPEN_CLOSE, 0x00 };
@@ -155,7 +155,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_ERASE, 0x00 };
@@ -201,7 +201,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				if (chipFlash==null)
 				{
@@ -346,7 +346,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = 0;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{	
 				//---校验是否需要进入编程模式
 				if (isAuto==true)
@@ -543,7 +543,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				byte[] cmd = new byte[] {	(byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_ERASE, 0x01,
 											(byte)(this.mMcuInfoParam.mChipEepromPerPageByteNum>>8), (byte)(this.mMcuInfoParam.mChipEepromPerPageByteNum),
@@ -599,7 +599,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---校验缓存区
 				if (chipEeprom == null)
@@ -740,7 +740,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---校验是否需要进入编程模式
 				if (isAuto == true)
@@ -935,7 +935,7 @@ namespace Harry.LabTools.LabMcuFunc
 		public override int CMcuFunc_CheckChipEepromEmpty(RichTextBox msg)
 		{
 			int _return = -1;
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				byte[] cmd = new byte[] {	(byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_ERASE, 0x02,
 											(byte)(this.mMcuInfoParam.mChipEepromPerPageByteNum),
@@ -991,7 +991,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_FUSE_LOCK_READ, 0x00,(byte)(this.mMcuInfoParam.mChipFuse.Length>2?1:0)};
@@ -1041,7 +1041,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_FUSE_LOCK_READ, 0x01};
@@ -1089,7 +1089,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = null;
@@ -1144,7 +1144,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_LOCK_WRITE, chipLock };
@@ -1190,7 +1190,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_ID_READ};
@@ -1248,7 +1248,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_CALIBRATIONBYTE_READ,(byte)(this.mMcuInfoParam.mChipOSCCalibration.mText.Length) };
@@ -1298,7 +1298,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				if (chipRom == null)
 				{
@@ -1413,7 +1413,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] { (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_PROG_CLOCK_SET,0x00,chipClock };
@@ -1459,7 +1459,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] {   (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_OPEN_CLOSE, 0x02,
@@ -1510,7 +1510,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯端口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] {   (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_OPEN_CLOSE, 0x02,
@@ -1562,7 +1562,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] {	(byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_PROG_CLOCK_SET, 0x02, 
@@ -1612,7 +1612,7 @@ namespace Harry.LabTools.LabMcuFunc
 		{
 			int _return = -1;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				//---发送命令
 				byte[] cmd = new byte[] {   (byte)CMCUFUNC_CMD_HVPP.CMD_HVPP_PROG_CLOCK_SET, 0x01 };
@@ -1668,7 +1668,7 @@ namespace Harry.LabTools.LabMcuFunc
 			int i = 0;
 			int mask = 0;
 			//---校验通讯接口
-			if ((this.mCCOMM != null) && (this.mCCOMM.mOpen == true))
+			if ((this.mCCOMM != null) && (this.mCCOMM.mCOMMOpen == true))
 			{
 				mask = this.mMcuInfoParam.mChipFuncMask1.mMask;
 				for (i = 0; i < this.mMcuInfoParam.mChipFuncMask1.mCout; i++)

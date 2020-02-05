@@ -540,7 +540,7 @@ namespace LabMcuForm.CMcuFormAVR8Bits
 				return;
 			}
 			//---校验通讯端口
-			if ((this.defaultCMcuFunc.mCCOMM==null) ||(this.defaultCMcuFunc.mCCOMM.mOpen == false))
+			if ((this.defaultCMcuFunc.mCCOMM==null) ||(this.defaultCMcuFunc.mCCOMM.mCOMMOpen == false))
 			{
 				MessageBox.Show("通讯端口初始化异常!", "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;

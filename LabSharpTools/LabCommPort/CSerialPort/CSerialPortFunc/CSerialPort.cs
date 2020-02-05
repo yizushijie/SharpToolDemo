@@ -47,7 +47,7 @@ namespace Harry.LabTools.LabCommPort
 			if (cCommBase!=null)
 			{
 				//---参数的分析
-				base.AnalyseParam(cCommBase.mPerPackageMaxSize, cCommBase.mSerialParam, cCommBase.mUSBParam, cCommBase.mMultiAddr);
+				base.AnalyseParam(cCommBase.mPerPackageMaxSize, cCommBase.mSerialPortParam, cCommBase.mUSBPortParam, cCommBase.mChildAddr);
 			}			
 		}
 

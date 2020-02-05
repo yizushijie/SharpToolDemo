@@ -22,7 +22,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 通讯端口的类型
 		/// </summary>
-		public virtual CCOMM_TYPE mType
+		public virtual CCOMM_TYPE mCOMMType
 		{
 			get
 			{
@@ -37,7 +37,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public virtual string mName
+		public virtual string mCOMMName
 		{
 			get
 			{
@@ -51,7 +51,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public virtual int mIndex
+		public virtual int mCOMMIndex
 		{
 			get
 			{
@@ -65,7 +65,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public virtual string mInfo
+		public virtual string mCOMMInfo
 		{
 			get
 			{
@@ -90,7 +90,46 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public virtual bool mMultiAddr
+		public virtual int mCOMMWriteTimeout
+		{
+			get
+			{
+				return 200;
+			}
+			set
+			{
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public virtual int mCOMMReadTimeout
+		{
+			get
+			{
+				return 200;
+			}
+			set
+			{
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public virtual int mCOMMInfiniteTimeout
+		{
+			get
+			{
+				return 200;
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public virtual bool mChildAddr
 		{
 			get
 			{
@@ -101,7 +140,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public virtual bool mMultiCMD
+		public virtual bool mChildCMD
 		{
 			get
 			{
@@ -116,7 +155,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 端口是否打开
 		/// </summary>
-		public virtual bool mOpen
+		public virtual bool mCOMMOpen
 		{
 			get
 			{
@@ -160,7 +199,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 设备连接状态
 		/// </summary>
-		public virtual bool mConnected
+		public virtual bool mCOMMConnected
 		{
 			get
 			{
@@ -171,7 +210,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 设备是否发生变化,TRUE---发生变化，FALSE---未变化
 		/// </summary>
-		public virtual bool mChanged
+		public virtual bool mCOMMChanged
 		{
 			get
 			{
@@ -237,7 +276,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 串行参数
 		/// </summary>
-		public virtual CSerialPortParam mSerialParam
+		public virtual CSerialPortParam mSerialPortParam
 		{
 			get
 			{
@@ -256,7 +295,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// USB属性
 		/// </summary>
-		public virtual CUSBPortParam mUSBParam
+		public virtual CUSBPortParam mUSBPortParam
 		{
 			get
 			{
@@ -324,25 +363,25 @@ namespace Harry.LabTools.LabCommPort
 		/// <param name="uSBParam"></param>
 		public virtual void  AnalyseParam( int perPackageSize,CSerialPortParam serialParam,CUSBPortParam usbParam,bool isUpAddrID=false)
 		{
-			if ((serialParam!=null)&&(this.mSerialParam!=null))
+			if ((serialParam!=null)&&(this.mSerialPortParam!=null))
 			{
-				this.mSerialParam.mName		=serialParam.mName		;
-				this.mSerialParam.mBaudRate	=serialParam.mBaudRate	;
-				this.mSerialParam.mStopBits	=serialParam.mStopBits	;
-				this.mSerialParam.mDataBits	=serialParam.mDataBits	;
-				this.mSerialParam.mParity	=serialParam.mParity	;
+				this.mSerialPortParam.mName		=serialParam.mName		;
+				this.mSerialPortParam.mBaudRate	=serialParam.mBaudRate	;
+				this.mSerialPortParam.mStopBits	=serialParam.mStopBits	;
+				this.mSerialPortParam.mDataBits	=serialParam.mDataBits	;
+				this.mSerialPortParam.mParity	=serialParam.mParity	;
 				//---是否需要更新ID
 				if (isUpAddrID)
 				{
-					this.mSerialParam.mAddrID = serialParam.mAddrID;
+					this.mSerialPortParam.mAddrID = serialParam.mAddrID;
 				}
 
-				this.mName = this.mSerialParam.mName;
+				this.mCOMMName = this.mSerialPortParam.mName;
             }
-			if ((usbParam!=null)&&(this.mUSBParam!=null))
+			if ((usbParam!=null)&&(this.mUSBPortParam!=null))
 			{
-				this.mUSBParam.mVID=mUSBParam.mVID;
-				this.mUSBParam.mPID=mUSBParam.mPID;
+				this.mUSBPortParam.mVID=mUSBPortParam.mVID;
+				this.mUSBPortParam.mPID=mUSBPortParam.mPID;
 			}
 			this.mPerPackageMaxSize = perPackageSize;
 		}
@@ -354,25 +393,25 @@ namespace Harry.LabTools.LabCommPort
 		/// <param name="uSBParam"></param>
 		public virtual void AnalyseParam(int perPackageSize, CSerialPortParam serialParam, CUSBPortParam usbParam,CCOMM_CRC rxCRC, CCOMM_CRC txCRC, bool isUpAddrID = false)
 		{
-			if ((serialParam != null) && (this.mSerialParam != null))
+			if ((serialParam != null) && (this.mSerialPortParam != null))
 			{
-				this.mSerialParam.mName		= serialParam.mName		;
-				this.mSerialParam.mBaudRate = serialParam.mBaudRate	;
-				this.mSerialParam.mStopBits = serialParam.mStopBits	;
-				this.mSerialParam.mDataBits = serialParam.mDataBits	;
-				this.mSerialParam.mParity	= serialParam.mParity	;
+				this.mSerialPortParam.mName		= serialParam.mName		;
+				this.mSerialPortParam.mBaudRate = serialParam.mBaudRate	;
+				this.mSerialPortParam.mStopBits = serialParam.mStopBits	;
+				this.mSerialPortParam.mDataBits = serialParam.mDataBits	;
+				this.mSerialPortParam.mParity	= serialParam.mParity	;
 				//---是否需要更新ID
-				if ((isUpAddrID)&&(this.mSerialParam.mAddrID != serialParam.mAddrID))
+				if ((isUpAddrID)&&(this.mSerialPortParam.mAddrID != serialParam.mAddrID))
 				{
-					this.mSerialParam.mAddrID = serialParam.mAddrID;
+					this.mSerialPortParam.mAddrID = serialParam.mAddrID;
 				}
-				this.mName = this.mSerialParam.mName;
+				this.mCOMMName = this.mSerialPortParam.mName;
 				
 			}
-			if ((usbParam != null) && (this.mUSBParam != null))
+			if ((usbParam != null) && (this.mUSBPortParam != null))
 			{
-				this.mUSBParam.mVID = mUSBParam.mVID;
-				this.mUSBParam.mPID = mUSBParam.mPID;
+				this.mUSBPortParam.mVID = mUSBPortParam.mVID;
+				this.mUSBPortParam.mPID = mUSBPortParam.mPID;
 			}
 			//---发送数据校验方式
 			this.mSendData.mCRCMode = txCRC;

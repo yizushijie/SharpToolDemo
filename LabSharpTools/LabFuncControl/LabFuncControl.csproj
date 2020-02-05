@@ -41,7 +41,7 @@
       <HintPath>..\..\packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
     </Reference>
     <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
-      <HintPath>..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
+      <HintPath>..\..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
     </Reference>
     <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>

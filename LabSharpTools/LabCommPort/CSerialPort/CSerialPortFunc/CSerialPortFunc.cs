@@ -60,7 +60,7 @@ namespace Harry.LabTools.LabCommPort
 										 cbb.Items.Add("COM" + this.defaultSerialIndexMemu[i].ToString());
 									 }
                                      //---当前端口在设备中索引
-                                     _return = this.defaultSerialIndexMemu.IndexOf((byte)this.mIndex);
+                                     _return = this.defaultSerialIndexMemu.IndexOf((byte)this.mCOMMIndex);
                                      if (_return < 0)
                                      {
                                          cbb.SelectedIndex = 0;
@@ -80,7 +80,7 @@ namespace Harry.LabTools.LabCommPort
 							cbb.Items.Add("COM" + this.defaultSerialIndexMemu[i].ToString());
 						}
                         //---当前端口在设备中索引
-                        _return = this.defaultSerialIndexMemu.IndexOf((byte)this.mIndex);
+                        _return = this.defaultSerialIndexMemu.IndexOf((byte)this.mCOMMIndex);
                         if (_return<0)
                         {
                             cbb.SelectedIndex = 0;
@@ -94,7 +94,7 @@ namespace Harry.LabTools.LabCommPort
 					//---获取设备的驱动信息
 					this.defaultSerialInfo = this.defaultSerialInfoMemu[_return];
 					//---获取设备的名称信息
-					this.mName = "COM" + this.defaultSerialIndexMemu[_return].ToString();
+					this.mCOMMName = "COM" + this.defaultSerialIndexMemu[_return].ToString();
 				}
 				this.defaultSerialMsg = "端口刷新成功！";
 				_return = 0;
@@ -349,9 +349,9 @@ namespace Harry.LabTools.LabCommPort
 					if (portIndex < 0)
 					{
                         //---判断是不是当前设备
-						if (this.defaultSerialIndexMemu[i] == this.mIndex)
+						if (this.defaultSerialIndexMemu[i] == this.mCOMMIndex)
 						{
-							this.mName = "";
+							this.mCOMMName = "";
                             if (this.defaultConnected ==true)
                             {
                                 if (this.defaultSerialPort!=null)
@@ -359,7 +359,7 @@ namespace Harry.LabTools.LabCommPort
 									//---注销事件接收函数
 									if (this.defaultHaveEventDataReceivedState==true)
 									{
-										this.defaultSerialPort.DataReceived -= new SerialDataReceivedEventHandler(this.EventDataReceivedHandler);
+										this.defaultSerialPort.DataReceived -= new SerialDataReceivedEventHandler(this.HandleDataReceivedEvent);
 										this.defaultHaveEventDataReceivedState = false;
 									}                                   
                                     //---释放资源
@@ -459,7 +459,7 @@ namespace Harry.LabTools.LabCommPort
 			if (this.defaultSerialIndexMemu.Count == 0)
 			{
 				//---释放端口
-				if ((this.defaultSerialPort != null) && (this.mIndex != 0))
+				if ((this.defaultSerialPort != null) && (this.mCOMMIndex != 0))
 				{
 					//---端口状态，空闲
 					this.defaultSerialSTATE = CCOMM_STATE.STATE_IDLE;
@@ -467,7 +467,7 @@ namespace Harry.LabTools.LabCommPort
 					this.defaultSerialPort.Close();
                     //---释放串口资源
                     this.defaultSerialPort.Dispose();
-					this.mName = string.Empty;
+					this.mCOMMName = string.Empty;
 				}
 			}
             if (this.mCCommRichTextBox != null)
@@ -500,7 +500,7 @@ namespace Harry.LabTools.LabCommPort
 			}
 			else
 			{
-				this.defaultSerialMsg = "端口：" + this.mName + "初始化异常！";
+				this.defaultSerialMsg = "端口：" + this.mCOMMName + "初始化异常！";
 			}
 			if ((msg != null) && (_return != 0))
 			{
@@ -534,7 +534,7 @@ namespace Harry.LabTools.LabCommPort
 				}
 				else
 				{
-					this.defaultSerialMsg = "端口：" + this.mName + "初始化异常！";
+					this.defaultSerialMsg = "端口：" + this.mCOMMName + "初始化异常！";
 				}
 			}
 			if ((msg!=null)&&(_return!=0))
@@ -571,7 +571,7 @@ namespace Harry.LabTools.LabCommPort
 			}
 			else
 			{
-				this.defaultSerialMsg = "端口：" + this.mName + "初始化异常！";
+				this.defaultSerialMsg = "端口：" + this.mCOMMName + "初始化异常！";
 			}
 			if ((msg != null) && (_return != 0))
 			{
@@ -709,7 +709,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <returns></returns>
 		public override int OpenDevice()
 		{
-			return this.OpenDevice(this.defaultSerialParam.mName,null);
+			return this.OpenDevice(this.defaultSerialPortParam.mName,null);
 		}
 
 		/// <summary>
@@ -750,31 +750,31 @@ namespace Harry.LabTools.LabCommPort
 						this.defaultSerialPort.PortName = argName;
 					}					
 					//---查空操作
-					if (this.defaultSerialParam == null)
+					if (this.defaultSerialPortParam == null)
 					{
-						this.defaultSerialParam = new CSerialPortParam();
+						this.defaultSerialPortParam = new CSerialPortParam();
 					}
 					//---使用的设备端口
-					this.mName = argName;
+					this.mCOMMName = argName;
 					//---波特率
-					if (this.defaultSerialPort.BaudRate != int.Parse(this.defaultSerialParam.mBaudRate))
+					if (this.defaultSerialPort.BaudRate != int.Parse(this.defaultSerialPortParam.mBaudRate))
 					{
-						this.defaultSerialPort.BaudRate = int.Parse(this.defaultSerialParam.mBaudRate);
+						this.defaultSerialPort.BaudRate = int.Parse(this.defaultSerialPortParam.mBaudRate);
 					}
 					//---校验位
-					if (this.defaultSerialPort.Parity != this.GetParityBits(this.defaultSerialParam.mParity))
+					if (this.defaultSerialPort.Parity != this.GetParityBits(this.defaultSerialPortParam.mParity))
 					{
-						this.defaultSerialPort.Parity = this.GetParityBits(this.defaultSerialParam.mParity);
+						this.defaultSerialPort.Parity = this.GetParityBits(this.defaultSerialPortParam.mParity);
 					}
 					//---停止位
-					if (this.defaultSerialPort.StopBits != this.GetStopBits(this.defaultSerialParam.mStopBits))
+					if (this.defaultSerialPort.StopBits != this.GetStopBits(this.defaultSerialPortParam.mStopBits))
 					{
-						this.defaultSerialPort.StopBits = this.GetStopBits(this.defaultSerialParam.mStopBits);
+						this.defaultSerialPort.StopBits = this.GetStopBits(this.defaultSerialPortParam.mStopBits);
 					}
 					//---数据位
-					if (this.defaultSerialPort.DataBits != int.Parse(this.defaultSerialParam.mDataBits))
+					if (this.defaultSerialPort.DataBits != int.Parse(this.defaultSerialPortParam.mDataBits))
 					{
-						this.defaultSerialPort.DataBits = int.Parse(this.defaultSerialParam.mDataBits);
+						this.defaultSerialPort.DataBits = int.Parse(this.defaultSerialPortParam.mDataBits);
 					}
 					try
 					{
@@ -785,17 +785,17 @@ namespace Harry.LabTools.LabCommPort
 						{
 							//---端口状态，错误
 							this.defaultSerialSTATE = CCOMM_STATE.STATE_ERROR;
-							this.defaultSerialMsg = "端口：" + this.mName + "打开失败!";
+							this.defaultSerialMsg = "端口：" + this.mCOMMName + "打开失败!";
 							_return = 2;
 						}
 						else
 						{
                             this.defaultConnected = true;
-                            this.defaultSerialMsg = "端口：" + this.mName + "打开成功!";
+                            this.defaultSerialMsg = "端口：" + this.mCOMMName + "打开成功!";
 							//---注册事件接收函数
 							if (this.defaultHaveEventDataReceivedState==false)
 							{
-								this.defaultSerialPort.DataReceived += new SerialDataReceivedEventHandler(this.EventDataReceivedHandler);
+								this.defaultSerialPort.DataReceived += new SerialDataReceivedEventHandler(this.HandleDataReceivedEvent);
 								this.defaultHaveEventDataReceivedState = true;
 							}							
 							_return = 0;
@@ -803,7 +803,7 @@ namespace Harry.LabTools.LabCommPort
 					}
 					catch 
 					{
-						this.defaultSerialMsg = "端口：" + this.mName + "打开异常!";
+						this.defaultSerialMsg = "端口：" + this.mCOMMName + "打开异常!";
 						_return = 3;
 					}
 					
@@ -846,8 +846,8 @@ namespace Harry.LabTools.LabCommPort
 		/// <returns></returns>
 		public override int OpenDevice(int argIndex, RichTextBox msg = null)
 		{
-			this.mName = "COM" + argIndex.ToString();
-			return this.OpenDevice(this.mName, msg); 
+			this.mCOMMName = "COM" + argIndex.ToString();
+			return this.OpenDevice(this.mCOMMName, msg); 
 		}
 
 		/// <summary>
@@ -860,17 +860,17 @@ namespace Harry.LabTools.LabCommPort
 		{
 			if (argSerialParam != null)
 			{
-				if (this.defaultSerialParam == null)
+				if (this.defaultSerialPortParam == null)
 				{
-					this.defaultSerialParam = new CSerialPortParam();
+					this.defaultSerialPortParam = new CSerialPortParam();
 				}
-				this.mName = argSerialParam.mName;
-				this.defaultSerialParam.mBaudRate = argSerialParam.mBaudRate;
-				this.defaultSerialParam.mParity = argSerialParam.mParity;
-				this.defaultSerialParam.mDataBits = argSerialParam.mDataBits;
-				this.defaultSerialParam.mStopBits = argSerialParam.mStopBits;
-				this.defaultSerialParam.mAddrID = argSerialParam.mAddrID;
-				return this.OpenDevice(this.mName, msg);
+				this.mCOMMName = argSerialParam.mName;
+				this.defaultSerialPortParam.mBaudRate = argSerialParam.mBaudRate;
+				this.defaultSerialPortParam.mParity = argSerialParam.mParity;
+				this.defaultSerialPortParam.mDataBits = argSerialParam.mDataBits;
+				this.defaultSerialPortParam.mStopBits = argSerialParam.mStopBits;
+				this.defaultSerialPortParam.mAddrID = argSerialParam.mAddrID;
+				return this.OpenDevice(this.mCOMMName, msg);
 			}
 			else
 			{
@@ -902,11 +902,11 @@ namespace Harry.LabTools.LabCommPort
                     {
                         this.defaultConnected = false;
                         _return = 0;
-                        this.defaultSerialMsg = "端口:" + this.mName.ToString() + "关闭成功!";
+                        this.defaultSerialMsg = "端口:" + this.mCOMMName.ToString() + "关闭成功!";
 						//---注销事件接收函数
 						if (this.defaultHaveEventDataReceivedState == true)
 						{
-							this.defaultSerialPort.DataReceived -= new SerialDataReceivedEventHandler(this.EventDataReceivedHandler);
+							this.defaultSerialPort.DataReceived -= new SerialDataReceivedEventHandler(this.HandleDataReceivedEvent);
 							this.defaultHaveEventDataReceivedState = false;
 						}
                         //---释放端口使用的资源
@@ -914,13 +914,13 @@ namespace Harry.LabTools.LabCommPort
                     }
                     else
                     {
-                        this.defaultSerialMsg = "端口:" + this.mName.ToString() + "关闭失败!";
+                        this.defaultSerialMsg = "端口:" + this.mCOMMName.ToString() + "关闭失败!";
                         _return = 1;
                     }
                 }
                 catch
                 {
-                    this.defaultSerialMsg = "端口:" + this.mName.ToString() + "关闭异常!";
+                    this.defaultSerialMsg = "端口:" + this.mCOMMName.ToString() + "关闭异常!";
                     _return = 2;
                 }
             }
@@ -974,11 +974,11 @@ namespace Harry.LabTools.LabCommPort
                     {
                         this.defaultConnected = false;
                         _return = 0;
-                        this.defaultSerialMsg = "端口:" + this.mName.ToString() + "关闭成功!";
+                        this.defaultSerialMsg = "端口:" + this.mCOMMName.ToString() + "关闭成功!";
 						//---注销事件接收函数
 						if (this.defaultHaveEventDataReceivedState == true)
 						{
-							this.defaultSerialPort.DataReceived -= new SerialDataReceivedEventHandler(this.EventDataReceivedHandler);
+							this.defaultSerialPort.DataReceived -= new SerialDataReceivedEventHandler(this.HandleDataReceivedEvent);
 							this.defaultHaveEventDataReceivedState = false;
 						}						
                         //---释放端口使用的资源
@@ -986,13 +986,13 @@ namespace Harry.LabTools.LabCommPort
                     }
                     else
                     {
-                        this.defaultSerialMsg = "端口:" + this.mName.ToString() + "关闭失败!";
+                        this.defaultSerialMsg = "端口:" + this.mCOMMName.ToString() + "关闭失败!";
                         _return = 4;
                     }
                 }
                 catch
                 {
-                    this.defaultSerialMsg = "端口:" + this.mName.ToString() + "关闭异常!";
+                    this.defaultSerialMsg = "端口:" + this.mCOMMName.ToString() + "关闭异常!";
                     _return = 5;
                 }
             }

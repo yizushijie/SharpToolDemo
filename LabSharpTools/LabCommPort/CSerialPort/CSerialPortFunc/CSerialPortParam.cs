@@ -39,7 +39,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 串口参数
 		/// </summary>
-		private CSerialPortParam defaultSerialParam = new CSerialPortParam();
+		private CSerialPortParam defaultSerialPortParam = new CSerialPortParam();
 		/// <summary>
 		/// 使用的时间
 		/// </summary>
@@ -68,7 +68,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 使用的通讯端口
 		/// </summary>
-		public override CCOMM_TYPE mType
+		public override CCOMM_TYPE mCOMMType
 		{
 			get
 			{
@@ -76,14 +76,14 @@ namespace Harry.LabTools.LabCommPort
 			}
 			set
 			{
-				base.mType = value;
+				base.mCOMMType = value;
 			}
 		}
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public override string mName
+		public override string mCOMMName
 		{
 			get
 			{
@@ -115,36 +115,36 @@ namespace Harry.LabTools.LabCommPort
 				{
 					this.defaultSerialPort.PortName = value;
 				}
-				this.defaultSerialParam.mName = this.defaultSerialPort.PortName;
+				this.defaultSerialPortParam.mName = this.defaultSerialPort.PortName;
 			}
 		}
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public override int mIndex
+		public override int mCOMMIndex
 		{
 			get
 			{
-				if(string.IsNullOrEmpty(this.mName))
+				if(string.IsNullOrEmpty(this.mCOMMName))
 				{
 					return 0;
 				}
 				else
 				{
-					return int.Parse(Regex.Replace(this.mName, @"[^\d]*", ""));
+					return int.Parse(Regex.Replace(this.mCOMMName, @"[^\d]*", ""));
 				}
 			}
 			set
 			{
-				this.mName = "COM" + value.ToString();
+				this.mCOMMName = "COM" + value.ToString();
 			}
 		}
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public override string mInfo
+		public override string mCOMMInfo
 		{
 			get
 			{
@@ -168,20 +168,61 @@ namespace Harry.LabTools.LabCommPort
 		}
 
 		/// <summary>
-		/// 
+		/// 读取超时时间
 		/// </summary>
-		public override bool mMultiAddr
+		public override int mCOMMReadTimeout
 		{
 			get
 			{
-				return ((this.defaultSerialParam!=null)&&(defaultSerialParam.mAddrID>0));
+				return this.defaultSerialPort.ReadTimeout;
+			}
+			set
+			{
+				this.defaultSerialPort.ReadTimeout = value;
+			}
+		}
+
+		/// <summary>
+		/// 写入超时
+		/// </summary>
+		public override int mCOMMWriteTimeout
+		{
+			get
+			{
+				return this.defaultSerialPort.WriteTimeout;
+			}
+			set
+			{
+				this.defaultSerialPort.WriteTimeout = value;
+			}
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public override int mCOMMInfiniteTimeout
+		{
+			get
+			{
+				return 200;
+			}
+		}
+
+		/// <summary>
+		/// 多地址通信
+		/// </summary>
+		public override bool mChildAddr
+		{
+			get
+			{
+				return ((this.defaultSerialPortParam!=null)&&(defaultSerialPortParam.mAddrID>0));
 			}
 		}
 
 		/// <summary>
 		/// 是不是复合命令
 		/// </summary>
-		public override bool mMultiCMD
+		public override bool mChildCMD
 		{
 			get
 			{
@@ -197,7 +238,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 端口是否打开
 		/// </summary>
-		public override bool mOpen
+		public override bool mCOMMOpen
 		{
 			get
 			{
@@ -249,7 +290,7 @@ namespace Harry.LabTools.LabCommPort
         /// <summary>
         /// 设备连接状态
         /// </summary>
-        public override bool mConnected
+        public override bool mCOMMConnected
         {
             get
             {
@@ -260,7 +301,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public override bool mChanged
+		public override bool mCOMMChanged
 		{
 			get
 			{
@@ -309,48 +350,48 @@ namespace Harry.LabTools.LabCommPort
 		#region 串口属性
 
 		/// <summary>
-		/// 串口配置信息
+		/// 串口参数配置信息
 		/// </summary>
-		public override CSerialPortParam mSerialParam
+		public override CSerialPortParam mSerialPortParam
 		{
 			get
 			{
-				if (this.defaultSerialParam==null)
+				if (this.defaultSerialPortParam==null)
 				{
-					this.defaultSerialParam = new CSerialPortParam();
+					this.defaultSerialPortParam = new CSerialPortParam();
 				}
-				return this.defaultSerialParam;
+				return this.defaultSerialPortParam;
 			}
 			set
 			{
-                if (this.defaultSerialParam!=null)
+                if (this.defaultSerialPortParam!=null)
                 {
-                    if ((value != null)&&(this.defaultSerialParam.mName!=value.mName))
+                    if ((value != null)&&(this.defaultSerialPortParam.mName!=value.mName))
                     {
-                        this.CloseDevice(this.defaultSerialParam.mName);
+                        this.CloseDevice(this.defaultSerialPortParam.mName);
                     }
 					if (value!=null)
 					{
-						this.defaultSerialParam.AnalyseParam(value.mName, value.mBaudRate, value.mStopBits, value.mDataBits, value.mParity);
+						this.defaultSerialPortParam.AnalyseParam(value.mName, value.mBaudRate, value.mStopBits, value.mDataBits, value.mParity);
 						//---波特率
-						if (this.defaultSerialPort.BaudRate != int.Parse(this.defaultSerialParam.mBaudRate))
+						if (this.defaultSerialPort.BaudRate != int.Parse(this.defaultSerialPortParam.mBaudRate))
 						{
-							this.defaultSerialPort.BaudRate = int.Parse(this.defaultSerialParam.mBaudRate);
+							this.defaultSerialPort.BaudRate = int.Parse(this.defaultSerialPortParam.mBaudRate);
 						}
 						//---停止位
-						if (this.defaultSerialPort.StopBits != this.GetStopBits(this.defaultSerialParam.mStopBits))
+						if (this.defaultSerialPort.StopBits != this.GetStopBits(this.defaultSerialPortParam.mStopBits))
 						{
-							this.defaultSerialPort.StopBits = this.GetStopBits(this.defaultSerialParam.mStopBits);
+							this.defaultSerialPort.StopBits = this.GetStopBits(this.defaultSerialPortParam.mStopBits);
 						}
 						//---数据位
-						if (this.defaultSerialPort.DataBits != int.Parse(this.defaultSerialParam.mDataBits))
+						if (this.defaultSerialPort.DataBits != int.Parse(this.defaultSerialPortParam.mDataBits))
 						{
-							this.defaultSerialPort.DataBits = int.Parse(this.defaultSerialParam.mDataBits);
+							this.defaultSerialPort.DataBits = int.Parse(this.defaultSerialPortParam.mDataBits);
 						}
 						//---校验位
-						if (this.defaultSerialPort.Parity != this.GetParityBits(this.defaultSerialParam.mParity))
+						if (this.defaultSerialPort.Parity != this.GetParityBits(this.defaultSerialPortParam.mParity))
 						{
-							this.defaultSerialPort.Parity = this.GetParityBits(this.defaultSerialParam.mParity);
+							this.defaultSerialPort.Parity = this.GetParityBits(this.defaultSerialPortParam.mParity);
 						}						
 					}
                 }
@@ -358,12 +399,12 @@ namespace Harry.LabTools.LabCommPort
 				{
 					if (value!=null)
 					{
-						this.defaultSerialParam = new CSerialPortParam(value.mName, value.mBaudRate, value.mStopBits, value.mDataBits, value.mParity);
+						this.defaultSerialPortParam = new CSerialPortParam(value.mName, value.mBaudRate, value.mStopBits, value.mDataBits, value.mParity);
 					}					
 				}
                 if (value!=null)
                 {
-                    this.mName = value.mName;
+                    this.mCOMMName = value.mName;
                 }
             }
 		}

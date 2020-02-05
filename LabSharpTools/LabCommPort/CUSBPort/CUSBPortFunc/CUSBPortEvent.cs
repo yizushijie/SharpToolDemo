@@ -35,7 +35,7 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public override void EventWatcherCommHandler(Object sender, EventArrivedEventArgs e)
+		public override void HandleWatcherCommEvent(Object sender, EventArrivedEventArgs e)
 		{
 
 		}

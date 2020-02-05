@@ -17,7 +17,7 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 使用的通讯端口
 		/// </summary>
-		public override CCOMM_TYPE mType
+		public override CCOMM_TYPE mCOMMType
 		{
 			get
 			{
@@ -25,7 +25,7 @@ namespace Harry.LabTools.LabCommPort
 			}
 			set
 			{
-				base.mType = value;
+				base.mCOMMType = value;
 			}
 		}
 
@@ -36,15 +36,15 @@ namespace Harry.LabTools.LabCommPort
 		/// <summary>
 		/// 
 		/// </summary>
-		public override CUSBPortParam mUSBParam
+		public override CUSBPortParam mUSBPortParam
 		{
 			get
 			{
-				return base.mUSBParam;
+				return base.mUSBPortParam;
 			}
 			set
 			{
-				base.mUSBParam = value;			
+				base.mUSBPortParam = value;			
 			}
 		}
 

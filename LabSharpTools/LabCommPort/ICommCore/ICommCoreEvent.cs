@@ -9,18 +9,28 @@ namespace Harry.LabTools.LabCommPort
 	/// <summary>
 	/// 设备变化设备变化事件
 	/// </summary>
-	public delegate void CCommChangeEvent();
+	public delegate void EventCCommChanged();
 
 	/// <summary>
 	/// 委托事件
 	/// </summary>
 	/// <param name="sender"></param>
 	/// <param name="e"></param>
-	public delegate void CCommEvent(object sender, EventArgs e);
+	public delegate void EventCCommDataReceived(object sender, EventArgs e);
 
 	interface ICommEvent
 	{
-		#region 函数定义
+		#region	委托函数
+		/// <summary>
+		/// 设备变化事件句柄
+		/// </summary>
+		event EventCCommChanged			EventCCommChangedHandler;
+		/// <summary>
+		/// 数据接收事件句柄
+		/// </summary>
+		event EventCCommDataReceived	EventCCommDataReceivedHandler;
+
+		#endregion
 		
 		#region 端口监控函数
 
@@ -37,34 +47,23 @@ namespace Harry.LabTools.LabCommPort
 		/// <returns></returns>
 		bool AddWatcherCommEvent(TimeSpan interval);
 
+		#endregion
+
+		#region 事件定义
 		/// <summary>
 		/// 监控端口的事件处理函数
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		void EventWatcherCommHandler(Object sender, EventArrivedEventArgs e);
+		void HandleWatcherCommEvent(Object sender, EventArrivedEventArgs e);
 
 		/// <summary>
 		/// 通讯数据接收事件
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		void EventDataReceivedHandler(object sender, EventArgs e);
-
-		/// <summary>
-		/// 设备变化事件
-		/// </summary>
-		event CCommChangeEvent EventHandlerCCommChange;
-
-		/// <summary>
-		/// 数据接收事件
-		/// </summary>
-		event CCommEvent EventHandlerCCommReceData;
-
+		void HandleDataReceivedEvent(object sender, EventArgs e);
+		
 		#endregion
-
-		#endregion
-
-
 	}
 }

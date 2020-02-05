@@ -103,11 +103,11 @@ namespace Harry.LabTools.LabCommPort
 
 					cmd[1] = (byte)(length >> 8);
 					cmd[2] = (byte)(length);
-					if (this.mMultiAddr)
+					if (this.mChildAddr)
 					{
 						id = cmd[3];
 						this.defaultSerialReceData.mParentCMD = cmd[4];
-						if (this.mMultiCMD)
+						if (this.mChildCMD)
 						{
 							this.defaultSerialReceData.mChildCMD = cmd[5];
 							this.defaultSerialReceData.mOkFlag = cmd[6];
@@ -124,7 +124,7 @@ namespace Harry.LabTools.LabCommPort
 					{
 
 						this.defaultSerialReceData.mParentCMD = cmd[3];
-						if (this.mMultiCMD)
+						if (this.mChildCMD)
 						{
 							this.defaultSerialReceData.mChildCMD = cmd[4];
 							this.defaultSerialReceData.mOkFlag = cmd[5];
@@ -141,11 +141,11 @@ namespace Harry.LabTools.LabCommPort
 				else
 				{
 					cmd[1] = (byte)(length);
-					if (this.mMultiAddr)
+					if (this.mChildAddr)
 					{
 						id = cmd[2];
 						this.defaultSerialReceData.mParentCMD = cmd[3];
-						if (this.mMultiCMD)
+						if (this.mChildCMD)
 						{
 							this.defaultSerialReceData.mChildCMD = cmd[4];
 							this.defaultSerialReceData.mOkFlag = cmd[5];
@@ -161,7 +161,7 @@ namespace Harry.LabTools.LabCommPort
 					else
 					{
 						this.defaultSerialReceData.mParentCMD = cmd[2];
-						if (this.mMultiCMD)
+						if (this.mChildCMD)
 						{
 							this.defaultSerialReceData.mChildCMD = cmd[3];
 							this.defaultSerialReceData.mOkFlag = cmd[4];
@@ -175,9 +175,9 @@ namespace Harry.LabTools.LabCommPort
 						}
 					}
 				}
-				if (this.mMultiCMD)
+				if (this.mChildCMD)
 				{
-					if (id != this.defaultSerialParam.mAddrID)
+					if (id != this.defaultSerialPortParam.mAddrID)
 					{
 						this.defaultSerialMsg = "设备通讯地址不匹配！";
 						_return = false;
@@ -267,10 +267,10 @@ namespace Harry.LabTools.LabCommPort
 				{
 					this.defaultSerialSendData.mByte.Clear();
 				}
-				if (this.mMultiAddr == true)
+				if (this.mChildAddr == true)
 				{
 					//---通过报头判断是否需要进行
-					if (cmd[0] == this.defaultSerialParam.mAddrID)
+					if (cmd[0] == this.defaultSerialPortParam.mAddrID)
 					{
 						this.defaultSerialSendData.mByte.AddRange(cmd);
 					}
@@ -284,7 +284,7 @@ namespace Harry.LabTools.LabCommPort
 							this.defaultSerialSendData.mByte.Add(0x00);
 						}
 						//---设备地址
-						this.defaultSerialSendData.mByte.Add((byte)this.defaultSerialParam.mAddrID);
+						this.defaultSerialSendData.mByte.Add((byte)this.defaultSerialPortParam.mAddrID);
 						//---填充命令
 						this.defaultSerialSendData.mByte.AddRange(cmd);
 					}
@@ -317,7 +317,7 @@ namespace Harry.LabTools.LabCommPort
 					this.defaultSerialSendData.mByte[1] = (byte)(this.defaultSerialSendData.mLength>>8);
 					this.defaultSerialSendData.mByte[2] = (byte)(this.defaultSerialSendData.mLength);
 					this.defaultSerialSendData.mParentCMD = this.defaultSerialSendData.mByte[3];
-					if (this.mMultiCMD)
+					if (this.mChildCMD)
 					{
 						this.defaultSerialSendData.mChildCMD = this.defaultSerialSendData.mByte[4];
 					}
@@ -331,7 +331,7 @@ namespace Harry.LabTools.LabCommPort
 					this.defaultSerialSendData.mLength -= 2;
 					this.defaultSerialSendData.mByte[1] = (byte)(this.defaultSerialSendData.mLength);
 					this.defaultSerialSendData.mParentCMD = this.defaultSerialSendData.mByte[2];
-					if (this.mMultiCMD)
+					if (this.mChildCMD)
 					{
 						this.defaultSerialSendData.mChildCMD = this.defaultSerialSendData.mByte[3];
 					}

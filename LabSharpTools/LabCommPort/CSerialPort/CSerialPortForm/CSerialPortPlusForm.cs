@@ -35,7 +35,7 @@ namespace Harry.LabTools.LabCommPort
 		{
 			get
 			{
-				return this.cCommSerial.mCCOMM.mChanged;
+				return this.cCommSerial.mCCOMM.mCOMMChanged;
 			}
 		}
 
@@ -229,13 +229,13 @@ namespace Harry.LabTools.LabCommPort
 				//---加载按钮事件
 				this.cCommSerial.mButton.Click+=new EventHandler(this.ParamShowDialog_Click);		
 				//---波特率
-				this.cCommSerial.AnalyseBaudRate(cComm.mSerialParam.mBaudRate);
+				this.cCommSerial.AnalyseBaudRate(cComm.mSerialPortParam.mBaudRate);
 				//---数据位
-				this.cCommSerial.AnalyseDataBits(cComm.mSerialParam.mDataBits);
+				this.cCommSerial.AnalyseDataBits(cComm.mSerialPortParam.mDataBits);
 				//---停止位
-				this.cCommSerial.AnalyseStopBits(cComm.mSerialParam.mStopBits);
+				this.cCommSerial.AnalyseStopBits(cComm.mSerialPortParam.mStopBits);
 				//---校验位
-				this.cCommSerial.AnalyseParity(cComm.mSerialParam.mParity);
+				this.cCommSerial.AnalyseParity(cComm.mSerialPortParam.mParity);
 			}
 			else
 			{
@@ -264,13 +264,13 @@ namespace Harry.LabTools.LabCommPort
 				//---加载按钮事件
 				this.cCommSerial.mButton.Click += new EventHandler(this.ParamShowDialog_Click);
 				//---波特率
-				this.cCommSerial.AnalyseBaudRate(cComm.mSerialParam.mBaudRate);
+				this.cCommSerial.AnalyseBaudRate(cComm.mSerialPortParam.mBaudRate);
 				//---数据位
-				this.cCommSerial.AnalyseDataBits(cComm.mSerialParam.mDataBits);
+				this.cCommSerial.AnalyseDataBits(cComm.mSerialPortParam.mDataBits);
 				//---停止位
-				this.cCommSerial.AnalyseStopBits(cComm.mSerialParam.mStopBits);
+				this.cCommSerial.AnalyseStopBits(cComm.mSerialPortParam.mStopBits);
 				//---校验位
-				this.cCommSerial.AnalyseParity(cComm.mSerialParam.mParity);
+				this.cCommSerial.AnalyseParity(cComm.mSerialPortParam.mParity);
 			}
 			else
 			{

@@ -6,7 +6,6 @@ using System.Text;
 
 namespace Harry.LabTools.LabCommPort
 {
-
 	/// <summary>
 	/// 端口监控事件函数
 	/// </summary>
@@ -24,16 +23,15 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		private ManagementEventWatcher defaultRemoveWatcher = null;
 
-
 		/// <summary>
 		/// 设备变化事件
 		/// </summary>
-		public virtual event CCommChangeEvent EventHandlerCCommChange = null;
-		
+		public virtual event EventCCommChanged EventCCommChangedHandler = null;		
+
 		/// <summary>
 		/// 数据接收事件
 		/// </summary>
-		public virtual event CCommEvent EventHandlerCCommReceData=null;
+		public virtual event EventCCommDataReceived EventCCommDataReceivedHandler=null;
 
 		#endregion
 
@@ -55,7 +53,7 @@ namespace Harry.LabTools.LabCommPort
 		{
             if ((this.defaultInsertWatcher == null) && (this.defaultRemoveWatcher == null))
             {
-                return this.AddWatcherCommEvent(this.EventWatcherCommHandler, this.EventWatcherCommHandler, new TimeSpan(0, 0, 1));
+                return this.AddWatcherCommEvent(this.HandleWatcherCommEvent, this.HandleWatcherCommEvent, new TimeSpan(0, 0, 1));
             }
             else
             {
@@ -72,7 +70,7 @@ namespace Harry.LabTools.LabCommPort
 		{
             if ((this.defaultInsertWatcher == null) && (this.defaultRemoveWatcher == null))
             {
-                return this.AddWatcherCommEvent(this.EventWatcherCommHandler, this.EventWatcherCommHandler, interval);
+                return this.AddWatcherCommEvent(this.HandleWatcherCommEvent, this.HandleWatcherCommEvent, interval);
             }
             else
             {
@@ -164,18 +162,17 @@ namespace Harry.LabTools.LabCommPort
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public virtual void EventWatcherCommHandler(Object sender, EventArrivedEventArgs e)
+		public virtual void HandleWatcherCommEvent(Object sender, EventArrivedEventArgs e)
 		{
 			
 		}
-
 
 		/// <summary>
 		/// 数据接收事件
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public virtual void EventDataReceivedHandler(object sender, EventArgs e)
+		public virtual void HandleDataReceivedEvent(object sender, EventArgs e)
 		{
 
 		}
